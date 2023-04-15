@@ -236,3 +236,4 @@ D:\Proj\VStudio\MyOPCUAServer\bin\Debug\System.ValueTuple.xml
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.csproj.CopyComplete
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.exe
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.pdb
+D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerConfigForm.resources

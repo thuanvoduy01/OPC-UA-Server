@@ -210,9 +210,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\MyOPCUAServer.Classes.cs" />
-    <Compile Include="Data\MyOPCUAServer.Constants.cs" />
-    <Compile Include="Data\MyOPCUAServer.DataTypes.cs" />
     <Compile Include="MyOPCUAServerConfiguration.cs" />
     <Compile Include="MyOPCUAServerForm.cs">
       <SubType>Form</SubType>
@@ -222,10 +219,19 @@
     </Compile>
     <Compile Include="MyOPCUAServerNodeManager.cs" />
     <Compile Include="MyServer.cs" />
+    <Compile Include="MyServerConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyServerConfigForm.Designer.cs">
+      <DependentUpon>MyServerConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MyOPCUAServerForm.resx">
       <DependentUpon>MyOPCUAServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyServerConfigForm.resx">
+      <DependentUpon>MyServerConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -236,13 +242,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Data\MyOPCUAServer.NodeIds.csv" />
-    <None Include="Data\MyOPCUAServer.PredefinedNodes.uanodes" />
-    <None Include="Data\MyOPCUAServer.Types.bsd" />
-    <None Include="Data\MyOPCUAServer.Types.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Model\ModelDesign.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -258,12 +257,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\MyOPCUAServer.NodeSet.xml" />
-    <Content Include="Data\MyOPCUAServer.NodeSet2.xml" />
-    <Content Include="Data\MyOPCUAServer.PredefinedNodes.xml" />
-    <Content Include="Model\ModelDesign.xml" />
     <Content Include="MyOPCUAServer.Config.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
