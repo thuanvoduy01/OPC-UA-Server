@@ -57,8 +57,52 @@ namespace MyOPCUAServer
             #endregion
 
             #region Create OPC UA Server from ua.nodes file
+            try
+            {
+                // process and command line arguments.
+                if (m_application.ProcessCommandLine())
+                {
+                    return;
+                }
 
+                // check if running as a service.
+                if (!Environment.UserInteractive)
+                {
+                    m_application.StartAsService(new MyServer());
+                    return;
+                }
+
+                //load the application configuration
+                m_application.LoadApplicationConfiguration(@"..\..\MyOPCUAServer.Config.xml", false).Wait();
+
+                //check the application certification
+                m_application.CheckApplicationInstanceCertificate(false, 0).Wait();
+
+                // start the server.
+                m_application.Start(new MyServer()).Wait();
+
+                // run the application interactively.
+                //Application.Run(new MyOPCUAServerForm(m_application));
+
+                
+                MyOPCUAServerForm myOPCUAServerForm = new MyOPCUAServerForm(m_application);
+                myOPCUAServerForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string text = "Exception: " + ex.Message;
+                if (ex.InnerException != null)
+                {
+                    text += "\r\nInner exception: ";
+                    text += ex.InnerException.Message;
+                }
+                MessageBox.Show(text, m_application.ApplicationName);
+            }
             #endregion
+
+            
+            //MyOPCUAServerForm myOPCUAServerForm = new MyOPCUAServerForm();
+            //ShowDialog(MyOPCUAServerForm);
         }
     }
 }

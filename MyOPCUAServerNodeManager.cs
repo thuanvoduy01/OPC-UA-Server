@@ -50,7 +50,7 @@ namespace MyOPCUAServer
             //    true);
 
             predefinedNodes.LoadFromBinaryResource(context,
-                @"D:\Proj\VStudio\MyOPCUAServer\Data\MyOPCUAServer.PredefinedNodes.uanodes",
+                @"D:\Proj\VStudio\MyOPCUAServer\InformationModelling\ModelCompilerOutputs\MyOPCUAServer.PredefinedNodes.uanodes",
                 typeof(MyOPCUAServerNodeManager).GetTypeInfo().Assembly,
                 true);
 

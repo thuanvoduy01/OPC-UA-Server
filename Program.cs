@@ -35,43 +35,7 @@ namespace MyOPCUAServer
                 MessageBox.Show($"Failed loading server config form: {ex.Message}\n {ex.StackTrace.ToString()}");
             }
 
-            //try
-            //{
-            //    // process and command line arguments.
-            //    if (application.ProcessCommandLine())
-            //    {
-            //        return;
-            //    }
-
-            //    // check if running as a service.
-            //    if (!Environment.UserInteractive)
-            //    {
-            //        application.StartAsService(new MyServer());
-            //        return;
-            //    }
-
-            //    //load the application configuration
-            //    application.LoadApplicationConfiguration(@"..\..\MyOPCUAServer.Config.xml", false).Wait();
-
-            //    //check the application certification
-            //    application.CheckApplicationInstanceCertificate(false, 0).Wait();
-
-            //    // start the server.
-            //    application.Start(new MyServer()).Wait();
-
-            //    // run the application interactively.
-            //    //Application.Run(new MyOPCUAServerForm(application));
-            //}
-            //catch(Exception e)
-            //{
-            //    string text = "Exception: " + e.Message;
-            //    if (e.InnerException != null)
-            //    {
-            //        text += "\r\nInner exception: ";
-            //        text += e.InnerException.Message;
-            //    }
-            //    MessageBox.Show(text, application.ApplicationName);
-            //}
+            
         }
     }
 }

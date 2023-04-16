@@ -16,5 +16,5 @@ REM %MODELCOMPILER% compile -d2 "D:\Proj\VStudio\MyOPCUAServer\InformationModell
 REM %MODELCOMPILER% compile -d2 "%MODELDESIGNXML%" -cg "%MODELDESIGNXML%" -o2 "%OUTPUTS%"
 
 echo Success
-pause
+rem pause
 
