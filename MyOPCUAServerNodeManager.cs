@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.Extensions.Configuration;
 using Opc.Ua;
 using Opc.Ua.Server;
 using System;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MyOPCUAServer
 {
@@ -39,6 +41,7 @@ namespace MyOPCUAServer
             {
                 m_configuration = new MyOPCUAServerConfiguration();
             }
+
         }
 
         protected override NodeStateCollection LoadPredefinedNodes(ISystemContext context)
@@ -78,11 +81,14 @@ namespace MyOPCUAServer
                 //m_batchPlant1.Conveyor.ConveyorMotor.Speed.Value = 99;
                 //m_simulationTimer = new System.Threading.Timer(DoSimulation, null, 1000, 1000);
 
+
+
             }
         }
 
         private MyOPCUAServerConfiguration m_configuration;
         //private static MyOPCUAServerState m_batchPlant1;
         private System.Threading.Timer m_simulationTimer;
+
     }
 }

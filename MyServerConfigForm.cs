@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Opc.Ua;
 
 namespace MyOPCUAServer
 {
@@ -100,9 +101,10 @@ namespace MyOPCUAServer
             }
             #endregion
 
-            
+
             //MyOPCUAServerForm myOPCUAServerForm = new MyOPCUAServerForm();
             //ShowDialog(MyOPCUAServerForm);
+
         }
     }
 }
