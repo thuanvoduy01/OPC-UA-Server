@@ -237,3 +237,6 @@ D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.csproj.CopyComplete
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.exe
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.pdb
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerConfigForm.resources
+D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerForm.resources
+D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerDesignerUC.resources
+D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerStatusUC.resources

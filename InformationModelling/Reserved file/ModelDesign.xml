@@ -15,6 +15,26 @@
 		               Prefix="MyOPCUAServer">http://opcfoundation.org/OPCUAServer</opc:Namespace>
 	</opc:Namespaces>
 	
+	
+	<opc:Object SymbolicName="tempReal"
+	            TypeDefinition= "ua:BaseObjectType"
+	            SupportsEvents="true">
+		<opc:BrowseName>System</opc:BrowseName>
+		<opc:Children>
+			<opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime">
+				<opc:DefaultValue>
+					<uax:DateTime>2013-12-31</uax:DateTime>
+				</opc:DefaultValue>
+			</opc:Property>
+		</opc:Children>
+		<opc:References>
+			<opc:Reference IsInverse="true">
+				<opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+				<opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+			</opc:Reference>
+		</opc:References>
+	</opc:Object>
+	
 	<opc:ObjectType xmlns:opc="http://opcfoundation.org/UA/ModelDesign.xsd"
 	                SymbolicName="DtDemoType"
 	                BaseType="ua:BaseObjectType">

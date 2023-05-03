@@ -9,7 +9,7 @@ using Opc.Ua.Configuration;
 
 namespace MyOPCUAServer
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -27,7 +27,9 @@ namespace MyOPCUAServer
 
             try
             {
-                Application.Run(new MyServerConfigForm(application));
+                Application.Run(new MyServerForm(application));
+
+                //Application.Run(new MyServerConfigForm(application));
 
             }
             catch (Exception ex)

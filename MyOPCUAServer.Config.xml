@@ -55,7 +55,7 @@
   </TransportQuotas>
   <ServerConfiguration>
     <BaseAddresses>
-      <ua:String>opc.tcp://localhost:26543/MyOPCUAServer</ua:String>
+      <ua:String>opc.tcp://localhost:12119/MyOPCUAServer</ua:String>
      </BaseAddresses>
     <SecurityPolicies>
       <ServerSecurityPolicy>
