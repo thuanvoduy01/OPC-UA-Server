@@ -1,6 +1,6 @@
 ﻿namespace MyOPCUAServer
 {
-    partial class MyServerForm
+    partial class frmMyServer
     {
         /// <summary>
         /// Required designer variable.

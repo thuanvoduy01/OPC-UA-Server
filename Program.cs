@@ -27,7 +27,7 @@ namespace MyOPCUAServer
 
             try
             {
-                Application.Run(new MyServerForm(application));
+                Application.Run(new frmMyServer(application));
 
                 //Application.Run(new MyServerConfigForm(application));
 

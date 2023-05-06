@@ -18,12 +18,12 @@ using Opc.Ua.Server;
 
 namespace MyOPCUAServer
 {
-    public partial class MyServerForm : Form
+    public partial class frmMyServer : Form
     {
         #region declare
         #region const & readonly variable
-        readonly Font FONT_DEFAULT = new Font("Century Gothic", 12, FontStyle.Bold);
-        readonly float FONT_SIZE_INC = 4;
+        //readonly Font FONT_DEFAULT = new Font("Century Gothic", 12, FontStyle.Bold);
+        //readonly float FONT_SIZE_INC = 4;
         readonly Color COLOR_CLICKED_BUTTON = Color.FromArgb(63, 88, 129);
         #endregion
 
@@ -41,11 +41,11 @@ namespace MyOPCUAServer
         ApplicationInstance m_applicationStatusUc;
         #endregion
         #endregion
-        public MyServerForm()
+        public frmMyServer()
         {
             InitializeComponent();
         }
-        public MyServerForm(ApplicationInstance application)
+        public frmMyServer(ApplicationInstance application)
         {
             InitializeComponent();
 

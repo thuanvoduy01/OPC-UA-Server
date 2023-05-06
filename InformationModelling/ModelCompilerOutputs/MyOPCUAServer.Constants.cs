@@ -50,13 +50,13 @@ namespace MyOPCUAServer
         public const uint UIObject_ObjectObject = 2;
 
         /// <remarks />
-        public const uint UIObject2 = 4;
+        public const uint UIObject_ObjectFolder = 3;
 
         /// <remarks />
-        public const uint UIObject2_ObjectObject = 5;
+        public const uint hello = 6;
 
         /// <remarks />
-        public const uint UIObject2_ObjectFolder = 6;
+        public const uint hello_helo123 = 7;
     }
     #endregion
 
@@ -67,13 +67,10 @@ namespace MyOPCUAServer
     public static partial class Variables
     {
         /// <remarks />
-        public const uint UIObject_ObjectVariable = 3;
+        public const uint UIObject_ObjectVariable = 4;
 
         /// <remarks />
-        public const uint UIObject2_ObjectVariable = 7;
-
-        /// <remarks />
-        public const uint UIObject2_NamespacePublicationDate = 8;
+        public const uint UIObject_NamespacePublicationDate = 5;
     }
     #endregion
 
@@ -90,13 +87,13 @@ namespace MyOPCUAServer
         public static readonly ExpandedNodeId UIObject_ObjectObject = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject_ObjectObject, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId UIObject2 = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject2, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject_ObjectFolder = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject_ObjectFolder, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId UIObject2_ObjectObject = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject2_ObjectObject, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId hello = new ExpandedNodeId(MyOPCUAServer.Objects.hello, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId UIObject2_ObjectFolder = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject2_ObjectFolder, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId hello_helo123 = new ExpandedNodeId(MyOPCUAServer.Objects.hello_helo123, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -110,10 +107,7 @@ namespace MyOPCUAServer
         public static readonly ExpandedNodeId UIObject_ObjectVariable = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject_ObjectVariable, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId UIObject2_ObjectVariable = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject2_ObjectVariable, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId UIObject2_NamespacePublicationDate = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject2_NamespacePublicationDate, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject_NamespacePublicationDate = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject_NamespacePublicationDate, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -122,6 +116,12 @@ namespace MyOPCUAServer
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     public static partial class BrowseNames
     {
+        /// <remarks />
+        public const string hello = "hello";
+
+        /// <remarks />
+        public const string helo123 = "helo123";
+
         /// <remarks />
         public const string ObjectFolder = "ObjectFolder";
 
@@ -133,9 +133,6 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const string UIObject = "UIObject";
-
-        /// <remarks />
-        public const string UIObject2 = "UIObject2";
     }
     #endregion
 

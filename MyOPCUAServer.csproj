@@ -213,20 +213,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Const.cs" />
-    <Compile Include="MyOPCUAServerConfiguration.cs" />
-    <Compile Include="MyOPCUAServerForm.cs">
+    <Compile Include="frmAddFolder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyOPCUAServerForm.Designer.cs">
+    <Compile Include="frmAddFolder.Designer.cs">
+      <DependentUpon>frmAddFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddProperty.Designer.cs">
+      <DependentUpon>frmAddProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddVariable.Designer.cs">
+      <DependentUpon>frmAddVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddObject.Designer.cs">
+      <DependentUpon>frmAddObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Const.cs" />
+    <Compile Include="MyOPCUAServerConfiguration.cs" />
+    <Compile Include="Old\MyOPCUAServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Old\MyOPCUAServerForm.Designer.cs">
       <DependentUpon>MyOPCUAServerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyOPCUAServerNodeManager.cs" />
     <Compile Include="MyServer.cs" />
-    <Compile Include="MyServerConfigForm.cs">
+    <Compile Include="Old\MyServerConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyServerConfigForm.Designer.cs">
+    <Compile Include="Old\MyServerConfigForm.Designer.cs">
       <DependentUpon>MyServerConfigForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyServerDesignerUC.cs">
@@ -235,11 +259,11 @@
     <Compile Include="MyServerDesignerUC.Designer.cs">
       <DependentUpon>MyServerDesignerUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyServerForm.cs">
+    <Compile Include="frmMyServer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyServerForm.Designer.cs">
-      <DependentUpon>MyServerForm.cs</DependentUpon>
+    <Compile Include="frmMyServer.Designer.cs">
+      <DependentUpon>frmMyServer.cs</DependentUpon>
     </Compile>
     <Compile Include="MyServerStatusUC.cs">
       <SubType>UserControl</SubType>
@@ -249,17 +273,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MyOPCUAServerForm.resx">
+    <EmbeddedResource Include="frmAddFolder.resx">
+      <DependentUpon>frmAddFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddProperty.resx">
+      <DependentUpon>frmAddProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddVariable.resx">
+      <DependentUpon>frmAddVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddObject.resx">
+      <DependentUpon>frmAddObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Old\MyOPCUAServerForm.resx">
       <DependentUpon>MyOPCUAServerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyServerConfigForm.resx">
+    <EmbeddedResource Include="Old\MyServerConfigForm.resx">
       <DependentUpon>MyServerConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyServerDesignerUC.resx">
       <DependentUpon>MyServerDesignerUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyServerForm.resx">
-      <DependentUpon>MyServerForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmMyServer.resx">
+      <DependentUpon>frmMyServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyServerStatusUC.resx">
       <DependentUpon>MyServerStatusUC.cs</DependentUpon>
@@ -290,11 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyOPCUAServer.Config.xml" />
-    <None Include="Resources\IMG_LOGO_BK.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

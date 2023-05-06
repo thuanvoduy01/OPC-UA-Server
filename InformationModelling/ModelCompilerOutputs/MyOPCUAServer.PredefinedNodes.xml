@@ -48,79 +48,10 @@
       </uax:TypeDefinitionId>
       <uax:NumericId>2</uax:NumericId>
     </ObjectObject>
-    <ObjectVariable>
-      <uax:NodeClass>Variable_2</uax:NodeClass>
-      <uax:NodeId>
-        <uax:Identifier>ns=1;i=3</uax:Identifier>
-      </uax:NodeId>
-      <uax:BrowseName>
-        <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>ObjectVariable</uax:Name>
-      </uax:BrowseName>
-      <uax:ReferenceTypeId>
-        <uax:Identifier>i=47</uax:Identifier>
-      </uax:ReferenceTypeId>
-      <uax:TypeDefinitionId>
-        <uax:Identifier>i=63</uax:Identifier>
-      </uax:TypeDefinitionId>
-      <uax:NumericId>3</uax:NumericId>
-      <uax:DataType>
-        <uax:Identifier>i=11</uax:Identifier>
-      </uax:DataType>
-      <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
-    </ObjectVariable>
-  </UIObject>
-  <UIObject2 xmlns="http://opcfoundation.org/OPCUAServer">
-    <uax:NodeClass>Object_1</uax:NodeClass>
-    <uax:NodeId>
-      <uax:Identifier>ns=1;i=4</uax:Identifier>
-    </uax:NodeId>
-    <uax:BrowseName>
-      <uax:NamespaceIndex>1</uax:NamespaceIndex>
-      <uax:Name>UIObject2</uax:Name>
-    </uax:BrowseName>
-    <uax:ReferenceTypeId>
-      <uax:Identifier>i=47</uax:Identifier>
-    </uax:ReferenceTypeId>
-    <uax:TypeDefinitionId>
-      <uax:Identifier>i=58</uax:Identifier>
-    </uax:TypeDefinitionId>
-    <uax:NumericId>4</uax:NumericId>
-    <uax:EventNotifier>1</uax:EventNotifier>
-    <uax:References>
-      <uax:Reference>
-        <uax:ReferenceTypeId>
-          <uax:Identifier>i=35</uax:Identifier>
-        </uax:ReferenceTypeId>
-        <uax:IsInverse>true</uax:IsInverse>
-        <uax:TargetId>
-          <uax:Identifier>i=85</uax:Identifier>
-        </uax:TargetId>
-      </uax:Reference>
-    </uax:References>
-    <ObjectObject>
-      <uax:NodeClass>Object_1</uax:NodeClass>
-      <uax:NodeId>
-        <uax:Identifier>ns=1;i=5</uax:Identifier>
-      </uax:NodeId>
-      <uax:BrowseName>
-        <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>ObjectObject</uax:Name>
-      </uax:BrowseName>
-      <uax:ReferenceTypeId>
-        <uax:Identifier>i=47</uax:Identifier>
-      </uax:ReferenceTypeId>
-      <uax:TypeDefinitionId>
-        <uax:Identifier>i=58</uax:Identifier>
-      </uax:TypeDefinitionId>
-      <uax:NumericId>5</uax:NumericId>
-    </ObjectObject>
     <ObjectFolder>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=6</uax:Identifier>
+        <uax:Identifier>ns=1;i=3</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -132,12 +63,12 @@
       <uax:TypeDefinitionId>
         <uax:Identifier>i=61</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>6</uax:NumericId>
+      <uax:NumericId>3</uax:NumericId>
     </ObjectFolder>
     <ObjectVariable>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=7</uax:Identifier>
+        <uax:Identifier>ns=1;i=4</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -149,7 +80,7 @@
       <uax:TypeDefinitionId>
         <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>7</uax:NumericId>
+      <uax:NumericId>4</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=11</uax:Identifier>
       </uax:DataType>
@@ -160,7 +91,7 @@
     <NamespacePublicationDate xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=8</uax:Identifier>
+        <uax:Identifier>ns=1;i=5</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -172,7 +103,7 @@
       <uax:TypeDefinitionId>
         <uax:Identifier>i=68</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>8</uax:NumericId>
+      <uax:NumericId>5</uax:NumericId>
       <uax:Value>
         <uax:Value>
           <uax:DateTime>2013-12-31T00:00:00Z</uax:DateTime>
@@ -185,5 +116,50 @@
       <uax:AccessLevel>1</uax:AccessLevel>
       <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </NamespacePublicationDate>
-  </UIObject2>
+  </UIObject>
+  <hello xmlns="http://opcfoundation.org/OPCUAServer">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=6</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
+      <uax:Name>hello</uax:Name>
+    </uax:BrowseName>
+    <uax:ReferenceTypeId>
+      <uax:Identifier>i=47</uax:Identifier>
+    </uax:ReferenceTypeId>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=61</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>6</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=35</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>i=85</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+    <helo123>
+      <uax:NodeClass>Object_1</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=7</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>helo123</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=61</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>7</uax:NumericId>
+    </helo123>
+  </hello>
 </uax:ListOfNodeState>

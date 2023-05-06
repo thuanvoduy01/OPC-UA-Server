@@ -59,15 +59,5 @@ namespace MyOPCUAServer.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IMG_LOGO_BK {
-            get {
-                object obj = ResourceManager.GetObject("IMG_LOGO_BK", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

@@ -1,8 +1,7 @@
 UIObject,1,Object
 UIObject_ObjectObject,2,Object
-UIObject_ObjectVariable,3,Variable
-UIObject2,4,Object
-UIObject2_ObjectObject,5,Object
-UIObject2_ObjectFolder,6,Object
-UIObject2_ObjectVariable,7,Variable
-UIObject2_NamespacePublicationDate,8,Variable
+UIObject_ObjectFolder,3,Object
+UIObject_ObjectVariable,4,Variable
+UIObject_NamespacePublicationDate,5,Variable
+hello,6,Object
+hello_helo123,7,Object
