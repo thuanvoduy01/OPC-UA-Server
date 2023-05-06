@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -473,7 +474,7 @@ namespace MyOPCUAServer
         }
 
         /// <summary>
-        /// Input path: ModelDesign\\obj1::ua:Object\\obj11::ua:Object.
+        /// Input path: ModelDesign\\obj1::Object\\obj11::Object.
         /// Output symbolicNamePath: ModelDesign\\obj1\\obj11
         /// </summary>
         /// <param name="path"></param>
@@ -481,11 +482,34 @@ namespace MyOPCUAServer
         public string ParsingPathToSymbolicNamePath(string path)
         {
             /* ---Xử lý parse cho object và folder---*/
-            //dT:adjust
+            //
             /*------------------------------ */
+            string symbolicNamePath = String.Empty;
+            string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
 
-            //dT: adjust
-            return String.Empty;
+            foreach(string subPath in subPaths)
+            {
+                string[] subStrings = subPath.Split(new[] { "::" }, StringSplitOptions.None);
+                symbolicNamePath += subStrings[0] + "\\";
+
+                /*
+                //subPath = ModelDesign -> symbolicNamePath = ModelDesign
+                if (subStrings.Length == 1)
+                {
+                    symbolicNamePath = symbolicNamePath + subStrings[0];
+                }
+
+                if (subStrings.Length == 2)
+                {
+                    symbolicNamePath = symbolicNamePath + "\\" + subStrings[1];
+                }
+                */
+
+            }
+
+
+            symbolicNamePath = symbolicNamePath.TrimEnd('\\');
+            return symbolicNamePath;
             
         }
         /// <summary>
@@ -507,30 +531,57 @@ namespace MyOPCUAServer
 
         private void btnAddFolder_Click(object sender, EventArgs e)
         {
+            if (tvwModel.SelectedNode == null)
+            {
+                return;
+            }
+
 
             UpdateTreeViewModel();
         }
 
         private void btnAddObject_Click(object sender, EventArgs e)
         {
+            if (tvwModel.SelectedNode == null)
+            {
+                return;
+            }
+
+
             UpdateTreeViewModel();
 
         }
 
         private void btnAddVariable_Click(object sender, EventArgs e)
         {
+            if (tvwModel.SelectedNode == null)
+            {
+                return;
+            }
+
+
             UpdateTreeViewModel();
 
         }
 
         private void btnAddProperty_Click(object sender, EventArgs e)
         {
+            if (tvwModel.SelectedNode == null)
+            {
+                return;
+            }
+
             UpdateTreeViewModel();
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if(tvwModel.SelectedNode == null)
+            {
+                return;
+            }
+
             XmlDocument xmlDoc = new XmlDocument();
             string xmlModelDesignUc = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
             xmlDoc.Load(xmlModelDesignUc);
