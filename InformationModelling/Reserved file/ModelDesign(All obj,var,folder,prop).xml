@@ -58,6 +58,33 @@
 		</opc:References>
 	</opc:Object>
 	
+	<opc:Object SymbolicName="UIObject2"
+	            TypeDefinition= "ua:BaseObjectType"
+	            SupportsEvents="true">
+		<!-- <opc:BrowseName>ObjectUI</opc:BrowseName> -->
+		<opc:Children>
+			<opc:Object SymbolicName= "ObjectObject" TypeDefinition= "ua:BaseObjectType">
+			</opc:Object>
+			
+			<opc:Object SymbolicName= "ObjectFolder" TypeDefinition= "ua:FolderType">
+			</opc:Object>
+			
+			<opc:Variable SymbolicName= "ObjectVariable" DataType= "ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
+			</opc:Variable>
+			<opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime">
+				<opc:DefaultValue>
+					<uax:DateTime>2013-12-31</uax:DateTime>
+				</opc:DefaultValue>
+			</opc:Property>
+		</opc:Children>
+		<opc:References>
+			<opc:Reference IsInverse="true">
+				<opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+				<opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+			</opc:Reference>
+		</opc:References>
+	</opc:Object>
+	
 	<opc:Object SymbolicName= "UIFolder" TypeDefinition= "ua:FolderType">
 		<opc:Children>
 			<opc:Object SymbolicName= "FolderObject" TypeDefinition= "ua:BaseObjectType">

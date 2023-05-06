@@ -45,7 +45,7 @@
             // 
             // txtFilePath
             // 
-            this.txtFilePath.Location = new System.Drawing.Point(133, 284);
+            this.txtFilePath.Location = new System.Drawing.Point(132, 433);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(352, 20);
             this.txtFilePath.TabIndex = 1;
@@ -57,7 +57,7 @@
             this.btnImportXml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportXml.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportXml.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnImportXml.Location = new System.Drawing.Point(28, 279);
+            this.btnImportXml.Location = new System.Drawing.Point(27, 428);
             this.btnImportXml.Name = "btnImportXml";
             this.btnImportXml.Size = new System.Drawing.Size(82, 35);
             this.btnImportXml.TabIndex = 2;
@@ -72,7 +72,7 @@
             this.btnRunServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunServer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunServer.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRunServer.Location = new System.Drawing.Point(630, 284);
+            this.btnRunServer.Location = new System.Drawing.Point(611, 425);
             this.btnRunServer.Name = "btnRunServer";
             this.btnRunServer.Size = new System.Drawing.Size(111, 30);
             this.btnRunServer.TabIndex = 2;
@@ -83,7 +83,7 @@
             // chkImport
             // 
             this.chkImport.AutoSize = true;
-            this.chkImport.Location = new System.Drawing.Point(531, 291);
+            this.chkImport.Location = new System.Drawing.Point(512, 432);
             this.chkImport.Name = "chkImport";
             this.chkImport.Size = new System.Drawing.Size(93, 17);
             this.chkImport.TabIndex = 3;
@@ -97,7 +97,7 @@
             this.btnAddObject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddObject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddObject.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddObject.Location = new System.Drawing.Point(514, 67);
+            this.btnAddObject.Location = new System.Drawing.Point(495, 208);
             this.btnAddObject.Name = "btnAddObject";
             this.btnAddObject.Size = new System.Drawing.Size(124, 35);
             this.btnAddObject.TabIndex = 2;
@@ -112,7 +112,7 @@
             this.btnAddFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFolder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFolder.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddFolder.Location = new System.Drawing.Point(514, 26);
+            this.btnAddFolder.Location = new System.Drawing.Point(495, 167);
             this.btnAddFolder.Name = "btnAddFolder";
             this.btnAddFolder.Size = new System.Drawing.Size(124, 35);
             this.btnAddFolder.TabIndex = 2;
@@ -127,7 +127,7 @@
             this.btnAddVariable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVariable.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVariable.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddVariable.Location = new System.Drawing.Point(514, 108);
+            this.btnAddVariable.Location = new System.Drawing.Point(495, 249);
             this.btnAddVariable.Name = "btnAddVariable";
             this.btnAddVariable.Size = new System.Drawing.Size(124, 35);
             this.btnAddVariable.TabIndex = 2;
@@ -142,7 +142,7 @@
             this.btnAddProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProperty.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProperty.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddProperty.Location = new System.Drawing.Point(514, 149);
+            this.btnAddProperty.Location = new System.Drawing.Point(495, 290);
             this.btnAddProperty.Name = "btnAddProperty";
             this.btnAddProperty.Size = new System.Drawing.Size(124, 35);
             this.btnAddProperty.TabIndex = 2;
@@ -157,7 +157,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDelete.Location = new System.Drawing.Point(514, 190);
+            this.btnDelete.Location = new System.Drawing.Point(495, 331);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 35);
             this.btnDelete.TabIndex = 2;
@@ -169,7 +169,7 @@
             // 
             this.tvwModel.Location = new System.Drawing.Point(37, 26);
             this.tvwModel.Name = "tvwModel";
-            this.tvwModel.Size = new System.Drawing.Size(434, 199);
+            this.tvwModel.Size = new System.Drawing.Size(434, 384);
             this.tvwModel.TabIndex = 4;
             // 
             // btnNew
@@ -179,7 +179,7 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnNew.Location = new System.Drawing.Point(644, 26);
+            this.btnNew.Location = new System.Drawing.Point(625, 167);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(83, 35);
             this.btnNew.TabIndex = 2;
@@ -208,7 +208,7 @@
             this.Controls.Add(this.btnImportXml);
             this.Controls.Add(this.txtFilePath);
             this.Name = "MyServerDesignerUC";
-            this.Size = new System.Drawing.Size(773, 338);
+            this.Size = new System.Drawing.Size(1079, 496);
             this.ResumeLayout(false);
             this.PerformLayout();
 

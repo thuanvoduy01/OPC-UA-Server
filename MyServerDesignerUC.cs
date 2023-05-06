@@ -443,24 +443,31 @@ namespace MyOPCUAServer
             nodeSymbolicName = subStrings[0];
             nodeType = subStrings[1];
 
-            //Create xPath
-            string xPath = $"//opc:{nodeType}[@SymbolicName='{nodeSymbolicName}']";
-
             XmlNamespaceManager nsMgr = new XmlNamespaceManager(xmlDoc.NameTable);
             nsMgr.AddNamespace("opc", "http://opcfoundation.org/UA/ModelDesign.xsd");
 
-            XmlNodeList nodeList = xmlDoc.SelectNodes(xPath, nsMgr);
+            string xPath;
+            XmlNodeList nodeList;
+            if (nodeSymbolicName == String.Empty)
+            {
+                xPath = $"//opc:{nodeType}";
+            }
+            else
+            {
+                xPath = $"//opc:{nodeType}[@SymbolicName='{nodeSymbolicName}']";
+            }
+
+            nodeList = xmlDoc.SelectNodes(xPath, nsMgr);
             #endregion
 
             #region Get the exact node by symbolicNamePath
             XmlNode selectedXmlNode = null;
             if (nodeList.Count > 0)
             {
-                string pathTreeview = @"ModelDesign\UIObject2\obj1";
+                string nodePath = ParsingPathToSymbolicNamePath(treeviewNodePath);
                 foreach (XmlNode node in nodeList)
                 {
-                    string nodePath = GetNodeSymbolicNamePath(node);
-                    if (nodePath == pathTreeview)
+                    if (nodePath == GetNodeSymbolicNamePath(node))
                     {
                         selectedXmlNode = node;
                         break;
@@ -481,9 +488,6 @@ namespace MyOPCUAServer
         /// <returns></returns>
         public string ParsingPathToSymbolicNamePath(string path)
         {
-            /* ---Xử lý parse cho object và folder---*/
-            //
-            /*------------------------------ */
             string symbolicNamePath = String.Empty;
             string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
 
@@ -513,17 +517,36 @@ namespace MyOPCUAServer
             
         }
         /// <summary>
-        /// Input path: ModelDesign\\obj1::ua:Object\\obj11::ua:Object.
-        /// Output symbolicNamePath: obj11::ua:Object.
-        /// Return SymbolicName = subString[0], Type = subString[1]
+        /// Input path: ModelDesign\\obj1::ua:Object\\obj11::ua:Object. <br/>
+        /// Output symbolicNamePath: obj11::ua:Object. <br/>
+        /// Return SymbolicName = subString[0], Type = subString[1] <br/>
+        /// If input = ModelDesign -> SymbolicName = "", Type = subString[1]
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
         public string[] ParsingPathToSymbolicNameAndType(string path)
         {
             //dT: adjust
-            return new[] { String.Empty };
+            string nodeSymbolicName, nodeType;
+            string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
 
+            string[] nodeDescription = subPaths.Last().Split(new[] { "::" }, StringSplitOptions.None);
+            if (nodeDescription.Length == 1)    //In case: path = "ModelDesign"
+            {
+                nodeSymbolicName = String.Empty;
+                nodeType = nodeDescription[0];
+            }
+            else
+            {
+                nodeSymbolicName = nodeDescription[0];
+                nodeType = nodeDescription[1];
+                //Object and Folder all declared as Object in XML
+                if (nodeType == "Folder")
+                {
+                    nodeType = "Object";
+                }
+            }    
+            return new[] { nodeSymbolicName, nodeType };
         }
 
 
@@ -586,15 +609,24 @@ namespace MyOPCUAServer
             string xmlModelDesignUc = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
             xmlDoc.Load(xmlModelDesignUc);
 
-            string symbolicNamePath = ParsingPathToSymbolicNamePath(tvwModel.SelectedNode.FullPath);
+            string treeviewNodePath = tvwModel.SelectedNode.FullPath;
 
-            XmlNode xmlNode = GetXmlNode(xmlDoc, symbolicNamePath);
+            XmlNode xmlNode = GetXmlNode(xmlDoc, treeviewNodePath);
 
             if (xmlNode != null)
             {
                 xmlNode.ParentNode.RemoveChild(xmlNode);
             }
 
+            //If there is only declaration (no root node), then DO NOT delete
+            if(xmlDoc.ChildNodes.Count > 1)
+            {
+                xmlDoc.Save(xmlModelDesignUc);
+            }
+            else
+            {
+                MessageBox.Show("Cannot delete the only root element!");
+            }
             UpdateTreeViewModel();
         }
 

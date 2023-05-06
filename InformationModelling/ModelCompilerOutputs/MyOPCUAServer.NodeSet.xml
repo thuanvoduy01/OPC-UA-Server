@@ -13,11 +13,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>object</Name>
+        <Name>UIObject</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>object</Text>
+        <Text>UIObject</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -62,17 +62,8 @@
             <Identifier>ns=1;i=3</Identifier>
           </TargetId>
         </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=46</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=4</Identifier>
-          </TargetId>
-        </ReferenceNode>
       </References>
-      <EventNotifier>0</EventNotifier>
+      <EventNotifier>1</EventNotifier>
     </Node>
     <Node i:type="ObjectNode">
       <NodeId>
@@ -81,11 +72,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>obj1</Name>
+        <Name>ObjectObject</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>obj1</Text>
+        <Text>ObjectObject</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -122,11 +113,11 @@
       <NodeClass>Variable_2</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>var1</Name>
+        <Name>ObjectVariable</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>var1</Text>
+        <Text>ObjectVariable</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -170,73 +161,18 @@
       <Historizing>false</Historizing>
       <AccessLevelEx>0</AccessLevelEx>
     </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=4</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>prop1</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>prop1</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=46</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=1</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=68</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Double xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Double>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=11</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
     <Node i:type="ObjectNode">
       <NodeId>
-        <Identifier>ns=1;i=5</Identifier>
+        <Identifier>ns=1;i=4</Identifier>
       </NodeId>
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>folder</Name>
+        <Name>UIObject2</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>folder</Text>
+        <Text>UIObject2</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -251,7 +187,7 @@
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
-            <Identifier>i=61</Identifier>
+            <Identifier>i=58</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -261,6 +197,15 @@
           <IsInverse>true</IsInverse>
           <TargetId>
             <Identifier>i=85</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=5</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -272,21 +217,39 @@
             <Identifier>ns=1;i=6</Identifier>
           </TargetId>
         </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=7</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=46</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=8</Identifier>
+          </TargetId>
+        </ReferenceNode>
       </References>
-      <EventNotifier>0</EventNotifier>
+      <EventNotifier>1</EventNotifier>
     </Node>
-    <Node i:type="VariableNode">
+    <Node i:type="ObjectNode">
       <NodeId>
-        <Identifier>ns=1;i=6</Identifier>
+        <Identifier>ns=1;i=5</Identifier>
       </NodeId>
-      <NodeClass>Variable_2</NodeClass>
+      <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>var2</Name>
+        <Name>ObjectObject</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>var2</Text>
+        <Text>ObjectObject</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -301,7 +264,7 @@
           </ReferenceTypeId>
           <IsInverse>true</IsInverse>
           <TargetId>
-            <Identifier>ns=1;i=5</Identifier>
+            <Identifier>ns=1;i=4</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -310,38 +273,24 @@
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
-            <Identifier>i=63</Identifier>
+            <Identifier>i=58</Identifier>
           </TargetId>
         </ReferenceNode>
       </References>
-      <Value>
-        <Value>
-          <Double xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Double>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=11</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>3</AccessLevel>
-      <UserAccessLevel>3</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
+      <EventNotifier>0</EventNotifier>
     </Node>
-    <Node i:type="VariableNode">
+    <Node i:type="ObjectNode">
       <NodeId>
-        <Identifier>ns=1;i=7</Identifier>
+        <Identifier>ns=1;i=6</Identifier>
       </NodeId>
-      <NodeClass>Variable_2</NodeClass>
+      <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>var</Name>
+        <Name>ObjectFolder</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>var</Text>
+        <Text>ObjectFolder</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -352,20 +301,61 @@
       <References>
         <ReferenceNode>
           <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=4</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=40</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>i=61</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <EventNotifier>0</EventNotifier>
+    </Node>
+    <Node i:type="VariableNode">
+      <NodeId>
+        <Identifier>ns=1;i=7</Identifier>
+      </NodeId>
+      <NodeClass>Variable_2</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>1</NamespaceIndex>
+        <Name>ObjectVariable</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>ObjectVariable</Text>
+      </DisplayName>
+      <Description i:nil="true" />
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=4</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
             <Identifier>i=40</Identifier>
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
             <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=35</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>i=85</Identifier>
           </TargetId>
         </ReferenceNode>
       </References>
@@ -391,12 +381,12 @@
       </NodeId>
       <NodeClass>Variable_2</NodeClass>
       <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>prop</Name>
+        <NamespaceIndex>0</NamespaceIndex>
+        <Name>NamespacePublicationDate</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>prop</Text>
+        <Text>NamespacePublicationDate</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -407,6 +397,15 @@
       <References>
         <ReferenceNode>
           <ReferenceTypeId>
+            <Identifier>i=46</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=4</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
             <Identifier>i=40</Identifier>
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
@@ -414,25 +413,16 @@
             <Identifier>i=68</Identifier>
           </TargetId>
         </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=35</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>i=85</Identifier>
-          </TargetId>
-        </ReferenceNode>
       </References>
       <Value>
         <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
+          <DateTime xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">2013-12-31T00:00:00Z</DateTime>
         </Value>
       </Value>
       <DataType>
-        <Identifier>i=11</Identifier>
+        <Identifier>i=13</Identifier>
       </DataType>
-      <ValueRank>-2</ValueRank>
+      <ValueRank>-1</ValueRank>
       <ArrayDimensions />
       <AccessLevel>1</AccessLevel>
       <UserAccessLevel>1</UserAccessLevel>

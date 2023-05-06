@@ -44,13 +44,19 @@ namespace MyOPCUAServer
     public static partial class Objects
     {
         /// <remarks />
-        public const uint object = 1;
+        public const uint UIObject = 1;
 
         /// <remarks />
-        public const uint object_obj1 = 2;
+        public const uint UIObject_ObjectObject = 2;
 
         /// <remarks />
-        public const uint folder = 5;
+        public const uint UIObject2 = 4;
+
+        /// <remarks />
+        public const uint UIObject2_ObjectObject = 5;
+
+        /// <remarks />
+        public const uint UIObject2_ObjectFolder = 6;
     }
     #endregion
 
@@ -61,19 +67,13 @@ namespace MyOPCUAServer
     public static partial class Variables
     {
         /// <remarks />
-        public const uint object_var1 = 3;
+        public const uint UIObject_ObjectVariable = 3;
 
         /// <remarks />
-        public const uint object_prop1 = 4;
+        public const uint UIObject2_ObjectVariable = 7;
 
         /// <remarks />
-        public const uint folder_var2 = 6;
-
-        /// <remarks />
-        public const uint var = 7;
-
-        /// <remarks />
-        public const uint prop = 8;
+        public const uint UIObject2_NamespacePublicationDate = 8;
     }
     #endregion
 
@@ -84,13 +84,19 @@ namespace MyOPCUAServer
     public static partial class ObjectIds
     {
         /// <remarks />
-        public static readonly ExpandedNodeId object = new ExpandedNodeId(MyOPCUAServer.Objects.object, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId object_obj1 = new ExpandedNodeId(MyOPCUAServer.Objects.object_obj1, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject_ObjectObject = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject_ObjectObject, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId folder = new ExpandedNodeId(MyOPCUAServer.Objects.folder, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject2 = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject2, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId UIObject2_ObjectObject = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject2_ObjectObject, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId UIObject2_ObjectFolder = new ExpandedNodeId(MyOPCUAServer.Objects.UIObject2_ObjectFolder, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -101,19 +107,13 @@ namespace MyOPCUAServer
     public static partial class VariableIds
     {
         /// <remarks />
-        public static readonly ExpandedNodeId object_var1 = new ExpandedNodeId(MyOPCUAServer.Variables.object_var1, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject_ObjectVariable = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject_ObjectVariable, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId object_prop1 = new ExpandedNodeId(MyOPCUAServer.Variables.object_prop1, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject2_ObjectVariable = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject2_ObjectVariable, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId folder_var2 = new ExpandedNodeId(MyOPCUAServer.Variables.folder_var2, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId var = new ExpandedNodeId(MyOPCUAServer.Variables.var, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId prop = new ExpandedNodeId(MyOPCUAServer.Variables.prop, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId UIObject2_NamespacePublicationDate = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject2_NamespacePublicationDate, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -123,28 +123,19 @@ namespace MyOPCUAServer
     public static partial class BrowseNames
     {
         /// <remarks />
-        public const string folder = "folder";
+        public const string ObjectFolder = "ObjectFolder";
 
         /// <remarks />
-        public const string obj1 = "obj1";
+        public const string ObjectObject = "ObjectObject";
 
         /// <remarks />
-        public const string object = "object";
+        public const string ObjectVariable = "ObjectVariable";
 
         /// <remarks />
-        public const string prop = "prop";
+        public const string UIObject = "UIObject";
 
         /// <remarks />
-        public const string prop1 = "prop1";
-
-        /// <remarks />
-        public const string var = "var";
-
-        /// <remarks />
-        public const string var1 = "var1";
-
-        /// <remarks />
-        public const string var2 = "var2";
+        public const string UIObject2 = "UIObject2";
     }
     #endregion
 

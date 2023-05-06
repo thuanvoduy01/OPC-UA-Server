@@ -34,7 +34,7 @@ namespace MyOPCUAServer
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed loading server config form: {ex.Message}\n {ex.StackTrace.ToString()}");
+                MessageBox.Show($"MyServerDesigner Failed: {ex.Message}\n {ex.StackTrace.ToString()}");
             }
 
             

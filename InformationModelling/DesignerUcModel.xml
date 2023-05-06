@@ -1,117 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<opc:ModelDesign xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                 xmlns:opc="http://opcfoundation.org/UA/ModelDesign.xsd"
-                 xmlns:ua="http://opcfoundation.org/UA/"
-                 xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
-                 xmlns="http://opcfoundation.org/OPCUAServer"
-                 TargetNamespace="http://opcfoundation.org/OPCUAServer">
-
-	<opc:Namespaces>
-		<opc:Namespace Name="OpcUa"
-		               Prefix="Opc.Ua"
-		               XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
-		<opc:Namespace Name="MyOPCUAServer"
-		               Prefix="MyOPCUAServer">http://opcfoundation.org/OPCUAServer</opc:Namespace>
-	</opc:Namespaces>
-	
-	<!-- UI Node Demo BEGIN-->
-	<opc:Object SymbolicName= "MyServer" TypeDefinition= "ua:FolderType">
-		<opc:Children>
-			<opc:Object SymbolicName= "df23" TypeDefinition= "ua:BaseObjectType">
-			</opc:Object>
-		</opc:Children>
-		
-		<opc:References>
-			<opc:Reference IsInverse="true">
-				<opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-				<opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-			</opc:Reference>
-		</opc:References>
-	</opc:Object>
-	
-	
-	<opc:Object SymbolicName="UIObject"
-	            TypeDefinition= "ua:BaseObjectType"
-	            SupportsEvents="true">
-		<!-- <opc:BrowseName>ObjectUI</opc:BrowseName> -->
-		<opc:Children>
-			<opc:Object SymbolicName= "ObjectObject" TypeDefinition= "ua:BaseObjectType">
-			</opc:Object>
-			
-			<opc:Object SymbolicName= "ObjectFolder" TypeDefinition= "ua:FolderType">
-			</opc:Object>
-			
-			<opc:Variable SymbolicName= "ObjectVariable" DataType= "ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
-			</opc:Variable>
-			<opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime">
-				<opc:DefaultValue>
-					<uax:DateTime>2013-12-31</uax:DateTime>
-				</opc:DefaultValue>
-			</opc:Property>
-		</opc:Children>
-		<opc:References>
-			<opc:Reference IsInverse="true">
-				<opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-				<opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-			</opc:Reference>
-		</opc:References>
-	</opc:Object>
-	
-	<opc:Object SymbolicName= "UIFolder" TypeDefinition= "ua:FolderType">
-		<opc:Children>
-			<opc:Object SymbolicName= "FolderObject" TypeDefinition= "ua:BaseObjectType">
-			</opc:Object>
-			
-			<opc:Object SymbolicName= "FolderFolder" TypeDefinition= "ua:FolderType">
-			</opc:Object>
-			
-			<opc:Variable SymbolicName= "FolderVariable" DataType= "ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
-			</opc:Variable>
-			
-			<!--Folder cannot have property-->
-			<!-- <opc:Property SymbolicName="FolderProperty" DataType="ua:Double">
-			</opc:Property> -->
-		</opc:Children>
-		<opc:References>
-			<opc:Reference IsInverse="true">
-				<opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-				<opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-			</opc:Reference>
-		</opc:References>
-	</opc:Object>
-	
-	<opc:Variable SymbolicName= "UIVariable" DataType= "ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
-		<opc:Children>
-		
-			<!--Variable cannot have object-->
-			<!-- <opc:Object SymbolicName= "VariableObject" TypeDefinition= "ua:BaseObjectType">
-			</opc:Object> -->
-			<!--Variable cannot have folder-->
-			<!-- <opc:Object SymbolicName= "VariableFolder" TypeDefinition= "ua:FolderType">
-			</opc:Object> -->
-			
-			<opc:Variable SymbolicName= "VariableVariable" DataType= "ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
-			</opc:Variable>
-			
-			
-			<opc:Property SymbolicName="VariableProperty" DataType="ua:Double">
-			</opc:Property>
-
-		</opc:Children> 
-		<opc:References>
-			<opc:Reference IsInverse="true">
-				<opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-				<opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-			</opc:Reference>
-		</opc:References>
-	</opc:Variable>
-	
-	
-	<!-- UI Node Demo END-->
-	
-	<!-- Demo Type BEGIN-->
-	<!--<opc:ObjectType xmlns:opc="http://opcfoundation.org/UA/ModelDesign.xsd"
+<opc:ModelDesign xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:opc="http://opcfoundation.org/UA/ModelDesign.xsd" xmlns:ua="http://opcfoundation.org/UA/" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd" xmlns="http://opcfoundation.org/OPCUAServer" TargetNamespace="http://opcfoundation.org/OPCUAServer">
+  <opc:Namespaces>
+    <opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
+    <opc:Namespace Name="MyOPCUAServer" Prefix="MyOPCUAServer">http://opcfoundation.org/OPCUAServer</opc:Namespace>
+  </opc:Namespaces>
+  <!-- UI Node Demo BEGIN-->
+  <opc:Object SymbolicName="UIObject" TypeDefinition="ua:BaseObjectType" SupportsEvents="true">
+    <!-- <opc:BrowseName>ObjectUI</opc:BrowseName> -->
+    <opc:Children>
+      <opc:Object SymbolicName="ObjectObject" TypeDefinition="ua:BaseObjectType">
+      </opc:Object>
+      <opc:Variable SymbolicName="ObjectVariable" DataType="ua:Double" ValueRank="Scalar" AccessLevel="ReadWrite">
+      </opc:Variable>
+    </opc:Children>
+    <opc:References>
+      <opc:Reference IsInverse="true">
+        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+      </opc:Reference>
+    </opc:References>
+  </opc:Object>
+  <opc:Object SymbolicName="UIObject2" TypeDefinition="ua:BaseObjectType" SupportsEvents="true">
+    <!-- <opc:BrowseName>ObjectUI</opc:BrowseName> -->
+    <opc:Children>
+      <opc:Object SymbolicName="ObjectObject" TypeDefinition="ua:BaseObjectType">
+      </opc:Object>
+      <opc:Object SymbolicName="ObjectFolder" TypeDefinition="ua:FolderType">
+      </opc:Object>
+      <opc:Variable SymbolicName="ObjectVariable" DataType="ua:Double" ValueRank="Scalar" AccessLevel="ReadWrite">
+      </opc:Variable>
+      <opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime">
+        <opc:DefaultValue>
+          <uax:DateTime>2013-12-31</uax:DateTime>
+        </opc:DefaultValue>
+      </opc:Property>
+    </opc:Children>
+    <opc:References>
+      <opc:Reference IsInverse="true">
+        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+      </opc:Reference>
+    </opc:References>
+  </opc:Object>
+  <!-- UI Node Demo END-->
+  <!-- Demo Type BEGIN-->
+  <!--<opc:ObjectType xmlns:opc="http://opcfoundation.org/UA/ModelDesign.xsd"
 	                SymbolicName="DtDemoType"
 	                BaseType="ua:BaseObjectType">
 		<opc:Description>A generic sensor.</opc:Description>
@@ -123,9 +56,9 @@
 			              AccessLevel="Read"/>
 		</opc:Children>
 	</opc:ObjectType>-->
-	<!-- Demo Type END-->
-	<!-- MachineType ModelDesign BEGIN-->
-	<!--<opc:ObjectType SymbolicName="GenericSensorType"
+  <!-- Demo Type END-->
+  <!-- MachineType ModelDesign BEGIN-->
+  <!--<opc:ObjectType SymbolicName="GenericSensorType"
 	                BaseType="ua:BaseObjectType">
 		<opc:Description>A generic sensor.</opc:Description>
 		<opc:Children>
@@ -202,10 +135,9 @@
 			</opc:Reference>
 		</opc:References>
 	</opc:Object>-->
-	<!-- MachineType ModelDesign END-->
-	
-	<!-- TankBatch ModelDesign BEGIN-->
-	<!--<opc:ObjectType SymbolicName="MotorType"
+  <!-- MachineType ModelDesign END-->
+  <!-- TankBatch ModelDesign BEGIN-->
+  <!--<opc:ObjectType SymbolicName="MotorType"
 	                BaseType="ua:BaseObjectType">
 		<opc:Description>Motor DataType.</opc:Description>
 		<opc:Children>
@@ -284,5 +216,5 @@
 			</opc:Reference>
 		</opc:References>
 	</opc:Object>-->
-	<!-- TankBatch ModelDesign END-->
+  <!-- TankBatch ModelDesign END-->
 </opc:ModelDesign>

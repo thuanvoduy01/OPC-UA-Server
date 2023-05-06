@@ -1,8 +1,8 @@
-object,1,Object
-object_obj1,2,Object
-object_var1,3,Variable
-object_prop1,4,Variable
-folder,5,Object
-folder_var2,6,Variable
-var,7,Variable
-prop,8,Variable
+UIObject,1,Object
+UIObject_ObjectObject,2,Object
+UIObject_ObjectVariable,3,Variable
+UIObject2,4,Object
+UIObject2_ObjectObject,5,Object
+UIObject2_ObjectFolder,6,Object
+UIObject2_ObjectVariable,7,Variable
+UIObject2_NamespacePublicationDate,8,Variable

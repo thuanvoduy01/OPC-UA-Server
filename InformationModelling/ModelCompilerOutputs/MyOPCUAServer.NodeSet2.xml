@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-04T10:19:23.0344224Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-06T16:52:22.3106494Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
   <NamespaceUris>
     <Uri>http://opcfoundation.org/OPCUAServer</Uri>
   </NamespaceUris>
   <Models>
-    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-04T10:19:23.0344224Z">
+    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-06T16:52:22.3106494Z">
       <RequiredModel ModelUri="http://opcfoundation.org/UA/" XmlSchemaUri="http://opcfoundation.org/UA/2008/02/Types.xsd" />
     </Model>
   </Models>
@@ -56,64 +56,69 @@
     <Alias Alias="HasAddIn">i=17604</Alias>
     <Alias Alias="HasInterface">i=17603</Alias>
   </Aliases>
-  <UAObject NodeId="ns=1;i=1" BrowseName="1:object">
-    <DisplayName>object</DisplayName>
+  <UAObject NodeId="ns=1;i=1" BrowseName="1:UIObject" EventNotifier="1">
+    <DisplayName>UIObject</DisplayName>
     <References>
       <Reference ReferenceType="HasComponent">ns=1;i=2</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=3</Reference>
-      <Reference ReferenceType="HasProperty">ns=1;i=4</Reference>
       <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
       <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
     </References>
   </UAObject>
-  <UAObject NodeId="ns=1;i=2" BrowseName="1:obj1" ParentNodeId="ns=1;i=1">
-    <DisplayName>obj1</DisplayName>
+  <UAObject NodeId="ns=1;i=2" BrowseName="1:ObjectObject" ParentNodeId="ns=1;i=1">
+    <DisplayName>ObjectObject</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1</Reference>
     </References>
   </UAObject>
-  <UAVariable NodeId="ns=1;i=3" BrowseName="1:var1" ParentNodeId="ns=1;i=1" DataType="Double" AccessLevel="3">
-    <DisplayName>var1</DisplayName>
+  <UAVariable NodeId="ns=1;i=3" BrowseName="1:ObjectVariable" ParentNodeId="ns=1;i=1" DataType="Double" AccessLevel="3">
+    <DisplayName>ObjectVariable</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="ns=1;i=4" BrowseName="1:prop1" ParentNodeId="ns=1;i=1" DataType="Double">
-    <DisplayName>prop1</DisplayName>
+  <UAObject NodeId="ns=1;i=4" BrowseName="1:UIObject2" EventNotifier="1">
+    <DisplayName>UIObject2</DisplayName>
     <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1</Reference>
-    </References>
-  </UAVariable>
-  <UAObject NodeId="ns=1;i=5" BrowseName="1:folder">
-    <DisplayName>folder</DisplayName>
-    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=5</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=6</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=7</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=8</Reference>
       <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
-      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
     </References>
   </UAObject>
-  <UAVariable NodeId="ns=1;i=6" BrowseName="1:var2" ParentNodeId="ns=1;i=5" DataType="Double" AccessLevel="3">
-    <DisplayName>var2</DisplayName>
+  <UAObject NodeId="ns=1;i=5" BrowseName="1:ObjectObject" ParentNodeId="ns=1;i=4">
+    <DisplayName>ObjectObject</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=4</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=6" BrowseName="1:ObjectFolder" ParentNodeId="ns=1;i=4">
+    <DisplayName>ObjectFolder</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=4</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=7" BrowseName="1:ObjectVariable" ParentNodeId="ns=1;i=4" DataType="Double" AccessLevel="3">
+    <DisplayName>ObjectVariable</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=5</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=4</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="ns=1;i=7" BrowseName="1:var" DataType="Double" AccessLevel="3">
-    <DisplayName>var</DisplayName>
+  <UAVariable NodeId="ns=1;i=8" BrowseName="NamespacePublicationDate" ParentNodeId="ns=1;i=4" DataType="DateTime">
+    <DisplayName>NamespacePublicationDate</DisplayName>
     <References>
-      <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
-      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="ns=1;i=8" BrowseName="1:prop" DataType="Double" ValueRank="-2">
-    <DisplayName>prop</DisplayName>
-    <References>
-      <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
       <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=4</Reference>
     </References>
+    <Value>
+      <DateTime xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">2013-12-31T00:00:00Z</DateTime>
+    </Value>
   </UAVariable>
 </UANodeSet>

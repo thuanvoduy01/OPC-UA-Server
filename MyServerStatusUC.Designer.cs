@@ -167,7 +167,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "MyServerStatusUC";
-            this.Size = new System.Drawing.Size(711, 419);
+            this.Size = new System.Drawing.Size(1079, 496);
             this.ResumeLayout(false);
             this.PerformLayout();
 
