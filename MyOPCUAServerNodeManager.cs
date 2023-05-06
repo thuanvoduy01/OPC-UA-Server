@@ -4,6 +4,7 @@ using Opc.Ua;
 using Opc.Ua.Server;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -47,15 +48,29 @@ namespace MyOPCUAServer
         protected override NodeStateCollection LoadPredefinedNodes(ISystemContext context)
         {
             NodeStateCollection predefinedNodes = new NodeStateCollection();
-            //predefinedNodes.LoadFromBinaryResource(context,
-            //    @"..\Data\MyOPCUAServer.PredefinedNodes.uanodes",
-            //    typeof(MyOPCUAServerNodeManager).GetTypeInfo().Assembly,
-            //    true);
+
+            #region Find the first .uanodes file
+            string resourcePath = String.Empty;
+            string modelCompilerOutputsDir = MyOPCUAServer.Const.MODEL_COMPILER_OUTPUTS_DIRECTORY;
+            string[] files = Directory.GetFiles(modelCompilerOutputsDir);
+            foreach (string file in files)
+            {
+                if (Path.GetExtension(file) == ".uanodes")
+                {
+                    resourcePath = file;
+                    break;
+                }
+            }
+            #endregion
 
             predefinedNodes.LoadFromBinaryResource(context,
-                @"D:\Proj\VStudio\MyOPCUAServer\InformationModelling\ModelCompilerOutputs\MyOPCUAServer.PredefinedNodes.uanodes",
+                resourcePath,
                 typeof(MyOPCUAServerNodeManager).GetTypeInfo().Assembly,
                 true);
+            //predefinedNodes.LoadFromBinaryResource(context,
+            //    @"D:\Proj\VStudio\MyOPCUAServer\InformationModelling\ModelCompilerOutputs\MyOPCUAServer.PredefinedNodes.uanodes",
+            //    typeof(MyOPCUAServerNodeManager).GetTypeInfo().Assembly,
+            //    true);
 
             return predefinedNodes;
         }

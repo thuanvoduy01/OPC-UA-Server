@@ -35,6 +35,8 @@ namespace MyOPCUAServer
             lblStartTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             lblCurrentTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
+            timerUpdateStatus.Interval = 250;
+            timerUpdateStatus.Enabled = true;
         }
 
         public void UpdateServer()
@@ -62,6 +64,12 @@ namespace MyOPCUAServer
         private void button1_Click(object sender, EventArgs e)
         {
             UpdateServer();
+        }
+
+        private void timerUpdateStatus_Tick(object sender, EventArgs e)
+        {
+            UpdateServer();
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.lblConnAddr = new System.Windows.Forms.Label();
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblStartTime = new System.Windows.Forms.Label();
+            this.timerUpdateStatus = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -145,6 +147,10 @@
             this.lblStartTime.TabIndex = 2;
             this.lblStartTime.Text = "Start Time";
             // 
+            // timerUpdateStatus
+            // 
+            this.timerUpdateStatus.Tick += new System.EventHandler(this.timerUpdateStatus_Tick);
+            // 
             // MyServerStatusUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,5 +185,6 @@
         private System.Windows.Forms.Label lblConnAddr;
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Label lblStartTime;
+        private System.Windows.Forms.Timer timerUpdateStatus;
     }
 }

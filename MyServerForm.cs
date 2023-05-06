@@ -52,7 +52,25 @@ namespace MyOPCUAServer
             m_application = application;
 
             myServerDesignerUC = new MyServerDesignerUC(m_application);
+
         }
+
+        #region custom UI method
+        public void RemoveTabControlButtonBackColor()
+        {
+            btnDesigner.BackColor = Color.FromArgb(227, 246, 245);
+            btnStatus.BackColor = Color.FromArgb(227, 246, 245);
+        }
+
+        public void AddUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+        #endregion
+
 
         private void MyServerForm_Load(object sender, EventArgs e)
         {
@@ -72,13 +90,6 @@ namespace MyOPCUAServer
             AddUserControl(myServerDesignerUC);
         }
 
-        #region custom UI method
-        public void RemoveTabControlButtonBackColor()
-        {
-            btnDesigner.BackColor = Color.FromArgb(227, 246, 245);
-            btnStatus.BackColor = Color.FromArgb(227, 246, 245);
-        }
-
         private void btnStatus_Click(object sender, EventArgs e)
         {
             #region Animation UI
@@ -96,7 +107,7 @@ namespace MyOPCUAServer
             if (standardServer != null)
             {
                 // if server has been created once, then no need to new another UC
-                if(isServerLoadedOnce == false)
+                if (isServerLoadedOnce == false)
                 {
                     myServerStatusUC = new MyServerStatusUC(m_applicationStatusUc);
                     isServerLoadedOnce = true;
@@ -111,17 +122,6 @@ namespace MyOPCUAServer
                 AddUserControl(myServerDesignerUC);
             }
         }
-
-        public void AddUserControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            panelContainer.Controls.Clear();
-            panelContainer.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
-
-
-        #endregion
 
         
     }
