@@ -1,4 +1,5 @@
-﻿using Opc.Ua.Configuration;
+﻿using Opc.Ua.Client;
+using Opc.Ua.Configuration;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -580,7 +581,8 @@ namespace MyOPCUAServer
         /// Input path: ModelDesign\\obj1::ua:Object\\obj11::ua:Object. <br/>
         /// Output symbolicNamePath: obj11::ua:Object. <br/>
         /// Return SymbolicName = subString[0], Type = subString[1] <br/>
-        /// If input = ModelDesign -> SymbolicName = "", Type = subString[1]
+        /// If input = ModelDesign -> SymbolicName = "", Type = subString[1]<br/>
+        /// Ps: "Folder" will return nodeType = Object 
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
@@ -649,9 +651,18 @@ namespace MyOPCUAServer
             {
                 isChildOfModelDesign = false;
 
-                parent = GotoChildrenElement(parent);
-                //can add check null of parent here but not necessary
-                //cause if it isn't ModelDesign, it suppose to have <opc:Children>
+                XmlElement tempElement = GotoChildrenElement(parent);
+                //Does not have chillren tag
+                if (tempElement == null)
+                {
+                    tempElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                    parent.AppendChild(tempElement);
+                    parent = tempElement;
+                }
+                else
+                {
+                    parent = tempElement;
+                }
             }
             else { }
             #endregion
@@ -738,9 +749,18 @@ namespace MyOPCUAServer
             {
                 isChildOfModelDesign = false;
 
-                parent = GotoChildrenElement(parent);
-                //can add check null of parent here but not necessary
-                //cause if it isn't ModelDesign, it suppose to have <opc:Children>
+                XmlElement tempElement = GotoChildrenElement(parent);
+                //Does not have chillren tag
+                if (tempElement == null)
+                {
+                    tempElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                    parent.AppendChild(tempElement);
+                    parent = tempElement;
+                }
+                else
+                {
+                    parent = tempElement;
+                }
             }
             else { }
             #endregion
@@ -828,9 +848,18 @@ namespace MyOPCUAServer
             {
                 isChildOfModelDesign = false;
 
-                parent = GotoChildrenElement(parent);
-                //can add check null of parent here but not necessary
-                //cause if it isn't ModelDesign, it suppose to have <opc:Children>
+                XmlElement tempElement = GotoChildrenElement(parent);
+                //Does not have chillren tag
+                if (tempElement == null)
+                {
+                    tempElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                    parent.AppendChild(tempElement);
+                    parent = tempElement;
+                }
+                else
+                {
+                    parent = tempElement;
+                }
             }
             else { }
             #endregion
@@ -918,9 +947,18 @@ namespace MyOPCUAServer
             {
                 isChildOfModelDesign = false;
 
-                parent = GotoChildrenElement(parent);
-                //can add check null of parent here but not necessary
-                //cause if it isn't ModelDesign, it suppose to have <opc:Children>
+                XmlElement tempElement = GotoChildrenElement(parent);
+                //Does not have chillren tag
+                if (tempElement == null)
+                {
+                    tempElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                    parent.AppendChild(tempElement);
+                    parent = tempElement;
+                }
+                else
+                {
+                    parent = tempElement;
+                }
             }
             else { }
             #endregion
@@ -1004,6 +1042,84 @@ namespace MyOPCUAServer
         {
             InitDesignerUcMdoel();
             UpdateTreeViewModel();
+        }
+
+        private void tvwModel_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (tvwModel.SelectedNode == null) {  return; }
+
+            string path = tvwModel.SelectedNode.FullPath;
+
+            #region Get type of node
+            //string nodeSymbolicName, 
+            string nodeType;
+            string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
+
+            string[] nodeDescription = subPaths.Last().Split(new[] { "::" }, StringSplitOptions.None);
+            if (nodeDescription.Length == 1)    //In case: path = "ModelDesign"
+            {
+                //nodeSymbolicName = String.Empty;
+                nodeType = nodeDescription[0];
+            }
+            else
+            {
+                //nodeSymbolicName = nodeDescription[0];
+                nodeType = nodeDescription[1];
+                //Object and Folder all declared as Object in XML
+                //if (nodeType == "Folder")
+                //{
+                //    nodeType = "Object";
+                //}
+            }
+            //return new[] { nodeSymbolicName, nodeType };
+            #endregion
+
+            switch (nodeType)
+            {
+                case "ModelDesign":
+                    btnAddFolder.Enabled = true;
+                    btnAddObject.Enabled = true;
+                    btnAddVariable.Enabled = true;
+                    btnAddProperty.Enabled = false;
+                    btnDelete.Enabled = false;
+                    break;
+                case "Object":
+                    btnAddFolder.Enabled = true;
+                    btnAddObject.Enabled = true;
+                    btnAddVariable.Enabled = true;
+                    btnAddProperty.Enabled = true;
+                    btnDelete.Enabled = true;
+                    break;
+                case "Folder":
+                    btnAddFolder.Enabled = true;
+                    btnAddObject.Enabled = true;
+                    btnAddVariable.Enabled = true;
+                    btnAddProperty.Enabled = false;
+                    btnDelete.Enabled = true;
+                    break;
+                case "Variable":
+                    btnAddFolder.Enabled = false ;
+                    btnAddObject.Enabled = false;
+                    btnAddVariable.Enabled = true;
+                    btnAddProperty.Enabled = true;
+                    btnDelete.Enabled = true;
+                    break;
+                case "Property":
+                    btnAddFolder.Enabled = false;
+                    btnAddObject.Enabled = false;
+                    btnAddVariable.Enabled = false;
+                    btnAddProperty.Enabled = false;
+                    btnDelete.Enabled = true;
+                    break;
+                default:
+                    btnAddFolder.Enabled = false;
+                    btnAddObject.Enabled = false;
+                    btnAddVariable.Enabled = false;
+                    btnAddProperty.Enabled = false;
+                    btnDelete.Enabled = false;
+                    break;
+            }
+            
         }
     }
 }

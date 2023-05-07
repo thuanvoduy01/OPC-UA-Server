@@ -13,11 +13,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>UIObject</Name>
+        <Name>System</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>UIObject</Text>
+        <Text>System</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -59,7 +59,7 @@
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
-            <Identifier>ns=1;i=3</Identifier>
+            <Identifier>ns=1;i=8</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -68,20 +68,11 @@
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
-            <Identifier>ns=1;i=4</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=46</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=5</Identifier>
+            <Identifier>ns=1;i=9</Identifier>
           </TargetId>
         </ReferenceNode>
       </References>
-      <EventNotifier>1</EventNotifier>
+      <EventNotifier>0</EventNotifier>
     </Node>
     <Node i:type="ObjectNode">
       <NodeId>
@@ -90,11 +81,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>ObjectObject</Name>
+        <Name>M1</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>ObjectObject</Text>
+        <Text>M1</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -121,6 +112,24 @@
             <Identifier>i=58</Identifier>
           </TargetId>
         </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=3</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=6</Identifier>
+          </TargetId>
+        </ReferenceNode>
       </References>
       <EventNotifier>0</EventNotifier>
     </Node>
@@ -131,11 +140,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>ObjectFolder</Name>
+        <Name>Input</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>ObjectFolder</Text>
+        <Text>Input</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -150,7 +159,7 @@
           </ReferenceTypeId>
           <IsInverse>true</IsInverse>
           <TargetId>
-            <Identifier>ns=1;i=1</Identifier>
+            <Identifier>ns=1;i=2</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -160,6 +169,24 @@
           <IsInverse>false</IsInverse>
           <TargetId>
             <Identifier>i=61</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=4</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=5</Identifier>
           </TargetId>
         </ReferenceNode>
       </References>
@@ -172,11 +199,11 @@
       <NodeClass>Variable_2</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>ObjectVariable</Name>
+        <Name>Start</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>ObjectVariable</Text>
+        <Text>Start</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -191,7 +218,7 @@
           </ReferenceTypeId>
           <IsInverse>true</IsInverse>
           <TargetId>
-            <Identifier>ns=1;i=1</Identifier>
+            <Identifier>ns=1;i=3</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -206,16 +233,16 @@
       </References>
       <Value>
         <Value>
-          <Double xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Double>
+          <Boolean xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">false</Boolean>
         </Value>
       </Value>
       <DataType>
-        <Identifier>i=11</Identifier>
+        <Identifier>i=1</Identifier>
       </DataType>
       <ValueRank>-1</ValueRank>
       <ArrayDimensions />
-      <AccessLevel>3</AccessLevel>
-      <UserAccessLevel>3</UserAccessLevel>
+      <AccessLevel>1</AccessLevel>
+      <UserAccessLevel>1</UserAccessLevel>
       <MinimumSamplingInterval>0</MinimumSamplingInterval>
       <Historizing>false</Historizing>
       <AccessLevelEx>0</AccessLevelEx>
@@ -226,12 +253,12 @@
       </NodeId>
       <NodeClass>Variable_2</NodeClass>
       <BrowseName>
-        <NamespaceIndex>0</NamespaceIndex>
-        <Name>NamespacePublicationDate</Name>
+        <NamespaceIndex>1</NamespaceIndex>
+        <Name>Stop</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>NamespacePublicationDate</Text>
+        <Text>Stop</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -242,11 +269,11 @@
       <References>
         <ReferenceNode>
           <ReferenceTypeId>
-            <Identifier>i=46</Identifier>
+            <Identifier>i=47</Identifier>
           </ReferenceTypeId>
           <IsInverse>true</IsInverse>
           <TargetId>
-            <Identifier>ns=1;i=1</Identifier>
+            <Identifier>ns=1;i=3</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -255,17 +282,17 @@
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
-            <Identifier>i=68</Identifier>
+            <Identifier>i=63</Identifier>
           </TargetId>
         </ReferenceNode>
       </References>
       <Value>
         <Value>
-          <DateTime xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">2013-12-31T00:00:00Z</DateTime>
+          <Boolean xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">false</Boolean>
         </Value>
       </Value>
       <DataType>
-        <Identifier>i=13</Identifier>
+        <Identifier>i=1</Identifier>
       </DataType>
       <ValueRank>-1</ValueRank>
       <ArrayDimensions />
@@ -282,11 +309,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>hello</Name>
+        <Name>Output</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>hello</Text>
+        <Text>Output</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -297,20 +324,20 @@
       <References>
         <ReferenceNode>
           <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=2</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
             <Identifier>i=40</Identifier>
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
             <Identifier>i=61</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=35</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>i=85</Identifier>
           </TargetId>
         </ReferenceNode>
         <ReferenceNode>
@@ -325,18 +352,18 @@
       </References>
       <EventNotifier>0</EventNotifier>
     </Node>
-    <Node i:type="ObjectNode">
+    <Node i:type="VariableNode">
       <NodeId>
         <Identifier>ns=1;i=7</Identifier>
       </NodeId>
-      <NodeClass>Object_1</NodeClass>
+      <NodeClass>Variable_2</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>helo123</Name>
+        <Name>CMD</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>helo123</Text>
+        <Text>CMD</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -360,11 +387,25 @@
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
-            <Identifier>i=61</Identifier>
+            <Identifier>i=63</Identifier>
           </TargetId>
         </ReferenceNode>
       </References>
-      <EventNotifier>0</EventNotifier>
+      <Value>
+        <Value>
+          <Boolean xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">false</Boolean>
+        </Value>
+      </Value>
+      <DataType>
+        <Identifier>i=1</Identifier>
+      </DataType>
+      <ValueRank>-1</ValueRank>
+      <ArrayDimensions />
+      <AccessLevel>1</AccessLevel>
+      <UserAccessLevel>1</UserAccessLevel>
+      <MinimumSamplingInterval>0</MinimumSamplingInterval>
+      <Historizing>false</Historizing>
+      <AccessLevelEx>0</AccessLevelEx>
     </Node>
     <Node i:type="ObjectNode">
       <NodeId>
@@ -373,11 +414,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>f</Name>
+        <Name>M2</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>f</Text>
+        <Text>M2</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -388,119 +429,20 @@
       <References>
         <ReferenceNode>
           <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=1</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
             <Identifier>i=40</Identifier>
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
-            <Identifier>i=61</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=35</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>i=85</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=9</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=10</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=12</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=13</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=14</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=16</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=17</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=18</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=19</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=20</Identifier>
+            <Identifier>i=58</Identifier>
           </TargetId>
         </ReferenceNode>
       </References>
@@ -513,11 +455,11 @@
       <NodeClass>Object_1</NodeClass>
       <BrowseName>
         <NamespaceIndex>1</NamespaceIndex>
-        <Name>f1</Name>
+        <Name>M3</Name>
       </BrowseName>
       <DisplayName>
         <Locale></Locale>
-        <Text>f1</Text>
+        <Text>M3</Text>
       </DisplayName>
       <Description i:nil="true" />
       <WriteMask>0</WriteMask>
@@ -532,655 +474,9 @@
           </ReferenceTypeId>
           <IsInverse>true</IsInverse>
           <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
+            <Identifier>ns=1;i=1</Identifier>
           </TargetId>
         </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=61</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <EventNotifier>0</EventNotifier>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=10</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>bool</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>bool</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=46</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=11</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Boolean xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">false</Boolean>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=1</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=11</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>property</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>property</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=46</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=10</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=68</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Boolean xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">false</Boolean>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=1</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=12</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>Int16</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>Int16</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Int16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Int16>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=4</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=13</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>UInt16</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>UInt16</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</UInt16>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=5</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=14</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>Int32</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>Int32</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Int32 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Int32>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=6</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=15</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>float</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>float</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Float xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Float>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=10</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=16</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>double</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>double</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Double xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Double>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=11</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=17</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>string</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>string</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=12</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=18</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>datetime</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>datetime</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <DateTime xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0001-01-01T00:00:00</DateTime>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=13</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=19</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>sbyte</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>sbyte</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <SByte xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</SByte>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=2</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=20</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>byte</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>byte</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=47</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=8</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Byte xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">0</Byte>
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=3</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
-    </Node>
-    <Node i:type="ObjectNode">
-      <NodeId>
-        <Identifier>ns=1;i=21</Identifier>
-      </NodeId>
-      <NodeClass>Object_1</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>o</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>o</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
         <ReferenceNode>
           <ReferenceTypeId>
             <Identifier>i=40</Identifier>
@@ -1190,72 +486,8 @@
             <Identifier>i=58</Identifier>
           </TargetId>
         </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=35</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>i=85</Identifier>
-          </TargetId>
-        </ReferenceNode>
       </References>
       <EventNotifier>0</EventNotifier>
-    </Node>
-    <Node i:type="VariableNode">
-      <NodeId>
-        <Identifier>ns=1;i=22</Identifier>
-      </NodeId>
-      <NodeClass>Variable_2</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>v</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>v</Text>
-      </DisplayName>
-      <Description i:nil="true" />
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=40</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=35</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>i=85</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>i=1</Identifier>
-      </DataType>
-      <ValueRank>-2</ValueRank>
-      <ArrayDimensions />
-      <AccessLevel>1</AccessLevel>
-      <UserAccessLevel>1</UserAccessLevel>
-      <MinimumSamplingInterval>0</MinimumSamplingInterval>
-      <Historizing>false</Historizing>
-      <AccessLevelEx>0</AccessLevelEx>
     </Node>
   </Nodes>
 </NodeSet>

@@ -4,90 +4,43 @@
     <opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
     <opc:Namespace Name="MyOPCUAServer" Prefix="MyOPCUAServer">http://opcfoundation.org/OPCUAServer</opc:Namespace>
   </opc:Namespaces>
-  <opc:Object SymbolicName="UIObject" TypeDefinition="ua:BaseObjectType" SupportsEvents="true">
-    <!-- <opc:BrowseName>ObjectUI</opc:BrowseName> -->
+  <opc:Object SymbolicName="System" TypeDefinition="ua:BaseObjectType">
     <opc:Children>
-      <opc:Object SymbolicName="ObjectObject" TypeDefinition="ua:BaseObjectType">
-      </opc:Object>
-      <opc:Object SymbolicName="ObjectFolder" TypeDefinition="ua:FolderType">
-      </opc:Object>
-      <opc:Variable SymbolicName="ObjectVariable" DataType="ua:Double" ValueRank="Scalar" AccessLevel="ReadWrite">
-      </opc:Variable>
-      <opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime">
-        <opc:DefaultValue>
-          <uax:DateTime>2013-12-31</uax:DateTime>
-        </opc:DefaultValue>
-      </opc:Property>
-    </opc:Children>
-    <opc:References>
-      <opc:Reference IsInverse="true">
-        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-      </opc:Reference>
-    </opc:References>
-  </opc:Object>
-  <opc:Object SymbolicName="hello" TypeDefinition="ua:FolderType">
-    <opc:Children>
-      <opc:Object SymbolicName="helo123" TypeDefinition="ua:FolderType">
-        <opc:Children />
-        <opc:References />
-      </opc:Object>
-    </opc:Children>
-    <opc:References>
-      <opc:Reference IsInverse="true">
-        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-      </opc:Reference>
-    </opc:References>
-  </opc:Object>
-  <opc:Object SymbolicName="f" TypeDefinition="ua:FolderType">
-    <opc:Children>
-      <opc:Object SymbolicName="f1" TypeDefinition="ua:FolderType">
-        <opc:Children />
-        <opc:References />
-      </opc:Object>
-      <opc:Variable SymbolicName="bool" DataType="ua:Boolean">
+      <opc:Object SymbolicName="M1" TypeDefinition="ua:BaseObjectType">
         <opc:Children>
-          <opc:Property SymbolicName="property" DataType="ua:Boolean" />
+          <opc:Object SymbolicName="Input" TypeDefinition="ua:FolderType">
+            <opc:Children>
+              <opc:Variable SymbolicName="Start" DataType="ua:Boolean">
+                <opc:Children />
+                <opc:References />
+              </opc:Variable>
+              <opc:Variable SymbolicName="Stop" DataType="ua:Boolean">
+                <opc:Children />
+                <opc:References />
+              </opc:Variable>
+            </opc:Children>
+            <opc:References />
+          </opc:Object>
+          <opc:Object SymbolicName="Output" TypeDefinition="ua:FolderType">
+            <opc:Children>
+              <opc:Variable SymbolicName="CMD" DataType="ua:Boolean">
+                <opc:Children />
+                <opc:References />
+              </opc:Variable>
+            </opc:Children>
+            <opc:References />
+          </opc:Object>
         </opc:Children>
         <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="Int16" DataType="ua:Int16">
+      </opc:Object>
+      <opc:Object SymbolicName="M2" TypeDefinition="ua:BaseObjectType">
         <opc:Children />
         <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="UInt16" DataType="ua:UInt16">
+      </opc:Object>
+      <opc:Object SymbolicName="M3" TypeDefinition="ua:BaseObjectType">
         <opc:Children />
         <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="Int32" DataType="ua:Int32">
-        <opc:Children />
-        <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="float" DataType="ua:Float">
-        <opc:Children />
-        <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="double" DataType="ua:Double">
-        <opc:Children />
-        <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="string" DataType="ua:String">
-        <opc:Children />
-        <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="datetime" DataType="ua:DateTime">
-        <opc:Children />
-        <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="sbyte" DataType="ua:SByte">
-        <opc:Children />
-        <opc:References />
-      </opc:Variable>
-      <opc:Variable SymbolicName="byte" DataType="ua:Byte">
-        <opc:Children />
-        <opc:References />
-      </opc:Variable>
+      </opc:Object>
     </opc:Children>
     <opc:References>
       <opc:Reference IsInverse="true">
@@ -96,22 +49,4 @@
       </opc:Reference>
     </opc:References>
   </opc:Object>
-  <opc:Object SymbolicName="o" TypeDefinition="ua:BaseObjectType">
-    <opc:Children />
-    <opc:References>
-      <opc:Reference IsInverse="true">
-        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-      </opc:Reference>
-    </opc:References>
-  </opc:Object>
-  <opc:Variable SymbolicName="v" DataType="ua:Boolean">
-    <opc:Children />
-    <opc:References>
-      <opc:Reference IsInverse="true">
-        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-      </opc:Reference>
-    </opc:References>
-  </opc:Variable>
 </opc:ModelDesign>

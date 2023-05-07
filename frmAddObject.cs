@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -41,6 +42,25 @@ namespace MyOPCUAServer
             SymbolicName = null;
             TypeDefinition= null;
             this.Close();
+        }
+
+        private void txtSymbolicName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //// Block space and special characters
+            //if (char.IsWhiteSpace(e.KeyChar) || char.IsPunctuation(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //}
+        }
+
+        private void txtSymbolicName_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtSymbolicName.Text, "^[a-zA-Z0-9_]*$"))
+            {
+                MessageBox.Show("Input contains invalid characters. Please use only alphanumeric characters and underscores.");
+                txtSymbolicName.Text = Regex.Replace(txtSymbolicName.Text, "[^a-zA-Z0-9_]", "");
+                txtSymbolicName.SelectionStart = txtSymbolicName.TextLength;
+            }
         }
     }
 }

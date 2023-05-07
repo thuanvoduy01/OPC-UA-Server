@@ -42,6 +42,8 @@
             this.txtSymbolicName.Name = "txtSymbolicName";
             this.txtSymbolicName.Size = new System.Drawing.Size(100, 20);
             this.txtSymbolicName.TabIndex = 0;
+            this.txtSymbolicName.TextChanged += new System.EventHandler(this.txtSymbolicName_TextChanged);
+            this.txtSymbolicName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSymbolicName_KeyPress);
             // 
             // btnOK
             // 
@@ -89,7 +91,7 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // frmAddVariable
+            // frmAddProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +102,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtSymbolicName);
-            this.Name = "frmAddVariable";
+            this.Name = "frmAddProperty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddObjectForm";
             this.ResumeLayout(false);

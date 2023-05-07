@@ -171,6 +171,7 @@
             this.tvwModel.Name = "tvwModel";
             this.tvwModel.Size = new System.Drawing.Size(434, 384);
             this.tvwModel.TabIndex = 4;
+            this.tvwModel.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwModel_AfterSelect);
             // 
             // btnNew
             // 

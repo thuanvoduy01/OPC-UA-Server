@@ -42,6 +42,8 @@
             this.txtSymbolicName.Name = "txtSymbolicName";
             this.txtSymbolicName.Size = new System.Drawing.Size(100, 20);
             this.txtSymbolicName.TabIndex = 0;
+            this.txtSymbolicName.TextChanged += new System.EventHandler(this.txtSymbolicName_TextChanged);
+            this.txtSymbolicName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSymbolicName_KeyPress);
             // 
             // btnOK
             // 
