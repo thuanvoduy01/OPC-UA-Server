@@ -57,6 +57,15 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const uint hello_helo123 = 7;
+
+        /// <remarks />
+        public const uint f = 8;
+
+        /// <remarks />
+        public const uint f_f1 = 9;
+
+        /// <remarks />
+        public const uint o = 21;
     }
     #endregion
 
@@ -71,6 +80,42 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const uint UIObject_NamespacePublicationDate = 5;
+
+        /// <remarks />
+        public const uint f_bool = 10;
+
+        /// <remarks />
+        public const uint f_bool_property = 11;
+
+        /// <remarks />
+        public const uint f_Int16 = 12;
+
+        /// <remarks />
+        public const uint f_UInt16 = 13;
+
+        /// <remarks />
+        public const uint f_Int32 = 14;
+
+        /// <remarks />
+        public const uint f_float = 15;
+
+        /// <remarks />
+        public const uint f_double = 16;
+
+        /// <remarks />
+        public const uint f_string = 17;
+
+        /// <remarks />
+        public const uint f_datetime = 18;
+
+        /// <remarks />
+        public const uint f_sbyte = 19;
+
+        /// <remarks />
+        public const uint f_byte = 20;
+
+        /// <remarks />
+        public const uint v = 22;
     }
     #endregion
 
@@ -94,6 +139,15 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public static readonly ExpandedNodeId hello_helo123 = new ExpandedNodeId(MyOPCUAServer.Objects.hello_helo123, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f = new ExpandedNodeId(MyOPCUAServer.Objects.f, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_f1 = new ExpandedNodeId(MyOPCUAServer.Objects.f_f1, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId o = new ExpandedNodeId(MyOPCUAServer.Objects.o, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -108,6 +162,42 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public static readonly ExpandedNodeId UIObject_NamespacePublicationDate = new ExpandedNodeId(MyOPCUAServer.Variables.UIObject_NamespacePublicationDate, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_bool = new ExpandedNodeId(MyOPCUAServer.Variables.f_bool, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_bool_property = new ExpandedNodeId(MyOPCUAServer.Variables.f_bool_property, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_Int16 = new ExpandedNodeId(MyOPCUAServer.Variables.f_Int16, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_UInt16 = new ExpandedNodeId(MyOPCUAServer.Variables.f_UInt16, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_Int32 = new ExpandedNodeId(MyOPCUAServer.Variables.f_Int32, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_float = new ExpandedNodeId(MyOPCUAServer.Variables.f_float, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_double = new ExpandedNodeId(MyOPCUAServer.Variables.f_double, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_string = new ExpandedNodeId(MyOPCUAServer.Variables.f_string, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_datetime = new ExpandedNodeId(MyOPCUAServer.Variables.f_datetime, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_sbyte = new ExpandedNodeId(MyOPCUAServer.Variables.f_sbyte, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId f_byte = new ExpandedNodeId(MyOPCUAServer.Variables.f_byte, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId v = new ExpandedNodeId(MyOPCUAServer.Variables.v, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -117,10 +207,40 @@ namespace MyOPCUAServer
     public static partial class BrowseNames
     {
         /// <remarks />
+        public const string bool = "bool";
+
+        /// <remarks />
+        public const string byte = "byte";
+
+        /// <remarks />
+        public const string datetime = "datetime";
+
+        /// <remarks />
+        public const string double = "double";
+
+        /// <remarks />
+        public const string f = "f";
+
+        /// <remarks />
+        public const string f1 = "f1";
+
+        /// <remarks />
+        public const string float = "float";
+
+        /// <remarks />
         public const string hello = "hello";
 
         /// <remarks />
         public const string helo123 = "helo123";
+
+        /// <remarks />
+        public const string Int16 = "Int16";
+
+        /// <remarks />
+        public const string Int32 = "Int32";
+
+        /// <remarks />
+        public const string o = "o";
 
         /// <remarks />
         public const string ObjectFolder = "ObjectFolder";
@@ -132,7 +252,19 @@ namespace MyOPCUAServer
         public const string ObjectVariable = "ObjectVariable";
 
         /// <remarks />
+        public const string sbyte = "sbyte";
+
+        /// <remarks />
+        public const string string = "string";
+
+        /// <remarks />
+        public const string UInt16 = "UInt16";
+
+        /// <remarks />
         public const string UIObject = "UIObject";
+
+        /// <remarks />
+        public const string v = "v";
     }
     #endregion
 

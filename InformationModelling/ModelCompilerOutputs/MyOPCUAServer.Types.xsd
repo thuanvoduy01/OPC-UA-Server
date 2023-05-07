@@ -7,7 +7,7 @@
 >
   <xs:annotation>
     <xs:appinfo>
-      <ua:Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-06T20:42:27.2054638Z" />
+      <ua:Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-07T01:30:11.4000085Z" />
     </xs:appinfo>
   </xs:annotation>
   

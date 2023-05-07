@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -494,10 +495,9 @@ namespace MyOPCUAServer
         }
 
         /// <summary>
-        /// Get <opc:Children> xml element
+        /// Get <opc:Children> element of current element <br/>
         /// </summary>
         /// <param name="xmlElement"></param>
-        /// <returns></returns>
         public XmlElement GotoChildrenElement(XmlElement xmlElement)
         {
             if (xmlElement == null)
@@ -508,8 +508,8 @@ namespace MyOPCUAServer
         }
 
         /// <summary>
-        /// Find child element of a root with name of xml tag and symbolicName.
-        /// If symbolicName is empty then return the first child.
+        /// Find child element of a root with name of xml tag and symbolicName. <br/>
+        /// If symbolicName is empty then return the first child.<br/>
         /// </summary>
         /// <param name="root"></param>
         /// <param name="tag"></param>
@@ -643,7 +643,6 @@ namespace MyOPCUAServer
                 MessageBox.Show("Can not find where to add");
                 return;
             }
-            #endregion
 
             bool isChildOfModelDesign = true;
             if (parent.Name.Contains("ModelDesign") == false)
@@ -655,8 +654,9 @@ namespace MyOPCUAServer
                 //cause if it isn't ModelDesign, it suppose to have <opc:Children>
             }
             else { }
+            #endregion
 
-            #region Create xml tag for object
+            #region Create xml tag for folder
             XmlElement objectElement = xmlDocument.CreateElement("opc", "Object", "http://opcfoundation.org/UA/ModelDesign.xsd");
             objectElement.SetAttribute("SymbolicName", $"{symbolicName}");
             objectElement.SetAttribute("TypeDefinition", "ua:FolderType");
@@ -700,12 +700,86 @@ namespace MyOPCUAServer
             {
                 return;
             }
-            
+            string treeviewNodePath = tvwModel.SelectedNode.FullPath;
+
             frmAddObject.ShowDialog();
             string symbolicName = frmAddObject.SymbolicName;
             string typeDefinition = frmAddObject.TypeDefinition;
-            
 
+            if (symbolicName == null)
+            {
+                MessageBox.Show("No input value yet!");
+                return;
+            }
+            if (typeDefinition == null)
+            {
+                MessageBox.Show("No input value yet!");
+                return;
+            }
+
+            #region load xml
+            XmlDocument xmlDocument = new XmlDocument();
+            string xmlModelDesignUc = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
+            xmlDocument.Load(xmlModelDesignUc);
+            #endregion
+
+            #region Determine where to add
+            XmlElement parent = (XmlElement)GetXmlNode(xmlDocument, treeviewNodePath);
+
+            //Check if destination exist
+            if (parent == null)
+            {
+                MessageBox.Show("Can not find where to add");
+                return;
+            }
+
+            bool isChildOfModelDesign = true;
+            if (parent.Name.Contains("ModelDesign") == false)
+            {
+                isChildOfModelDesign = false;
+
+                parent = GotoChildrenElement(parent);
+                //can add check null of parent here but not necessary
+                //cause if it isn't ModelDesign, it suppose to have <opc:Children>
+            }
+            else { }
+            #endregion
+
+            #region Create xml tag for object
+            XmlElement objectElement = xmlDocument.CreateElement("opc", "Object", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.SetAttribute("SymbolicName", $"{symbolicName}");
+            objectElement.SetAttribute("TypeDefinition", $"ua:{typeDefinition}");
+
+            XmlElement childrenElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.AppendChild(childrenElement);
+            XmlElement referencesElement = xmlDocument.CreateElement("opc", "References", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.AppendChild(referencesElement);
+
+            if (isChildOfModelDesign)
+            {
+                /*
+                 Create Reference tag
+                    <opc:Reference IsInverse="true">
+                        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+                        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+                     </opc:Reference>
+                 */
+                XmlElement referenceElement = xmlDocument.CreateElement("opc", "Reference", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                referenceElement.SetAttribute("IsInverse", "true");
+                referencesElement.AppendChild(referenceElement);
+
+                XmlElement referenceTypeElement = xmlDocument.CreateElement("opc", "ReferenceType", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                referenceTypeElement.InnerText = "ua:Organizes";
+                referenceElement.AppendChild(referenceTypeElement);
+                XmlElement targetIdElement = xmlDocument.CreateElement("opc", "TargetId", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                targetIdElement.InnerText = "ua:ObjectsFolder";
+                referenceElement.AppendChild(targetIdElement);
+            }
+            #endregion
+
+            parent.AppendChild(objectElement);
+
+            xmlDocument.Save(xmlModelDesignUc);
 
             UpdateTreeViewModel();
 
@@ -717,10 +791,85 @@ namespace MyOPCUAServer
             {
                 return;
             }
+            string treeviewNodePath = tvwModel.SelectedNode.FullPath;
 
-            frmAddObject.ShowDialog();
+            frmAddVariable.ShowDialog();
             string symbolicName = frmAddVariable.SymbolicName;
             string dataType = frmAddVariable.DataType;
+            if (symbolicName == null)
+            {
+                MessageBox.Show("No input value yet!");
+                return;
+            }
+            if (dataType == null)
+            {
+                MessageBox.Show("No input value yet!");
+                return;
+            }
+
+            #region load xml
+            XmlDocument xmlDocument = new XmlDocument();
+            string xmlModelDesignUc = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
+            xmlDocument.Load(xmlModelDesignUc);
+            #endregion
+
+            #region Determine where to add
+            XmlElement parent = (XmlElement)GetXmlNode(xmlDocument, treeviewNodePath);
+
+            //Check if destination exist
+            if (parent == null)
+            {
+                MessageBox.Show("Can not find where to add");
+                return;
+            }
+
+            bool isChildOfModelDesign = true;
+            if (parent.Name.Contains("ModelDesign") == false)
+            {
+                isChildOfModelDesign = false;
+
+                parent = GotoChildrenElement(parent);
+                //can add check null of parent here but not necessary
+                //cause if it isn't ModelDesign, it suppose to have <opc:Children>
+            }
+            else { }
+            #endregion
+
+            #region Create xml tag for folder
+            XmlElement objectElement = xmlDocument.CreateElement("opc", "Variable", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.SetAttribute("SymbolicName", $"{symbolicName}");
+            objectElement.SetAttribute("DataType", $"ua:{dataType}");
+
+            XmlElement childrenElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.AppendChild(childrenElement);
+            XmlElement referencesElement = xmlDocument.CreateElement("opc", "References", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.AppendChild(referencesElement);
+
+            if (isChildOfModelDesign)
+            {
+                /*
+                 Create Reference tag
+                    <opc:Reference IsInverse="true">
+                        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+                        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+                     </opc:Reference>
+                 */
+                XmlElement referenceElement = xmlDocument.CreateElement("opc", "Reference", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                referenceElement.SetAttribute("IsInverse", "true");
+                referencesElement.AppendChild(referenceElement);
+
+                XmlElement referenceTypeElement = xmlDocument.CreateElement("opc", "ReferenceType", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                referenceTypeElement.InnerText = "ua:Organizes";
+                referenceElement.AppendChild(referenceTypeElement);
+                XmlElement targetIdElement = xmlDocument.CreateElement("opc", "TargetId", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                targetIdElement.InnerText = "ua:ObjectsFolder";
+                referenceElement.AppendChild(targetIdElement);
+            }
+            #endregion
+
+            parent.AppendChild(objectElement);
+
+            xmlDocument.Save(xmlModelDesignUc);
 
             UpdateTreeViewModel();
 
@@ -732,10 +881,88 @@ namespace MyOPCUAServer
             {
                 return;
             }
+            string treeviewNodePath = tvwModel.SelectedNode.FullPath;
 
             frmAddProperty.ShowDialog();
             string symbolicName = frmAddProperty.SymbolicName;
             string dataType = frmAddProperty.DataType;
+            if (symbolicName == null)
+            {
+                MessageBox.Show("No input value yet!");
+                return;
+            }
+            if (dataType == null)
+            {
+                MessageBox.Show("No input value yet!");
+                return;
+            }
+
+            #region load xml
+            XmlDocument xmlDocument = new XmlDocument();
+            string xmlModelDesignUc = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
+            xmlDocument.Load(xmlModelDesignUc);
+            #endregion
+
+            #region Determine where to add
+            XmlElement parent = (XmlElement)GetXmlNode(xmlDocument, treeviewNodePath);
+
+            //Check if destination exist
+            if (parent == null)
+            {
+                MessageBox.Show("Can not find where to add");
+                return;
+            }
+
+            bool isChildOfModelDesign = true;
+            if (parent.Name.Contains("ModelDesign") == false)
+            {
+                isChildOfModelDesign = false;
+
+                parent = GotoChildrenElement(parent);
+                //can add check null of parent here but not necessary
+                //cause if it isn't ModelDesign, it suppose to have <opc:Children>
+            }
+            else { }
+            #endregion
+
+            #region Create xml tag for Property
+            XmlElement objectElement = xmlDocument.CreateElement("opc", "Property", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.SetAttribute("SymbolicName", $"{symbolicName}");
+            objectElement.SetAttribute("DataType", $"ua:{dataType}");
+
+            /* Property does not need this. Cause Property cannot have child!
+            XmlElement childrenElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.AppendChild(childrenElement);
+            XmlElement referencesElement = xmlDocument.CreateElement("opc", "References", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            objectElement.AppendChild(referencesElement);
+            
+
+            if (isChildOfModelDesign)
+            {
+                //
+                // Create Reference tag
+                //    <opc:Reference IsInverse="true">
+                //        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+                //        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+                //     </opc:Reference>
+                // 
+                XmlElement referenceElement = xmlDocument.CreateElement("opc", "Reference", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                referenceElement.SetAttribute("IsInverse", "true");
+                referencesElement.AppendChild(referenceElement);
+
+                XmlElement referenceTypeElement = xmlDocument.CreateElement("opc", "ReferenceType", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                referenceTypeElement.InnerText = "ua:Organizes";
+                referenceElement.AppendChild(referenceTypeElement);
+                XmlElement targetIdElement = xmlDocument.CreateElement("opc", "TargetId", "http://opcfoundation.org/UA/ModelDesign.xsd");
+                targetIdElement.InnerText = "ua:ObjectsFolder";
+                referenceElement.AppendChild(targetIdElement);
+            }
+            */
+            #endregion
+
+            parent.AppendChild(objectElement);
+
+            xmlDocument.Save(xmlModelDesignUc);
 
             UpdateTreeViewModel();
 

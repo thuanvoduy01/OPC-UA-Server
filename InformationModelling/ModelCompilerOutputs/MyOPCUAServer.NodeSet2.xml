@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-06T20:42:27.2054638Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-07T01:30:11.4000085Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
   <NamespaceUris>
     <Uri>http://opcfoundation.org/OPCUAServer</Uri>
   </NamespaceUris>
   <Models>
-    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-06T20:42:27.2054638Z">
+    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-07T01:30:11.4000085Z">
       <RequiredModel ModelUri="http://opcfoundation.org/UA/" XmlSchemaUri="http://opcfoundation.org/UA/2008/02/Types.xsd" />
     </Model>
   </Models>
@@ -113,4 +113,121 @@
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=6</Reference>
     </References>
   </UAObject>
+  <UAObject NodeId="ns=1;i=8" BrowseName="1:f">
+    <DisplayName>f</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=9</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=10</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=12</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=13</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=14</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=17</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=18</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=19</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=20</Reference>
+      <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=9" BrowseName="1:f1" ParentNodeId="ns=1;i=8">
+    <DisplayName>f1</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=10" BrowseName="1:bool" ParentNodeId="ns=1;i=8" DataType="Boolean">
+    <DisplayName>bool</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=11</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=11" BrowseName="1:property" ParentNodeId="ns=1;i=10" DataType="Boolean">
+    <DisplayName>property</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=10</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=12" BrowseName="1:Int16" ParentNodeId="ns=1;i=8" DataType="Int16">
+    <DisplayName>Int16</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=13" BrowseName="1:UInt16" ParentNodeId="ns=1;i=8" DataType="UInt16">
+    <DisplayName>UInt16</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=14" BrowseName="1:Int32" ParentNodeId="ns=1;i=8" DataType="Int32">
+    <DisplayName>Int32</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15" BrowseName="1:float" ParentNodeId="ns=1;i=8" DataType="Float">
+    <DisplayName>float</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16" BrowseName="1:double" ParentNodeId="ns=1;i=8" DataType="Double">
+    <DisplayName>double</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=17" BrowseName="1:string" ParentNodeId="ns=1;i=8" DataType="String">
+    <DisplayName>string</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=18" BrowseName="1:datetime" ParentNodeId="ns=1;i=8" DataType="DateTime">
+    <DisplayName>datetime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=19" BrowseName="1:sbyte" ParentNodeId="ns=1;i=8" DataType="SByte">
+    <DisplayName>sbyte</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=20" BrowseName="1:byte" ParentNodeId="ns=1;i=8" DataType="Byte">
+    <DisplayName>byte</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=8</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=21" BrowseName="1:o">
+    <DisplayName>o</DisplayName>
+    <References>
+      <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=22" BrowseName="1:v" DataType="Boolean" ValueRank="-2">
+    <DisplayName>v</DisplayName>
+    <References>
+      <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+    </References>
+  </UAVariable>
 </UANodeSet>
