@@ -1,5 +1,6 @@
 ﻿using Opc.Ua.Client;
 using Opc.Ua.Configuration;
+using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -245,6 +246,8 @@ namespace MyOPCUAServer
             XmlElement root = xmlDocument.DocumentElement;
             PopulateTreeview(root, tvwModel.Nodes[0]);
 
+            TraverseTreeview(tvwModel.Nodes);
+
             tvwModel.ExpandAll();
         }
 
@@ -476,7 +479,7 @@ namespace MyOPCUAServer
             string[] subStrings = ParsingPathToSymbolicNameAndType(treeviewNodePath);
             nodeSymbolicName = subStrings[0];
             nodeType = subStrings[1];
-
+            
             XmlNamespaceManager nsMgr = new XmlNamespaceManager(xmlDoc.NameTable);
             nsMgr.AddNamespace("opc", "http://opcfoundation.org/UA/ModelDesign.xsd");
 
@@ -1138,7 +1141,64 @@ namespace MyOPCUAServer
                     btnDelete.Enabled = false;
                     break;
             }
-            
+        }
+
+        void TraverseTreeview(TreeNodeCollection nodes)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                UpdateTreeviewNodeImg(node);
+                TraverseTreeview(node.Nodes);
+            }
+        }
+
+        public void UpdateTreeviewNodeImg(TreeNode node)
+        {
+            string path = node.FullPath;
+            string nodeType;
+            string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
+
+            string[] nodeDescription = subPaths.Last().Split(new[] { "::" }, StringSplitOptions.None);
+            if (nodeDescription.Length == 1)    //In case: path = "ModelDesign"
+            {
+                //nodeSymbolicName = String.Empty;
+                nodeType = nodeDescription[0];
+            }
+            else
+            {
+                //nodeSymbolicName = nodeDescription[0];
+                nodeType = nodeDescription[1];
+                //Object and Folder all declared as Object in XML
+                //if (nodeType == "Folder")
+                //{
+                //    nodeType = "Object";
+                //}
+            }
+            if (nodeType == "Folder")
+            {
+                node.ImageIndex = 3;
+                node.SelectedImageIndex = 3;
+            }
+            if (nodeType == "Object")
+            {
+                node.ImageIndex = 2;
+                node.SelectedImageIndex = 2;
+            }
+            if (nodeType == "Variable")
+            {
+                node.ImageIndex = 1;
+                node.SelectedImageIndex = 1;
+            }
+            if (nodeType == "Property")
+            {
+                node.ImageIndex = 0;
+                node.SelectedImageIndex = 0;
+            }
+            if (nodeType == "ModelDesign")
+            {
+                node.ImageIndex = 4;
+                node.SelectedImageIndex = 4;
+            }
         }
     }
 }

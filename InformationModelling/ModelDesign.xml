@@ -4,19 +4,8 @@
     <opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
     <opc:Namespace Name="MyOPCUAServer" Prefix="MyOPCUAServer">http://opcfoundation.org/OPCUAServer</opc:Namespace>
   </opc:Namespaces>
-  <opc:Object SymbolicName="a" TypeDefinition="ua:FolderType">
-    <opc:Children>
-      <opc:Object SymbolicName="v" TypeDefinition="ua:BaseObjectType">
-        <opc:Children>
-          <opc:Variable SymbolicName="c" DataType="ua:Boolean">
-            <opc:Children />
-            <opc:References />
-          </opc:Variable>
-          <opc:Property SymbolicName="v" DataType="ua:Boolean" />
-        </opc:Children>
-        <opc:References />
-      </opc:Object>
-    </opc:Children>
+  <opc:Object SymbolicName="justafolder" TypeDefinition="ua:FolderType">
+    <opc:Children />
     <opc:References>
       <opc:Reference IsInverse="true">
         <opc:ReferenceType>ua:Organizes</opc:ReferenceType>

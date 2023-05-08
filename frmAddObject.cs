@@ -26,6 +26,7 @@ namespace MyOPCUAServer
 
             cmbTypeDefinition.DataSource = Enum.GetValues(typeof(TypeDefinitionValue));
             cmbTypeDefinition.SelectedIndex = 0;
+            cmbTypeDefinition.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         

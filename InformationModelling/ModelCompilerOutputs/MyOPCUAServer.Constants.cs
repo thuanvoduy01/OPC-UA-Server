@@ -44,24 +44,7 @@ namespace MyOPCUAServer
     public static partial class Objects
     {
         /// <remarks />
-        public const uint a = 1;
-
-        /// <remarks />
-        public const uint a_v = 2;
-    }
-    #endregion
-
-    #region Variable Identifiers
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public static partial class Variables
-    {
-        /// <remarks />
-        public const uint a_v_c = 3;
-
-        /// <remarks />
-        public const uint a_v_v = 4;
+        public const uint justafolder = 1;
     }
     #endregion
 
@@ -72,24 +55,7 @@ namespace MyOPCUAServer
     public static partial class ObjectIds
     {
         /// <remarks />
-        public static readonly ExpandedNodeId a = new ExpandedNodeId(MyOPCUAServer.Objects.a, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId a_v = new ExpandedNodeId(MyOPCUAServer.Objects.a_v, MyOPCUAServer.Namespaces.MyOPCUAServer);
-    }
-    #endregion
-
-    #region Variable Node Identifiers
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public static partial class VariableIds
-    {
-        /// <remarks />
-        public static readonly ExpandedNodeId a_v_c = new ExpandedNodeId(MyOPCUAServer.Variables.a_v_c, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId a_v_v = new ExpandedNodeId(MyOPCUAServer.Variables.a_v_v, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId justafolder = new ExpandedNodeId(MyOPCUAServer.Objects.justafolder, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -99,10 +65,7 @@ namespace MyOPCUAServer
     public static partial class BrowseNames
     {
         /// <remarks />
-        public const string a = "a";
-
-        /// <remarks />
-        public const string v = "v";
+        public const string justafolder = "justafolder";
     }
     #endregion
 

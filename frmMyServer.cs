@@ -58,8 +58,9 @@ namespace MyOPCUAServer
         #region custom UI method
         public void RemoveTabControlButtonBackColor()
         {
-            btnDesigner.BackColor = Color.FromArgb(227, 246, 245);
-            btnStatus.BackColor = Color.FromArgb(227, 246, 245);
+            Color colorButton = Color.FromArgb(39, 35, 67);
+            btnDesigner.BackColor = colorButton;
+            btnStatus.BackColor = colorButton;
         }
 
         public void AddUserControl(UserControl userControl)

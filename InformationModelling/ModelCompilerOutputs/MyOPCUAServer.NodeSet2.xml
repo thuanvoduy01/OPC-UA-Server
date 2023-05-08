@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-08T06:45:17.3763808Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-08T07:57:55.5341939Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
   <NamespaceUris>
     <Uri>http://opcfoundation.org/OPCUAServer</Uri>
   </NamespaceUris>
   <Models>
-    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-08T06:45:17.3763808Z">
+    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-08T07:57:55.5341939Z">
       <RequiredModel ModelUri="http://opcfoundation.org/UA/" XmlSchemaUri="http://opcfoundation.org/UA/2008/02/Types.xsd" />
     </Model>
   </Models>
@@ -56,35 +56,11 @@
     <Alias Alias="HasAddIn">i=17604</Alias>
     <Alias Alias="HasInterface">i=17603</Alias>
   </Aliases>
-  <UAObject NodeId="ns=1;i=1" BrowseName="1:a">
-    <DisplayName>a</DisplayName>
+  <UAObject NodeId="ns=1;i=1" BrowseName="1:justafolder">
+    <DisplayName>justafolder</DisplayName>
     <References>
-      <Reference ReferenceType="HasComponent">ns=1;i=2</Reference>
       <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
       <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
     </References>
   </UAObject>
-  <UAObject NodeId="ns=1;i=2" BrowseName="1:v" ParentNodeId="ns=1;i=1">
-    <DisplayName>v</DisplayName>
-    <References>
-      <Reference ReferenceType="HasComponent">ns=1;i=3</Reference>
-      <Reference ReferenceType="HasProperty">ns=1;i=4</Reference>
-      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1</Reference>
-    </References>
-  </UAObject>
-  <UAVariable NodeId="ns=1;i=3" BrowseName="1:c" ParentNodeId="ns=1;i=2" DataType="Boolean">
-    <DisplayName>c</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=2</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="ns=1;i=4" BrowseName="1:v" ParentNodeId="ns=1;i=2" DataType="Boolean">
-    <DisplayName>v</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=2</Reference>
-    </References>
-  </UAVariable>
 </UANodeSet>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyServerDesignerUC));
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.btnImportXml = new System.Windows.Forms.Button();
             this.btnRunServer = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.timerUpdateDesigner = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.imgNode = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // txtFilePath
@@ -58,11 +60,14 @@
             this.btnImportXml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportXml.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportXml.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.btnImportXml.Location = new System.Drawing.Point(568, 413);
+            this.btnImportXml.ImageIndex = 6;
+            this.btnImportXml.ImageList = this.imgNode;
+            this.btnImportXml.Location = new System.Drawing.Point(553, 413);
             this.btnImportXml.Name = "btnImportXml";
-            this.btnImportXml.Size = new System.Drawing.Size(124, 35);
+            this.btnImportXml.Size = new System.Drawing.Size(168, 35);
             this.btnImportXml.TabIndex = 2;
             this.btnImportXml.Text = "Import";
+            this.btnImportXml.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImportXml.UseVisualStyleBackColor = true;
             this.btnImportXml.Click += new System.EventHandler(this.btnImportXml_Click);
             // 
@@ -100,11 +105,14 @@
             this.btnAddObject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddObject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddObject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.btnAddObject.Location = new System.Drawing.Point(568, 201);
+            this.btnAddObject.ImageIndex = 2;
+            this.btnAddObject.ImageList = this.imgNode;
+            this.btnAddObject.Location = new System.Drawing.Point(553, 180);
             this.btnAddObject.Name = "btnAddObject";
-            this.btnAddObject.Size = new System.Drawing.Size(124, 35);
+            this.btnAddObject.Size = new System.Drawing.Size(168, 35);
             this.btnAddObject.TabIndex = 2;
             this.btnAddObject.Text = "Add Object";
+            this.btnAddObject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddObject.UseVisualStyleBackColor = true;
             this.btnAddObject.Click += new System.EventHandler(this.btnAddObject_Click);
             // 
@@ -115,11 +123,15 @@
             this.btnAddFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFolder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.btnAddFolder.Location = new System.Drawing.Point(568, 160);
+            this.btnAddFolder.ImageIndex = 3;
+            this.btnAddFolder.ImageList = this.imgNode;
+            this.btnAddFolder.Location = new System.Drawing.Point(553, 133);
             this.btnAddFolder.Name = "btnAddFolder";
-            this.btnAddFolder.Size = new System.Drawing.Size(124, 35);
+            this.btnAddFolder.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAddFolder.Size = new System.Drawing.Size(168, 35);
             this.btnAddFolder.TabIndex = 2;
             this.btnAddFolder.Text = "Add Folder";
+            this.btnAddFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddFolder.UseVisualStyleBackColor = true;
             this.btnAddFolder.Click += new System.EventHandler(this.btnAddFolder_Click);
             // 
@@ -130,11 +142,14 @@
             this.btnAddVariable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVariable.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVariable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.btnAddVariable.Location = new System.Drawing.Point(568, 242);
+            this.btnAddVariable.ImageIndex = 1;
+            this.btnAddVariable.ImageList = this.imgNode;
+            this.btnAddVariable.Location = new System.Drawing.Point(553, 227);
             this.btnAddVariable.Name = "btnAddVariable";
-            this.btnAddVariable.Size = new System.Drawing.Size(124, 35);
+            this.btnAddVariable.Size = new System.Drawing.Size(168, 35);
             this.btnAddVariable.TabIndex = 2;
             this.btnAddVariable.Text = "Add Variable";
+            this.btnAddVariable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddVariable.UseVisualStyleBackColor = true;
             this.btnAddVariable.Click += new System.EventHandler(this.btnAddVariable_Click);
             // 
@@ -145,11 +160,14 @@
             this.btnAddProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProperty.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProperty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.btnAddProperty.Location = new System.Drawing.Point(568, 283);
+            this.btnAddProperty.ImageIndex = 0;
+            this.btnAddProperty.ImageList = this.imgNode;
+            this.btnAddProperty.Location = new System.Drawing.Point(553, 274);
             this.btnAddProperty.Name = "btnAddProperty";
-            this.btnAddProperty.Size = new System.Drawing.Size(124, 35);
+            this.btnAddProperty.Size = new System.Drawing.Size(168, 35);
             this.btnAddProperty.TabIndex = 2;
             this.btnAddProperty.Text = "Add Property";
+            this.btnAddProperty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddProperty.UseVisualStyleBackColor = true;
             this.btnAddProperty.Click += new System.EventHandler(this.btnAddProperty_Click);
             // 
@@ -160,19 +178,25 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.btnDelete.Location = new System.Drawing.Point(568, 324);
+            this.btnDelete.ImageIndex = 5;
+            this.btnDelete.ImageList = this.imgNode;
+            this.btnDelete.Location = new System.Drawing.Point(553, 321);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(124, 35);
+            this.btnDelete.Size = new System.Drawing.Size(168, 35);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tvwModel
             // 
+            this.tvwModel.ImageIndex = 0;
+            this.tvwModel.ImageList = this.imgNode;
             this.tvwModel.Location = new System.Drawing.Point(53, 48);
             this.tvwModel.Name = "tvwModel";
-            this.tvwModel.Size = new System.Drawing.Size(488, 342);
+            this.tvwModel.SelectedImageIndex = 0;
+            this.tvwModel.Size = new System.Drawing.Size(451, 342);
             this.tvwModel.TabIndex = 4;
             this.tvwModel.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwModel_AfterSelect);
             // 
@@ -183,11 +207,14 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.btnNew.Location = new System.Drawing.Point(568, 119);
+            this.btnNew.ImageIndex = 7;
+            this.btnNew.ImageList = this.imgNode;
+            this.btnNew.Location = new System.Drawing.Point(553, 86);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(124, 35);
+            this.btnNew.Size = new System.Drawing.Size(168, 35);
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "New";
+            this.btnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -205,6 +232,19 @@
             this.label2.Size = new System.Drawing.Size(91, 19);
             this.label2.TabIndex = 6;
             this.label2.Text = "File Path:";
+            // 
+            // imgNode
+            // 
+            this.imgNode.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgNode.ImageStream")));
+            this.imgNode.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgNode.Images.SetKeyName(0, "icons8-view-details-50.png");
+            this.imgNode.Images.SetKeyName(1, "icons8-variable-48.png");
+            this.imgNode.Images.SetKeyName(2, "icons8-object-48.png");
+            this.imgNode.Images.SetKeyName(3, "icons8-folder-48.png");
+            this.imgNode.Images.SetKeyName(4, "icons8-blank-64.png");
+            this.imgNode.Images.SetKeyName(5, "icons8-remove-48.png");
+            this.imgNode.Images.SetKeyName(6, "icons8-import-64.png");
+            this.imgNode.Images.SetKeyName(7, "icons8-new-copy-80.png");
             // 
             // MyServerDesignerUC
             // 
@@ -244,5 +284,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Timer timerUpdateDesigner;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ImageList imgNode;
     }
 }

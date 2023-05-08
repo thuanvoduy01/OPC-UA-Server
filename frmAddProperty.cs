@@ -50,9 +50,12 @@ namespace MyOPCUAServer
 
             cmbDataType.DataSource = Enum.GetValues(typeof(DataTypeValue));
             cmbDataType.SelectedIndex = 0;
+
+            cmbDataType.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
-        
+
 
         private void btnOK_Click(object sender, EventArgs e)
         {
