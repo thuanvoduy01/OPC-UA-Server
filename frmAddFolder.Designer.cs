@@ -36,16 +36,21 @@
             // 
             // txtSymbolicName
             // 
-            this.txtSymbolicName.Location = new System.Drawing.Point(148, 30);
+            this.txtSymbolicName.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSymbolicName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.txtSymbolicName.Location = new System.Drawing.Point(208, 29);
             this.txtSymbolicName.Name = "txtSymbolicName";
-            this.txtSymbolicName.Size = new System.Drawing.Size(100, 20);
+            this.txtSymbolicName.Size = new System.Drawing.Size(203, 27);
             this.txtSymbolicName.TabIndex = 0;
             this.txtSymbolicName.TextChanged += new System.EventHandler(this.txtSymbolicName_TextChanged);
             this.txtSymbolicName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSymbolicName_KeyPress);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(148, 106);
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.btnOK.Location = new System.Drawing.Point(158, 91);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -56,15 +61,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 30);
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(53, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(137, 19);
             this.label1.TabIndex = 2;
-            this.label1.Text = "SymbolicName";
+            this.label1.Text = "SymbolicName:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(242, 106);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.btnCancel.Location = new System.Drawing.Point(239, 91);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
@@ -76,14 +87,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 145);
+            this.ClientSize = new System.Drawing.Size(494, 122);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtSymbolicName);
             this.Name = "frmAddFolder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddObjectForm";
+            this.Text = "Add New Folder";
             this.ResumeLayout(false);
             this.PerformLayout();
 

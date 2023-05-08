@@ -71,5 +71,15 @@ namespace MyOPCUAServer
             UpdateServer();
 
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(lblConnAddr.Text);
+        }
     }
 }

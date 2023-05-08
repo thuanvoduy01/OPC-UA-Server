@@ -4,41 +4,16 @@
     <opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
     <opc:Namespace Name="MyOPCUAServer" Prefix="MyOPCUAServer">http://opcfoundation.org/OPCUAServer</opc:Namespace>
   </opc:Namespaces>
-  <opc:Object SymbolicName="System" TypeDefinition="ua:BaseObjectType">
+  <opc:Object SymbolicName="a" TypeDefinition="ua:FolderType">
     <opc:Children>
-      <opc:Object SymbolicName="M1" TypeDefinition="ua:BaseObjectType">
+      <opc:Object SymbolicName="v" TypeDefinition="ua:BaseObjectType">
         <opc:Children>
-          <opc:Object SymbolicName="Input" TypeDefinition="ua:FolderType">
-            <opc:Children>
-              <opc:Variable SymbolicName="Start" DataType="ua:Boolean">
-                <opc:Children />
-                <opc:References />
-              </opc:Variable>
-              <opc:Variable SymbolicName="Stop" DataType="ua:Boolean">
-                <opc:Children />
-                <opc:References />
-              </opc:Variable>
-            </opc:Children>
+          <opc:Variable SymbolicName="c" DataType="ua:Boolean">
+            <opc:Children />
             <opc:References />
-          </opc:Object>
-          <opc:Object SymbolicName="Output" TypeDefinition="ua:FolderType">
-            <opc:Children>
-              <opc:Variable SymbolicName="CMD" DataType="ua:Boolean">
-                <opc:Children />
-                <opc:References />
-              </opc:Variable>
-            </opc:Children>
-            <opc:References />
-          </opc:Object>
+          </opc:Variable>
+          <opc:Property SymbolicName="v" DataType="ua:Boolean" />
         </opc:Children>
-        <opc:References />
-      </opc:Object>
-      <opc:Object SymbolicName="M2" TypeDefinition="ua:BaseObjectType">
-        <opc:Children />
-        <opc:References />
-      </opc:Object>
-      <opc:Object SymbolicName="M3" TypeDefinition="ua:BaseObjectType">
-        <opc:Children />
         <opc:References />
       </opc:Object>
     </opc:Children>

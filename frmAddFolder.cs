@@ -55,5 +55,10 @@ namespace MyOPCUAServer
                 txtSymbolicName.SelectionStart = txtSymbolicName.TextLength;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

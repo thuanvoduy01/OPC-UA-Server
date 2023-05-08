@@ -144,6 +144,7 @@ namespace MyOPCUAServer
                 procStartInfo.CreateNoWindow = true;
                 Process proc = Process.Start(procStartInfo);
                 proc.WaitForExit();
+                
             }
             catch (Exception ex)
             {
@@ -151,9 +152,27 @@ namespace MyOPCUAServer
             }
             #endregion
 
+            #region If .uanodes file does not exit, then ModelDesign is error
+            string resourcePath = String.Empty;
+            files = Directory.GetFiles(modelCompilerOutputsDir);
+            foreach (string file in files)
+            {
+                if (Path.GetExtension(file) == ".uanodes")
+                {
+                    resourcePath = file;
+                    break;
+                }
+            }
+            if (resourcePath == String.Empty) { return; }
+            #endregion
+
             #region Create OPC UA Server from ua.nodes file
             try
             {
+                // Dispose server in case run server again
+                if (m_application.Server != null) { m_application.Server.Dispose(); }
+                
+
                 // process and command line arguments.
                 if (m_application.ProcessCommandLine())
                 {
@@ -626,7 +645,7 @@ namespace MyOPCUAServer
             string symbolicName = frmAddFolder.SymbolicName;
             if (symbolicName == null)
             {
-                MessageBox.Show("No input value yet!");
+                //MessageBox.Show("No input value yet!");
                 return;
             }
 
@@ -719,12 +738,12 @@ namespace MyOPCUAServer
 
             if (symbolicName == null)
             {
-                MessageBox.Show("No input value yet!");
+                //MessageBox.Show("No input value yet!");
                 return;
             }
             if (typeDefinition == null)
             {
-                MessageBox.Show("No input value yet!");
+                //MessageBox.Show("No input value yet!");
                 return;
             }
 
@@ -818,12 +837,12 @@ namespace MyOPCUAServer
             string dataType = frmAddVariable.DataType;
             if (symbolicName == null)
             {
-                MessageBox.Show("No input value yet!");
+                //MessageBox.Show("No input value yet!");
                 return;
             }
             if (dataType == null)
             {
-                MessageBox.Show("No input value yet!");
+                //MessageBox.Show("No input value yet!");
                 return;
             }
 
@@ -917,12 +936,12 @@ namespace MyOPCUAServer
             string dataType = frmAddProperty.DataType;
             if (symbolicName == null)
             {
-                MessageBox.Show("No input value yet!");
+                //MessageBox.Show("No input value yet!");
                 return;
             }
             if (dataType == null)
             {
-                MessageBox.Show("No input value yet!");
+                //MessageBox.Show("No input value yet!");
                 return;
             }
 

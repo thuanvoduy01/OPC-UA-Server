@@ -38,15 +38,20 @@
             // 
             // txtSymbolicName
             // 
-            this.txtSymbolicName.Location = new System.Drawing.Point(148, 30);
+            this.txtSymbolicName.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSymbolicName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.txtSymbolicName.Location = new System.Drawing.Point(193, 27);
             this.txtSymbolicName.Name = "txtSymbolicName";
-            this.txtSymbolicName.Size = new System.Drawing.Size(100, 20);
+            this.txtSymbolicName.Size = new System.Drawing.Size(203, 27);
             this.txtSymbolicName.TabIndex = 0;
             this.txtSymbolicName.TextChanged += new System.EventHandler(this.txtSymbolicName_TextChanged);
             this.txtSymbolicName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSymbolicName_KeyPress);
             // 
             // btnOK
             // 
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
+            this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
             this.btnOK.Location = new System.Drawing.Point(148, 106);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
@@ -58,31 +63,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
             this.label1.Location = new System.Drawing.Point(50, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(137, 19);
             this.label1.TabIndex = 2;
-            this.label1.Text = "SymbolicName";
+            this.label1.Text = "SymbolicName:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(276, 30);
+            this.label2.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.label2.Location = new System.Drawing.Point(50, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(91, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "DataType";
             // 
             // cmbDataType
             // 
+            this.cmbDataType.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold);
+            this.cmbDataType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
             this.cmbDataType.FormattingEnabled = true;
-            this.cmbDataType.Location = new System.Drawing.Point(358, 30);
+            this.cmbDataType.Location = new System.Drawing.Point(193, 57);
             this.cmbDataType.Name = "cmbDataType";
-            this.cmbDataType.Size = new System.Drawing.Size(121, 21);
+            this.cmbDataType.Size = new System.Drawing.Size(203, 27);
             this.cmbDataType.TabIndex = 3;
             // 
             // btnCancel
             // 
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
             this.btnCancel.Location = new System.Drawing.Point(242, 106);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -95,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 145);
+            this.ClientSize = new System.Drawing.Size(451, 154);
             this.Controls.Add(this.cmbDataType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -104,7 +118,7 @@
             this.Controls.Add(this.txtSymbolicName);
             this.Name = "frmAddProperty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddObjectForm";
+            this.Text = "Add New Property";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,31 +38,15 @@
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblStartTime = new System.Windows.Forms.Label();
             this.timerUpdateStatus = new System.Windows.Forms.Timer(this.components);
+            this.btnCopy = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(175, 338);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(275, 358);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.label1.Location = new System.Drawing.Point(160, 161);
+            this.label1.Location = new System.Drawing.Point(111, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 25);
             this.label1.TabIndex = 2;
@@ -75,7 +57,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.label2.Location = new System.Drawing.Point(160, 243);
+            this.label2.Location = new System.Drawing.Point(111, 286);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 25);
             this.label2.TabIndex = 2;
@@ -86,7 +68,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.label3.Location = new System.Drawing.Point(160, 202);
+            this.label3.Location = new System.Drawing.Point(111, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(226, 25);
             this.label3.TabIndex = 2;
@@ -97,7 +79,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.label4.Location = new System.Drawing.Point(160, 284);
+            this.label4.Location = new System.Drawing.Point(111, 332);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(234, 25);
             this.label4.TabIndex = 2;
@@ -108,7 +90,7 @@
             this.lblServerStatus.AutoSize = true;
             this.lblServerStatus.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServerStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.lblServerStatus.Location = new System.Drawing.Point(426, 161);
+            this.lblServerStatus.Location = new System.Drawing.Point(349, 148);
             this.lblServerStatus.Name = "lblServerStatus";
             this.lblServerStatus.Size = new System.Drawing.Size(79, 25);
             this.lblServerStatus.TabIndex = 2;
@@ -119,7 +101,7 @@
             this.lblConnAddr.AutoSize = true;
             this.lblConnAddr.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConnAddr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.lblConnAddr.Location = new System.Drawing.Point(426, 202);
+            this.lblConnAddr.Location = new System.Drawing.Point(159, 240);
             this.lblConnAddr.Name = "lblConnAddr";
             this.lblConnAddr.Size = new System.Drawing.Size(94, 25);
             this.lblConnAddr.TabIndex = 2;
@@ -130,7 +112,7 @@
             this.lblCurrentTime.AutoSize = true;
             this.lblCurrentTime.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.lblCurrentTime.Location = new System.Drawing.Point(426, 243);
+            this.lblCurrentTime.Location = new System.Drawing.Point(349, 286);
             this.lblCurrentTime.Name = "lblCurrentTime";
             this.lblCurrentTime.Size = new System.Drawing.Size(153, 25);
             this.lblCurrentTime.TabIndex = 2;
@@ -141,7 +123,7 @@
             this.lblStartTime.AutoSize = true;
             this.lblStartTime.Font = new System.Drawing.Font("Century Schoolbook", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
-            this.lblStartTime.Location = new System.Drawing.Point(426, 284);
+            this.lblStartTime.Location = new System.Drawing.Point(349, 332);
             this.lblStartTime.Name = "lblStartTime";
             this.lblStartTime.Size = new System.Drawing.Size(122, 25);
             this.lblStartTime.TabIndex = 2;
@@ -151,11 +133,27 @@
             // 
             this.timerUpdateStatus.Tick += new System.EventHandler(this.timerUpdateStatus_Tick);
             // 
+            // btnCopy
+            // 
+            this.btnCopy.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.btnCopy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopy.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.btnCopy.Location = new System.Drawing.Point(354, 194);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(51, 25);
+            this.btnCopy.TabIndex = 3;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
             // MyServerStatusUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -164,19 +162,14 @@
             this.Controls.Add(this.lblConnAddr);
             this.Controls.Add(this.lblServerStatus);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Name = "MyServerStatusUC";
-            this.Size = new System.Drawing.Size(1079, 496);
+            this.Size = new System.Drawing.Size(739, 542);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -186,5 +179,6 @@
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Label lblStartTime;
         private System.Windows.Forms.Timer timerUpdateStatus;
+        private System.Windows.Forms.Button btnCopy;
     }
 }

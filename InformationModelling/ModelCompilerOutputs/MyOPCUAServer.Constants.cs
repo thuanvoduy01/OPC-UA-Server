@@ -44,22 +44,10 @@ namespace MyOPCUAServer
     public static partial class Objects
     {
         /// <remarks />
-        public const uint System = 1;
+        public const uint a = 1;
 
         /// <remarks />
-        public const uint System_M1 = 2;
-
-        /// <remarks />
-        public const uint System_M1_Input = 3;
-
-        /// <remarks />
-        public const uint System_M1_Output = 6;
-
-        /// <remarks />
-        public const uint System_M2 = 8;
-
-        /// <remarks />
-        public const uint System_M3 = 9;
+        public const uint a_v = 2;
     }
     #endregion
 
@@ -70,13 +58,10 @@ namespace MyOPCUAServer
     public static partial class Variables
     {
         /// <remarks />
-        public const uint System_M1_Input_Start = 4;
+        public const uint a_v_c = 3;
 
         /// <remarks />
-        public const uint System_M1_Input_Stop = 5;
-
-        /// <remarks />
-        public const uint System_M1_Output_CMD = 7;
+        public const uint a_v_v = 4;
     }
     #endregion
 
@@ -87,22 +72,10 @@ namespace MyOPCUAServer
     public static partial class ObjectIds
     {
         /// <remarks />
-        public static readonly ExpandedNodeId System = new ExpandedNodeId(MyOPCUAServer.Objects.System, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId a = new ExpandedNodeId(MyOPCUAServer.Objects.a, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId System_M1 = new ExpandedNodeId(MyOPCUAServer.Objects.System_M1, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId System_M1_Input = new ExpandedNodeId(MyOPCUAServer.Objects.System_M1_Input, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId System_M1_Output = new ExpandedNodeId(MyOPCUAServer.Objects.System_M1_Output, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId System_M2 = new ExpandedNodeId(MyOPCUAServer.Objects.System_M2, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId System_M3 = new ExpandedNodeId(MyOPCUAServer.Objects.System_M3, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId a_v = new ExpandedNodeId(MyOPCUAServer.Objects.a_v, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -113,13 +86,10 @@ namespace MyOPCUAServer
     public static partial class VariableIds
     {
         /// <remarks />
-        public static readonly ExpandedNodeId System_M1_Input_Start = new ExpandedNodeId(MyOPCUAServer.Variables.System_M1_Input_Start, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId a_v_c = new ExpandedNodeId(MyOPCUAServer.Variables.a_v_c, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
-        public static readonly ExpandedNodeId System_M1_Input_Stop = new ExpandedNodeId(MyOPCUAServer.Variables.System_M1_Input_Stop, MyOPCUAServer.Namespaces.MyOPCUAServer);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId System_M1_Output_CMD = new ExpandedNodeId(MyOPCUAServer.Variables.System_M1_Output_CMD, MyOPCUAServer.Namespaces.MyOPCUAServer);
+        public static readonly ExpandedNodeId a_v_v = new ExpandedNodeId(MyOPCUAServer.Variables.a_v_v, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -129,16 +99,10 @@ namespace MyOPCUAServer
     public static partial class BrowseNames
     {
         /// <remarks />
-        public const string M1 = "M1";
+        public const string a = "a";
 
         /// <remarks />
-        public const string M2 = "M2";
-
-        /// <remarks />
-        public const string M3 = "M3";
-
-        /// <remarks />
-        public const string System = "System";
+        public const string v = "v";
     }
     #endregion
 

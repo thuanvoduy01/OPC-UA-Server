@@ -1,9 +1,4 @@
-System,1,Object
-System_M1,2,Object
-System_M1_Input,3,Object
-System_M1_Input_Start,4,Variable
-System_M1_Input_Stop,5,Variable
-System_M1_Output,6,Object
-System_M1_Output_CMD,7,Variable
-System_M2,8,Object
-System_M3,9,Object
+a,1,Object
+a_v,2,Object
+a_v_c,3,Variable
+a_v_v,4,Variable
