@@ -13,4 +13,22 @@
       </opc:Reference>
     </opc:References>
   </opc:Object>
+  <opc:Variable SymbolicName="start" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+    <opc:Children />
+    <opc:References>
+      <opc:Reference IsInverse="true">
+        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+      </opc:Reference>
+    </opc:References>
+  </opc:Variable>
+  <opc:Variable SymbolicName="stop" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+    <opc:Children />
+    <opc:References>
+      <opc:Reference IsInverse="true">
+        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+      </opc:Reference>
+    </opc:References>
+  </opc:Variable>
 </opc:ModelDesign>

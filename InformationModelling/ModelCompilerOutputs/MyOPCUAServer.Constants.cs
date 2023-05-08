@@ -48,6 +48,20 @@ namespace MyOPCUAServer
     }
     #endregion
 
+    #region Variable Identifiers
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public static partial class Variables
+    {
+        /// <remarks />
+        public const uint start = 2;
+
+        /// <remarks />
+        public const uint stop = 3;
+    }
+    #endregion
+
     #region Object Node Identifiers
     /// <remarks />
     /// <exclude />
@@ -59,6 +73,20 @@ namespace MyOPCUAServer
     }
     #endregion
 
+    #region Variable Node Identifiers
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public static partial class VariableIds
+    {
+        /// <remarks />
+        public static readonly ExpandedNodeId start = new ExpandedNodeId(MyOPCUAServer.Variables.start, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId stop = new ExpandedNodeId(MyOPCUAServer.Variables.stop, MyOPCUAServer.Namespaces.MyOPCUAServer);
+    }
+    #endregion
+
     #region BrowseName Declarations
     /// <remarks />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
@@ -66,6 +94,12 @@ namespace MyOPCUAServer
     {
         /// <remarks />
         public const string justafolder = "justafolder";
+
+        /// <remarks />
+        public const string start = "start";
+
+        /// <remarks />
+        public const string stop = "stop";
     }
     #endregion
 

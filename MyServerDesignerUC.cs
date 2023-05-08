@@ -887,14 +887,16 @@ namespace MyOPCUAServer
             #endregion
 
             #region Create xml tag for folder
-            XmlElement objectElement = xmlDocument.CreateElement("opc", "Variable", "http://opcfoundation.org/UA/ModelDesign.xsd");
-            objectElement.SetAttribute("SymbolicName", $"{symbolicName}");
-            objectElement.SetAttribute("DataType", $"ua:{dataType}");
+            XmlElement variableElement = xmlDocument.CreateElement("opc", "Variable", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            variableElement.SetAttribute("SymbolicName", $"{symbolicName}");
+            variableElement.SetAttribute("DataType", $"ua:{dataType}");
+            variableElement.SetAttribute("ValueRank", "Scalar");
+            variableElement.SetAttribute("AccessLevel", "ReadWrite");
 
             XmlElement childrenElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
-            objectElement.AppendChild(childrenElement);
+            variableElement.AppendChild(childrenElement);
             XmlElement referencesElement = xmlDocument.CreateElement("opc", "References", "http://opcfoundation.org/UA/ModelDesign.xsd");
-            objectElement.AppendChild(referencesElement);
+            variableElement.AppendChild(referencesElement);
 
             if (isChildOfModelDesign)
             {
@@ -918,7 +920,7 @@ namespace MyOPCUAServer
             }
             #endregion
 
-            parent.AppendChild(objectElement);
+            parent.AppendChild(variableElement);
 
             xmlDocument.Save(xmlModelDesignUc);
 
@@ -986,9 +988,9 @@ namespace MyOPCUAServer
             #endregion
 
             #region Create xml tag for Property
-            XmlElement objectElement = xmlDocument.CreateElement("opc", "Property", "http://opcfoundation.org/UA/ModelDesign.xsd");
-            objectElement.SetAttribute("SymbolicName", $"{symbolicName}");
-            objectElement.SetAttribute("DataType", $"ua:{dataType}");
+            XmlElement propertyElement = xmlDocument.CreateElement("opc", "Property", "http://opcfoundation.org/UA/ModelDesign.xsd");
+            propertyElement.SetAttribute("SymbolicName", $"{symbolicName}");
+            propertyElement.SetAttribute("DataType", $"ua:{dataType}");
 
             /* Property does not need this. Cause Property cannot have child!
             XmlElement childrenElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
@@ -1020,7 +1022,7 @@ namespace MyOPCUAServer
             */
             #endregion
 
-            parent.AppendChild(objectElement);
+            parent.AppendChild(propertyElement);
 
             xmlDocument.Save(xmlModelDesignUc);
 
