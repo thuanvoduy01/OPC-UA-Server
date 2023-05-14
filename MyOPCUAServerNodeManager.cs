@@ -15,9 +15,7 @@ namespace MyOPCUAServer
 {
     public class MyOPCUAServerNodeManager : CustomNodeManager2
     {
-        public MyOPCUAServerNodeManager(IServerInternal server, ApplicationConfiguration configuration)
-        :
-       base(server, configuration)
+        public MyOPCUAServerNodeManager(IServerInternal server, ApplicationConfiguration configuration) : base(server, configuration)
         {
             SystemContext.NodeIdFactory = this;
 
@@ -67,11 +65,7 @@ namespace MyOPCUAServer
                 resourcePath,
                 typeof(MyOPCUAServerNodeManager).GetTypeInfo().Assembly,
                 true);
-            //predefinedNodes.LoadFromBinaryResource(context,
-            //    @"D:\Proj\VStudio\MyOPCUAServer\InformationModelling\ModelCompilerOutputs\MyOPCUAServer.PredefinedNodes.uanodes",
-            //    typeof(MyOPCUAServerNodeManager).GetTypeInfo().Assembly,
-            //    true);
-
+            
             return predefinedNodes;
         }
 
@@ -95,9 +89,6 @@ namespace MyOPCUAServer
                 //m_batchPlant1.StopProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnStopProcess);
                 //m_batchPlant1.Conveyor.ConveyorMotor.Speed.Value = 99;
                 //m_simulationTimer = new System.Threading.Timer(DoSimulation, null, 1000, 1000);
-
-
-
             }
         }
 

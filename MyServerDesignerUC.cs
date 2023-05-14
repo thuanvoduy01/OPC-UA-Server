@@ -31,6 +31,7 @@ namespace MyOPCUAServer
         frmAddProperty frmAddProperty = new frmAddProperty();
         #endregion
 
+        #region Constructor
         public MyServerDesignerUC()
         {
             InitializeComponent();
@@ -59,171 +60,12 @@ namespace MyOPCUAServer
 
 
         }
+        #endregion
 
+        #region Custom Method
         public ApplicationInstance GetApplication()
         {
             return m_application;
-        }
-
-        private void btnImportXml_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select File";
-            openFileDialog.InitialDirectory = @"C:\";
-            openFileDialog.Filter = "All files (*.*)|*.* | XML files (*.xml)|*.xml";
-            openFileDialog.FilterIndex = 2;
-            openFileDialog.ShowDialog();
-            if (openFileDialog.FileName != String.Empty)
-            { 
-                txtFilePath.Text = openFileDialog.FileName; 
-            }
-            else
-            { 
-                //txtFilePath.Text = "You didn't select the file!"; 
-            }
-        }
-
-        private void btnRunServer_Click(object sender, EventArgs e)
-        {
-            string selectedFileDir;
-            string xmlModelDesignDir = MyOPCUAServer.Const.MODEL_DESIGN_DIRECTORY;
-            string modelCompilerOutputsDir = MyOPCUAServer.Const.MODEL_COMPILER_OUTPUTS_DIRECTORY;
-            XmlDocument xmlDoc = new XmlDocument();
-
-            #region Create an empty ModelDesign.xml
-            // Open the file in write mode and write an empty string to it
-            // If the file not exist, StreamWriter will create a new one
-            using (StreamWriter sw = new StreamWriter(xmlModelDesignDir, false))
-            {
-                sw.Write(String.Empty);
-            }
-            #endregion
-
-            #region Delete old generated file
-            string[] files = Directory.GetFiles(modelCompilerOutputsDir);
-            foreach(string file in files)
-            {
-                File.Delete(file);
-            }
-            #endregion
-
-            #region Update ModelDesign file from Designer or Import
-            if (chkImport.Checked == false)
-            {
-                //Using Designer
-                selectedFileDir = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
-            }
-            else
-            {
-                //Using import XML
-                selectedFileDir = txtFilePath.Text;
-            }
-
-            if (File.Exists(selectedFileDir) == false)
-            {
-                return;
-            }
-
-            if (Path.GetExtension(selectedFileDir) != ".xml")
-            {
-                return;
-            }
-
-            xmlDoc.Load(selectedFileDir);
-            xmlDoc.Save(xmlModelDesignDir);
-            #endregion
-
-            #region Calling ModelCompiler to generate ua.nodes file
-            try
-            {
-                string batDir = MyOPCUAServer.Const.BATCH_DIRECTORY_MODEL_COMPILER;
-                //string batDir = @"D:\Proj\VStudio\MyOPCUAServer\InformationModelling\MyOPCUAServerBuildDesignFullPath.bat";
-                /* cmd /c -> run command then terminate
-                   cmd /k -> run command then return to CMD prompt => useful for debugging*/
-                string para = $"/c \"{batDir}\"";
-                ProcessStartInfo procStartInfo = new ProcessStartInfo("cmd", para);
-                procStartInfo.CreateNoWindow = true;
-                Process proc = Process.Start(procStartInfo);
-                proc.WaitForExit();
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message} \n {ex.StackTrace.ToString()}");
-            }
-            #endregion
-
-            #region If .uanodes file does not exit, then ModelDesign is error
-            string resourcePath = String.Empty;
-            files = Directory.GetFiles(modelCompilerOutputsDir);
-            foreach (string file in files)
-            {
-                if (Path.GetExtension(file) == ".uanodes")
-                {
-                    resourcePath = file;
-                    break;
-                }
-            }
-            if (resourcePath == String.Empty) { return; }
-            #endregion
-
-            #region Create OPC UA Server from ua.nodes file
-            try
-            {
-                // Dispose server in case run server again
-                if (m_application.Server != null) { m_application.Server.Dispose(); }
-                
-
-                // process and command line arguments.
-                if (m_application.ProcessCommandLine())
-                {
-                    return;
-                }
-
-                // check if running as a service.
-                if (!Environment.UserInteractive)
-                {
-                    m_application.StartAsService(new MyServer());
-                    return;
-                }
-
-                //load the application configuration
-                string confDir = MyOPCUAServer.Const.CONFIG_SERVER_DIRECTORY;
-                //string confDir = @"..\..\MyOPCUAServer.Config.xml";
-                m_application.LoadApplicationConfiguration(confDir, false).Wait();
-
-                //check the application certification
-                m_application.CheckApplicationInstanceCertificate(false, 0).Wait();
-
-                // start the server.
-                m_application.Start(new MyServer()).Wait();
-
-
-                // run the application interactively.
-                //Application.Run(new MyOPCUAServerForm(m_application));
-
-                //MyOPCUAServerForm myOPCUAServerForm = new MyOPCUAServerForm(m_application);
-                //myOPCUAServerForm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                string text = "Exception: " + ex.Message;
-                if (ex.InnerException != null)
-                {
-                    text += "\r\nInner exception: ";
-                    text += ex.InnerException.Message;
-                }
-                MessageBox.Show(text, m_application.ApplicationName);
-            }
-            #endregion
-
-            //MyOPCUAServerForm myOPCUAServerForm = new MyOPCUAServerForm();
-            //ShowDialog(MyOPCUAServerForm);
-        }
-
-        private void timerUpdateDesigner_Tick(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -250,7 +92,7 @@ namespace MyOPCUAServer
 
             tvwModel.ExpandAll();
         }
-
+       
         public void PopulateTreeview(XmlNode node, TreeNode treeNode)
         {
             string treeNodeText, treeNodeType = String.Empty;
@@ -313,7 +155,6 @@ namespace MyOPCUAServer
 
             }
         }
-
 
         public void InitDesignerUcMdoel()
         {
@@ -479,7 +320,7 @@ namespace MyOPCUAServer
             string[] subStrings = ParsingPathToSymbolicNameAndType(treeviewNodePath);
             nodeSymbolicName = subStrings[0];
             nodeType = subStrings[1];
-            
+
             XmlNamespaceManager nsMgr = new XmlNamespaceManager(xmlDoc.NameTable);
             nsMgr.AddNamespace("opc", "http://opcfoundation.org/UA/ModelDesign.xsd");
 
@@ -574,7 +415,7 @@ namespace MyOPCUAServer
             string symbolicNamePath = String.Empty;
             string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
 
-            foreach(string subPath in subPaths)
+            foreach (string subPath in subPaths)
             {
                 string[] subStrings = subPath.Split(new[] { "::" }, StringSplitOptions.None);
                 symbolicNamePath += subStrings[0] + "\\";
@@ -597,8 +438,9 @@ namespace MyOPCUAServer
 
             symbolicNamePath = symbolicNamePath.TrimEnd('\\');
             return symbolicNamePath;
-            
+
         }
+
         /// <summary>
         /// Input path: ModelDesign\\obj1::ua:Object\\obj11::ua:Object. <br/>
         /// Output symbolicNamePath: obj11::ua:Object. <br/>
@@ -629,13 +471,231 @@ namespace MyOPCUAServer
                 {
                     nodeType = "Object";
                 }
-            }    
+            }
             return new[] { nodeSymbolicName, nodeType };
         }
 
+        public void TraverseTreeview(TreeNodeCollection nodes)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                UpdateTreeviewNodeImg(node);
+                TraverseTreeview(node.Nodes);
+            }
+        }
+
+        public void UpdateTreeviewNodeImg(TreeNode node)
+        {
+            string path = node.FullPath;
+            string nodeType;
+            string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
+
+            string[] nodeDescription = subPaths.Last().Split(new[] { "::" }, StringSplitOptions.None);
+            if (nodeDescription.Length == 1)    //In case: path = "ModelDesign"
+            {
+                //nodeSymbolicName = String.Empty;
+                nodeType = nodeDescription[0];
+            }
+            else
+            {
+                //nodeSymbolicName = nodeDescription[0];
+                nodeType = nodeDescription[1];
+                //Object and Folder all declared as Object in XML
+                //if (nodeType == "Folder")
+                //{
+                //    nodeType = "Object";
+                //}
+            }
+            if (nodeType == "Folder")
+            {
+                node.ImageIndex = 3;
+                node.SelectedImageIndex = 3;
+            }
+            if (nodeType == "Object")
+            {
+                node.ImageIndex = 2;
+                node.SelectedImageIndex = 2;
+            }
+            if (nodeType == "Variable")
+            {
+                node.ImageIndex = 1;
+                node.SelectedImageIndex = 1;
+            }
+            if (nodeType == "Property")
+            {
+                node.ImageIndex = 0;
+                node.SelectedImageIndex = 0;
+            }
+            if (nodeType == "ModelDesign")
+            {
+                node.ImageIndex = 4;
+                node.SelectedImageIndex = 4;
+            }
+        }
+        #endregion
+
+        #region Events
+        private void btnImportXml_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select File";
+            openFileDialog.InitialDirectory = @"C:\";
+            openFileDialog.Filter = "All files (*.*)|*.* | XML files (*.xml)|*.xml";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName != String.Empty)
+            { 
+                txtFilePath.Text = openFileDialog.FileName; 
+            }
+            else
+            { 
+                //txtFilePath.Text = "You didn't select the file!"; 
+            }
+        }
+
+        private void btnRunServer_Click(object sender, EventArgs e)
+        {
+            string selectedFileDir;
+            string xmlModelDesignDir = MyOPCUAServer.Const.MODEL_DESIGN_DIRECTORY;
+            string modelCompilerOutputsDir = MyOPCUAServer.Const.MODEL_COMPILER_OUTPUTS_DIRECTORY;
+            XmlDocument xmlDoc = new XmlDocument();
+
+            #region Create an empty ModelDesign.xml
+            // Open the file in write mode and write an empty string to it
+            // If the file not exist, StreamWriter will create a new one
+            using (StreamWriter sw = new StreamWriter(xmlModelDesignDir, false))
+            {
+                sw.Write(String.Empty);
+            }
+            #endregion
+
+            #region Delete old generated file
+            string[] files = Directory.GetFiles(modelCompilerOutputsDir);
+            foreach(string file in files)
+            {
+                File.Delete(file);
+            }
+            #endregion
+
+            #region Update ModelDesign file from Designer or Import
+            if (chkImport.Checked == false)
+            {
+                //Using Designer
+                selectedFileDir = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
+            }
+            else
+            {
+                //Using import XML
+                selectedFileDir = txtFilePath.Text;
+            }
+
+            if (File.Exists(selectedFileDir) == false)
+            {
+                return;
+            }
+
+            if (Path.GetExtension(selectedFileDir) != ".xml")
+            {
+                return;
+            }
+
+            xmlDoc.Load(selectedFileDir);
+            xmlDoc.Save(xmlModelDesignDir);
+            #endregion
+
+            #region Calling ModelCompiler to generate ua.nodes file
+            try
+            {
+                string batDir = MyOPCUAServer.Const.BATCH_DIRECTORY_MODEL_COMPILER;
+                //string batDir = @"D:\Proj\VStudio\MyOPCUAServer\InformationModelling\MyOPCUAServerBuildDesignFullPath.bat";
+                /* cmd /c -> run command then terminate
+                   cmd /k -> run command then return to CMD prompt => useful for debugging*/
+                string para = $"/c \"{batDir}\"";
+                ProcessStartInfo procStartInfo = new ProcessStartInfo("cmd", para);
+                procStartInfo.CreateNoWindow = true;
+                Process proc = Process.Start(procStartInfo);
+                proc.WaitForExit();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message} \n {ex.StackTrace.ToString()}");
+            }
+            #endregion
+
+            #region If .uanodes file does not exit, then ModelDesign is error
+            string resourcePath = String.Empty;
+            files = Directory.GetFiles(modelCompilerOutputsDir);
+            foreach (string file in files)
+            {
+                if (Path.GetExtension(file) == ".uanodes")
+                {
+                    resourcePath = file;
+                    break;
+                }
+            }
+            if (resourcePath == String.Empty) { return; }
+            #endregion
+
+            #region Create OPC UA Server from ua.nodes file
+            try
+            {
+                // Dispose server in case run server again
+                if (m_application.Server != null) { m_application.Server.Dispose(); }
+                
+
+                // process and command line arguments.
+                if (m_application.ProcessCommandLine())
+                {
+                    return;
+                }
+
+                // check if running as a service.
+                if (!Environment.UserInteractive)
+                {
+                    m_application.StartAsService(new MyServer());
+                    return;
+                }
+
+                //load the application configuration
+                string confDir = MyOPCUAServer.Const.CONFIG_SERVER_DIRECTORY;
+                //string confDir = @"..\..\MyOPCUAServer.Config.xml";
+                m_application.LoadApplicationConfiguration(confDir, false).Wait();
+
+                //check the application certification
+                m_application.CheckApplicationInstanceCertificate(false, 0).Wait();
+
+                // start the server.
+                m_application.Start(new MyServer()).Wait();
 
 
+                // run the application interactively.
+                //Application.Run(new MyOPCUAServerForm(m_application));
 
+                //MyOPCUAServerForm myOPCUAServerForm = new MyOPCUAServerForm(m_application);
+                //myOPCUAServerForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string text = "Exception: " + ex.Message;
+                if (ex.InnerException != null)
+                {
+                    text += "\r\nInner exception: ";
+                    text += ex.InnerException.Message;
+                }
+                MessageBox.Show(text, m_application.ApplicationName);
+            }
+            #endregion
+
+            //MyOPCUAServerForm myOPCUAServerForm = new MyOPCUAServerForm();
+            //ShowDialog(MyOPCUAServerForm);
+        }
+
+        private void timerUpdateDesigner_Tick(object sender, EventArgs e)
+        {
+
+        }
+       
         private void btnAddFolder_Click(object sender, EventArgs e)
         {
             if (tvwModel.SelectedNode == null)
@@ -991,6 +1051,8 @@ namespace MyOPCUAServer
             XmlElement propertyElement = xmlDocument.CreateElement("opc", "Property", "http://opcfoundation.org/UA/ModelDesign.xsd");
             propertyElement.SetAttribute("SymbolicName", $"{symbolicName}");
             propertyElement.SetAttribute("DataType", $"ua:{dataType}");
+            propertyElement.SetAttribute("ValueRank", "Scalar");
+            propertyElement.SetAttribute("AccessLevel", "ReadWrite");
 
             /* Property does not need this. Cause Property cannot have child!
             XmlElement childrenElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
@@ -1144,63 +1206,6 @@ namespace MyOPCUAServer
                     break;
             }
         }
-
-        void TraverseTreeview(TreeNodeCollection nodes)
-        {
-            foreach (TreeNode node in nodes)
-            {
-                UpdateTreeviewNodeImg(node);
-                TraverseTreeview(node.Nodes);
-            }
-        }
-
-        public void UpdateTreeviewNodeImg(TreeNode node)
-        {
-            string path = node.FullPath;
-            string nodeType;
-            string[] subPaths = path.Split(new[] { "\\" }, StringSplitOptions.None);
-
-            string[] nodeDescription = subPaths.Last().Split(new[] { "::" }, StringSplitOptions.None);
-            if (nodeDescription.Length == 1)    //In case: path = "ModelDesign"
-            {
-                //nodeSymbolicName = String.Empty;
-                nodeType = nodeDescription[0];
-            }
-            else
-            {
-                //nodeSymbolicName = nodeDescription[0];
-                nodeType = nodeDescription[1];
-                //Object and Folder all declared as Object in XML
-                //if (nodeType == "Folder")
-                //{
-                //    nodeType = "Object";
-                //}
-            }
-            if (nodeType == "Folder")
-            {
-                node.ImageIndex = 3;
-                node.SelectedImageIndex = 3;
-            }
-            if (nodeType == "Object")
-            {
-                node.ImageIndex = 2;
-                node.SelectedImageIndex = 2;
-            }
-            if (nodeType == "Variable")
-            {
-                node.ImageIndex = 1;
-                node.SelectedImageIndex = 1;
-            }
-            if (nodeType == "Property")
-            {
-                node.ImageIndex = 0;
-                node.SelectedImageIndex = 0;
-            }
-            if (nodeType == "ModelDesign")
-            {
-                node.ImageIndex = 4;
-                node.SelectedImageIndex = 4;
-            }
-        }
+        #endregion
     }
 }

@@ -68,7 +68,6 @@
             this.label1.Size = new System.Drawing.Size(137, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "SymbolicName:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnCancel
             // 

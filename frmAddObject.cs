@@ -13,13 +13,19 @@ namespace MyOPCUAServer
 {
     public partial class frmAddObject : Form
     {
+        #region Properties
         public string SymbolicName { get; set; }
         public string TypeDefinition { get; set; }
+        #endregion
 
+        #region Enum
         enum TypeDefinitionValue
         {
             BaseObjectType
         }
+        #endregion
+
+        #region Constructor
         public frmAddObject()
         {
             InitializeComponent();
@@ -28,9 +34,9 @@ namespace MyOPCUAServer
             cmbTypeDefinition.SelectedIndex = 0;
             cmbTypeDefinition.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        #endregion
 
-        
-
+        #region Events
         private void btnOK_Click(object sender, EventArgs e)
         {
             SymbolicName = txtSymbolicName.Text;
@@ -63,5 +69,6 @@ namespace MyOPCUAServer
                 txtSymbolicName.SelectionStart = txtSymbolicName.TextLength;
             }
         }
+        #endregion
     }
 }

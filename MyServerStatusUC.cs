@@ -20,6 +20,8 @@ namespace MyOPCUAServer
         private StandardServer m_server;
         private ApplicationConfiguration m_configuration;
         #endregion
+
+        #region Constructor
         public MyServerStatusUC()
         {
             InitializeComponent();
@@ -38,9 +40,12 @@ namespace MyOPCUAServer
             timerUpdateStatus.Interval = 250;
             timerUpdateStatus.Enabled = true;
         }
+        #endregion
 
+        #region Custom Method
         public void UpdateServer()
         {            
+            if (m_server == null) { return; }
             if ( m_server.CurrentInstance.IsRunning == true)
             {
                 lblServerStatus.Text = "Running";
@@ -58,9 +63,9 @@ namespace MyOPCUAServer
 
             lblCurrentTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
+        #endregion
 
-       
-
+        #region Events
         private void button1_Click(object sender, EventArgs e)
         {
             UpdateServer();
@@ -81,5 +86,6 @@ namespace MyOPCUAServer
         {
             Clipboard.SetText(lblConnAddr.Text);
         }
+        #endregion
     }
 }

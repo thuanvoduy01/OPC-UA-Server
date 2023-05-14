@@ -44,10 +44,12 @@
 			
 			<opc:Variable SymbolicName= "ObjectVariable" DataType= "ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 			</opc:Variable>
-			<opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime">
+			<opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 				<opc:DefaultValue>
 					<uax:DateTime>2013-12-31</uax:DateTime>
 				</opc:DefaultValue>
+			</opc:Property>
+			<opc:Property SymbolicName="FolderProperty" DataType="ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 			</opc:Property>
 		</opc:Children>
 		<opc:References>
@@ -71,10 +73,12 @@
 			
 			<opc:Variable SymbolicName= "ObjectVariable" DataType= "ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 			</opc:Variable>
-			<opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime">
+			<opc:Property SymbolicName="ua:NamespacePublicationDate" DataType="ua:DateTime" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 				<opc:DefaultValue>
 					<uax:DateTime>2013-12-31</uax:DateTime>
 				</opc:DefaultValue>
+			</opc:Property>
+			<opc:Property SymbolicName="FolderProperty" DataType="ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 			</opc:Property>
 		</opc:Children>
 		<opc:References>
@@ -97,7 +101,7 @@
 			</opc:Variable>
 			
 			<!--Folder cannot have property-->
-			<!-- <opc:Property SymbolicName="FolderProperty" DataType="ua:Double">
+			<!-- <opc:Property SymbolicName="FolderProperty" DataType="ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 			</opc:Property> -->
 		</opc:Children>
 		<opc:References>
@@ -122,7 +126,7 @@
 			</opc:Variable>
 			
 			
-			<opc:Property SymbolicName="VariableProperty" DataType="ua:Double">
+			<opc:Property SymbolicName="VariableProperty" DataType="ua:Double" ValueRank= "Scalar" AccessLevel = "ReadWrite">
 			</opc:Property>
 
 		</opc:Children> 

@@ -13,9 +13,12 @@ namespace MyOPCUAServer
 {
     public partial class frmAddVariable : Form
     {
+        #region Properties
         public string SymbolicName { get; set; }
         public string DataType { get; set; }
+        #endregion
 
+        #region Enum
         enum DataTypeValue
         {
             Boolean,
@@ -44,6 +47,9 @@ namespace MyOPCUAServer
             Variant,
             DiagnosticInfo,
         }
+        #endregion
+
+        #region Constructor
         public frmAddVariable()
         {
             InitializeComponent();
@@ -52,11 +58,10 @@ namespace MyOPCUAServer
             cmbDataType.SelectedIndex = 0;
 
             cmbDataType.DropDownStyle = ComboBoxStyle.DropDownList;
-
         }
+        #endregion
 
-
-
+        #region Events
         private void btnOK_Click(object sender, EventArgs e)
         {
             SymbolicName = txtSymbolicName.Text;
@@ -89,5 +94,6 @@ namespace MyOPCUAServer
                 txtSymbolicName.SelectionStart = txtSymbolicName.TextLength;
             }
         }
+        #endregion
     }
 }

@@ -28,16 +28,12 @@ namespace MyOPCUAServer
             try
             {
                 Application.Run(new frmMyServer(application));
-
                 //Application.Run(new MyServerConfigForm(application));
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"MyServerDesigner Failed: {ex.Message}\n {ex.StackTrace.ToString()}");
-            }
-
-            
+            }   
         }
     }
 }

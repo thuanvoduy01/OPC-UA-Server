@@ -20,7 +20,7 @@ namespace MyOPCUAServer
 {
     public partial class frmMyServer : Form
     {
-        #region declare
+        #region Declaration
         #region const & readonly variable
         //readonly Font FONT_DEFAULT = new Font("Century Gothic", 12, FontStyle.Bold);
         //readonly float FONT_SIZE_INC = 4;
@@ -29,11 +29,9 @@ namespace MyOPCUAServer
 
         private static bool isServerLoadedOnce = false;
 
-
         #region User Control 
         private MyServerDesignerUC myServerDesignerUC;
-        private MyServerStatusUC myServerStatusUC;
-        
+        private MyServerStatusUC myServerStatusUC;        
         #endregion
 
         #region Private field
@@ -41,6 +39,8 @@ namespace MyOPCUAServer
         ApplicationInstance m_applicationStatusUc;
         #endregion
         #endregion
+
+        #region Constructor
         public frmMyServer()
         {
             InitializeComponent();
@@ -52,10 +52,10 @@ namespace MyOPCUAServer
             m_application = application;
 
             myServerDesignerUC = new MyServerDesignerUC(m_application);
-
         }
+        #endregion
 
-        #region custom UI method
+        #region Custom Method
         public void RemoveTabControlButtonBackColor()
         {
             Color colorButton = Color.FromArgb(39, 35, 67);
@@ -72,7 +72,7 @@ namespace MyOPCUAServer
         }
         #endregion
 
-
+        #region Events
         private void MyServerForm_Load(object sender, EventArgs e)
         {
             AddUserControl(myServerDesignerUC);
@@ -128,5 +128,6 @@ namespace MyOPCUAServer
         {
             this.Close();
         }
+        #endregion
     }
 }

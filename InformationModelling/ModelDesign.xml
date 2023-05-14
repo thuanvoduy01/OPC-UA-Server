@@ -4,8 +4,75 @@
     <opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
     <opc:Namespace Name="MyOPCUAServer" Prefix="MyOPCUAServer">http://opcfoundation.org/OPCUAServer</opc:Namespace>
   </opc:Namespaces>
-  <opc:Object SymbolicName="justafolder" TypeDefinition="ua:FolderType">
-    <opc:Children />
+  <opc:Object SymbolicName="obj" TypeDefinition="ua:BaseObjectType">
+    <opc:Children>
+      <opc:Object SymbolicName="input" TypeDefinition="ua:FolderType">
+        <opc:Children>
+          <opc:Variable SymbolicName="start" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+          <opc:Variable SymbolicName="stop" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+        </opc:Children>
+        <opc:References />
+      </opc:Object>
+      <opc:Object SymbolicName="output" TypeDefinition="ua:FolderType">
+        <opc:Children>
+          <opc:Variable SymbolicName="CMD" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+        </opc:Children>
+        <opc:References />
+      </opc:Object>
+      <opc:Object SymbolicName="control" TypeDefinition="ua:FolderType">
+        <opc:Children>
+          <opc:Variable SymbolicName="kp" DataType="ua:Double" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+          <opc:Variable SymbolicName="ki" DataType="ua:Double" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+          <opc:Variable SymbolicName="kd" DataType="ua:Double" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+        </opc:Children>
+        <opc:References />
+      </opc:Object>
+      <opc:Object SymbolicName="new" TypeDefinition="ua:FolderType">
+        <opc:Children>
+          <opc:Variable SymbolicName="dt" DataType="ua:DateTime" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+          <opc:Variable SymbolicName="guid" DataType="ua:Guid" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+          <opc:Variable SymbolicName="bytestring" DataType="ua:ByteString" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+          <opc:Variable SymbolicName="statcode" DataType="ua:StatusCode" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+          <opc:Variable SymbolicName="locText" DataType="ua:LocalizedText" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <opc:Children />
+            <opc:References />
+          </opc:Variable>
+        </opc:Children>
+        <opc:References />
+      </opc:Object>
+      <opc:Property SymbolicName="test" DataType="ua:Boolean" />
+      <opc:Property SymbolicName="test2" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite" />
+    </opc:Children>
     <opc:References>
       <opc:Reference IsInverse="true">
         <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
@@ -13,22 +80,4 @@
       </opc:Reference>
     </opc:References>
   </opc:Object>
-  <opc:Variable SymbolicName="start" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
-    <opc:Children />
-    <opc:References>
-      <opc:Reference IsInverse="true">
-        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-      </opc:Reference>
-    </opc:References>
-  </opc:Variable>
-  <opc:Variable SymbolicName="stop" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
-    <opc:Children />
-    <opc:References>
-      <opc:Reference IsInverse="true">
-        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
-        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
-      </opc:Reference>
-    </opc:References>
-  </opc:Variable>
 </opc:ModelDesign>
