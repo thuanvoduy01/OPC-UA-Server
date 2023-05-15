@@ -57,6 +57,9 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const uint obj_new = 11;
+
+        /// <remarks />
+        public const uint Motor = 19;
     }
     #endregion
 
@@ -104,6 +107,18 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const uint obj_test2 = 18;
+
+        /// <remarks />
+        public const uint Motor_Start = 20;
+
+        /// <remarks />
+        public const uint Motor_Stop = 21;
+
+        /// <remarks />
+        public const uint Motor_Speed = 22;
+
+        /// <remarks />
+        public const uint Motor_Power = 23;
     }
     #endregion
 
@@ -127,6 +142,9 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public static readonly ExpandedNodeId obj_new = new ExpandedNodeId(MyOPCUAServer.Objects.obj_new, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId Motor = new ExpandedNodeId(MyOPCUAServer.Objects.Motor, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -174,6 +192,18 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public static readonly ExpandedNodeId obj_test2 = new ExpandedNodeId(MyOPCUAServer.Variables.obj_test2, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId Motor_Start = new ExpandedNodeId(MyOPCUAServer.Variables.Motor_Start, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId Motor_Stop = new ExpandedNodeId(MyOPCUAServer.Variables.Motor_Stop, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId Motor_Speed = new ExpandedNodeId(MyOPCUAServer.Variables.Motor_Speed, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId Motor_Power = new ExpandedNodeId(MyOPCUAServer.Variables.Motor_Power, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -189,6 +219,9 @@ namespace MyOPCUAServer
         public const string input = "input";
 
         /// <remarks />
+        public const string Motor = "Motor";
+
+        /// <remarks />
         public const string new = "new";
 
         /// <remarks />
@@ -196,6 +229,18 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const string output = "output";
+
+        /// <remarks />
+        public const string Power = "Power";
+
+        /// <remarks />
+        public const string Speed = "Speed";
+
+        /// <remarks />
+        public const string Start = "Start";
+
+        /// <remarks />
+        public const string Stop = "Stop";
 
         /// <remarks />
         public const string test = "test";

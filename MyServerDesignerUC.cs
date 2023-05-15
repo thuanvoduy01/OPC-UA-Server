@@ -1206,6 +1206,30 @@ namespace MyOPCUAServer
                     break;
             }
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            string xmlModelDesignUc = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlModelDesignUc);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Select Destination";
+            saveFileDialog.InitialDirectory = @"C:\";
+            string defaultFileName = "ModelDesignExport_" + DateTime.Now.ToString("yyyyMMdd-HH-mm-ss");
+            saveFileDialog.FileName = defaultFileName;
+            saveFileDialog.DefaultExt = "xml";
+            saveFileDialog.Filter = "XML files (*.xml)|*.xml";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.FileName != String.Empty)
+            {
+                string desDir = saveFileDialog.FileName;
+                xmlDoc.Save(desDir);
+            }
+            else {}
+        }
         #endregion
+
+
     }
 }

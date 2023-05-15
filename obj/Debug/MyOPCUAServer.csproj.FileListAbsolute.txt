@@ -244,3 +244,4 @@ D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.frmMyServer.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.frmAddFolder.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.frmAddProperty.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.frmAddVariable.resources
+D:\Proj\VStudio\MyOPCUAServer\bin\Debug\MyOPCUAServer.Config.xml

@@ -16,3 +16,8 @@ obj_new_statcode,15,Variable
 obj_new_locText,16,Variable
 obj_test,17,Variable
 obj_test2,18,Variable
+Motor,19,Object
+Motor_Start,20,Variable
+Motor_Stop,21,Variable
+Motor_Speed,22,Variable
+Motor_Power,23,Variable

@@ -15,7 +15,8 @@ namespace MyOPCUAServer
 {
     public class MyOPCUAServerNodeManager : CustomNodeManager2
     {
-        public MyOPCUAServerNodeManager(IServerInternal server, ApplicationConfiguration configuration) : base(server, configuration)
+        public MyOPCUAServerNodeManager(IServerInternal server, ApplicationConfiguration configuration) 
+            : base(server, configuration)
         {
             SystemContext.NodeIdFactory = this;
 
