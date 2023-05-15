@@ -72,6 +72,18 @@
       </opc:Object>
       <opc:Property SymbolicName="test" DataType="ua:Boolean" />
       <opc:Property SymbolicName="test2" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite" />
+      <opc:Variable SymbolicName="xoadi" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+        <opc:Children />
+        <opc:References />
+      </opc:Variable>
+      <opc:Variable SymbolicName="xoadi1" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+        <opc:Children />
+        <opc:References />
+      </opc:Variable>
+      <opc:Variable SymbolicName="xoadi2" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
+        <opc:Children />
+        <opc:References />
+      </opc:Variable>
     </opc:Children>
     <opc:References>
       <opc:Reference IsInverse="true">

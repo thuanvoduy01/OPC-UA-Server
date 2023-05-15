@@ -59,7 +59,7 @@ namespace MyOPCUAServer
         public const uint obj_new = 11;
 
         /// <remarks />
-        public const uint Motor = 19;
+        public const uint Motor = 22;
     }
     #endregion
 
@@ -109,16 +109,25 @@ namespace MyOPCUAServer
         public const uint obj_test2 = 18;
 
         /// <remarks />
-        public const uint Motor_Start = 20;
+        public const uint obj_xoadi = 19;
 
         /// <remarks />
-        public const uint Motor_Stop = 21;
+        public const uint obj_xoadi1 = 20;
 
         /// <remarks />
-        public const uint Motor_Speed = 22;
+        public const uint obj_xoadi2 = 21;
 
         /// <remarks />
-        public const uint Motor_Power = 23;
+        public const uint Motor_Start = 23;
+
+        /// <remarks />
+        public const uint Motor_Stop = 24;
+
+        /// <remarks />
+        public const uint Motor_Speed = 25;
+
+        /// <remarks />
+        public const uint Motor_Power = 26;
     }
     #endregion
 
@@ -194,6 +203,15 @@ namespace MyOPCUAServer
         public static readonly ExpandedNodeId obj_test2 = new ExpandedNodeId(MyOPCUAServer.Variables.obj_test2, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
+        public static readonly ExpandedNodeId obj_xoadi = new ExpandedNodeId(MyOPCUAServer.Variables.obj_xoadi, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId obj_xoadi1 = new ExpandedNodeId(MyOPCUAServer.Variables.obj_xoadi1, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId obj_xoadi2 = new ExpandedNodeId(MyOPCUAServer.Variables.obj_xoadi2, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
         public static readonly ExpandedNodeId Motor_Start = new ExpandedNodeId(MyOPCUAServer.Variables.Motor_Start, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
@@ -247,6 +265,15 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const string test2 = "test2";
+
+        /// <remarks />
+        public const string xoadi = "xoadi";
+
+        /// <remarks />
+        public const string xoadi1 = "xoadi1";
+
+        /// <remarks />
+        public const string xoadi2 = "xoadi2";
     }
     #endregion
 

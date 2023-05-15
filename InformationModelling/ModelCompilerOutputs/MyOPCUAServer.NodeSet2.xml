@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-14T05:38:02.6557604Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-05-15T16:54:49.9716082Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
   <NamespaceUris>
     <Uri>http://opcfoundation.org/OPCUAServer</Uri>
   </NamespaceUris>
   <Models>
-    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-14T05:38:02.6557604Z">
+    <Model ModelUri="http://opcfoundation.org/OPCUAServer" Version="1.0.0" PublicationDate="2023-05-15T16:54:49.9716082Z">
       <RequiredModel ModelUri="http://opcfoundation.org/UA/" XmlSchemaUri="http://opcfoundation.org/UA/2008/02/Types.xsd" />
     </Model>
   </Models>
@@ -65,6 +65,9 @@
       <Reference ReferenceType="HasComponent">ns=1;i=11</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=17</Reference>
       <Reference ReferenceType="HasProperty">ns=1;i=18</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=19</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=20</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=21</Reference>
       <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
       <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
     </References>
@@ -199,43 +202,64 @@
       <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=1</Reference>
     </References>
   </UAVariable>
-  <UAObject NodeId="ns=1;i=19" BrowseName="1:Motor">
+  <UAVariable NodeId="ns=1;i=19" BrowseName="1:xoadi" ParentNodeId="ns=1;i=1" DataType="Boolean" AccessLevel="3">
+    <DisplayName>xoadi</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=20" BrowseName="1:xoadi1" ParentNodeId="ns=1;i=1" DataType="Boolean" AccessLevel="3">
+    <DisplayName>xoadi1</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=21" BrowseName="1:xoadi2" ParentNodeId="ns=1;i=1" DataType="Boolean" AccessLevel="3">
+    <DisplayName>xoadi2</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=22" BrowseName="1:Motor">
     <DisplayName>Motor</DisplayName>
     <References>
-      <Reference ReferenceType="HasComponent">ns=1;i=20</Reference>
-      <Reference ReferenceType="HasComponent">ns=1;i=21</Reference>
-      <Reference ReferenceType="HasComponent">ns=1;i=22</Reference>
       <Reference ReferenceType="HasComponent">ns=1;i=23</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=24</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=25</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=26</Reference>
       <Reference ReferenceType="Organizes" IsForward="false">i=85</Reference>
       <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
     </References>
   </UAObject>
-  <UAVariable NodeId="ns=1;i=20" BrowseName="1:Start" ParentNodeId="ns=1;i=19" DataType="Boolean" AccessLevel="3">
+  <UAVariable NodeId="ns=1;i=23" BrowseName="1:Start" ParentNodeId="ns=1;i=22" DataType="Boolean" AccessLevel="3">
     <DisplayName>Start</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=19</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=22</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="ns=1;i=21" BrowseName="1:Stop" ParentNodeId="ns=1;i=19" DataType="Boolean" AccessLevel="3">
+  <UAVariable NodeId="ns=1;i=24" BrowseName="1:Stop" ParentNodeId="ns=1;i=22" DataType="Boolean" AccessLevel="3">
     <DisplayName>Stop</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=19</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=22</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="ns=1;i=22" BrowseName="1:Speed" ParentNodeId="ns=1;i=19" DataType="Int16" AccessLevel="3">
+  <UAVariable NodeId="ns=1;i=25" BrowseName="1:Speed" ParentNodeId="ns=1;i=22" DataType="Int16" AccessLevel="3">
     <DisplayName>Speed</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=19</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=22</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="ns=1;i=23" BrowseName="1:Power" ParentNodeId="ns=1;i=19" DataType="Double" AccessLevel="3">
+  <UAVariable NodeId="ns=1;i=26" BrowseName="1:Power" ParentNodeId="ns=1;i=22" DataType="Double" AccessLevel="3">
     <DisplayName>Power</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=19</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=22</Reference>
     </References>
   </UAVariable>
 </UANodeSet>

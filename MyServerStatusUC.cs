@@ -46,15 +46,18 @@ namespace MyOPCUAServer
         public void UpdateServer()
         {            
             if (m_server == null) { return; }
-            if ( m_server.CurrentInstance.IsRunning == true)
+            try
             {
-                lblServerStatus.Text = "Running";
+                if (m_server.CurrentInstance.IsRunning == true)
+                {
+                    lblServerStatus.Text = "Running";
 
-            } 
-            else
-            {
-                lblServerStatus.Text = "Not Running";
-            }
+                }
+                else
+                {
+                    lblServerStatus.Text = "Not Running";
+                }
+            } catch (Exception ex) { }
 
             foreach (EndpointDescription endpoint in m_server.GetEndpoints())
             {

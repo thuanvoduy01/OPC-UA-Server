@@ -156,7 +156,7 @@ namespace MyOPCUAServer
             }
         }
 
-        public void InitDesignerUcMdoel()
+        public void InitDesignerUcModel()
         {
             string xmlModelDesignUcDir = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
 
@@ -637,11 +637,14 @@ namespace MyOPCUAServer
             if (resourcePath == String.Empty) { return; }
             #endregion
 
+            // Dispose server in case run server again
+            if (m_application.Server != null) { m_application.Server.Dispose(); }
+
             #region Create OPC UA Server from ua.nodes file
             try
             {
                 // Dispose server in case run server again
-                if (m_application.Server != null) { m_application.Server.Dispose(); }
+                //if (m_application.Server != null) { m_application.Server.Dispose(); }
                 
 
                 // process and command line arguments.
@@ -726,7 +729,7 @@ namespace MyOPCUAServer
             {
                 MessageBox.Show("Can not find where to add");
                 return;
-            }
+            }   
 
             bool isChildOfModelDesign = true;
             if (parent.Name.Contains("ModelDesign") == false)
@@ -1126,7 +1129,7 @@ namespace MyOPCUAServer
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            InitDesignerUcMdoel();
+            InitDesignerUcModel();
             UpdateTreeViewModel();
         }
 
