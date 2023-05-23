@@ -1057,7 +1057,7 @@ namespace MyOPCUAServer
             propertyElement.SetAttribute("ValueRank", "Scalar");
             propertyElement.SetAttribute("AccessLevel", "ReadWrite");
 
-            /* Property does not need this. Cause Property cannot have child!
+            /* Property does not need this. Cause Property cannot have child! And Folder is not supposed to have property
             XmlElement childrenElement = xmlDocument.CreateElement("opc", "Children", "http://opcfoundation.org/UA/ModelDesign.xsd");
             objectElement.AppendChild(childrenElement);
             XmlElement referencesElement = xmlDocument.CreateElement("opc", "References", "http://opcfoundation.org/UA/ModelDesign.xsd");

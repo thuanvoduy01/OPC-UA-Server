@@ -12,7 +12,8 @@ namespace MyOPCUAServer
         public readonly static string INFORMATION_MODELLING_DIRECTORY = PROJECT_DIRECTORY + @"\InformationModelling";
         public readonly static string TEMP = INFORMATION_MODELLING_DIRECTORY + @"\InformationModelling";
 
-        public readonly static string BATCH_DIRECTORY_MODEL_COMPILER = INFORMATION_MODELLING_DIRECTORY + @"\MyOPCUAServerBuildDesignFullPath.bat";
+        public readonly static string BATCH_DIRECTORY_MODEL_COMPILER = INFORMATION_MODELLING_DIRECTORY + @"\MyOPCUAServerBuildDesign.bat";
+        public readonly static string BATCH_DIRECTORY_MODEL_COMPILER_FULL_PATH = INFORMATION_MODELLING_DIRECTORY + @"\MyOPCUAServerBuildDesignFullPath.bat";
         public readonly static string MODEL_COMPILER_OUTPUTS_DIRECTORY = INFORMATION_MODELLING_DIRECTORY + @"\ModelCompilerOutputs";
         public readonly static string MODEL_DESIGN_DIRECTORY = INFORMATION_MODELLING_DIRECTORY + @"\ModelDesign.xml";
         public readonly static string MODEL_DESIGN_UC_DIRECTORY = INFORMATION_MODELLING_DIRECTORY + @"\DesignerUcModel.xml";
