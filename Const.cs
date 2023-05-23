@@ -8,15 +8,11 @@ namespace MyOPCUAServer
 {
     public class Const
     {
-<<<<<<< HEAD
-        public readonly static string PROJECT_DIRECTORY = @"D:\Proj\VStudio\MyOPCUAServer";
-
-=======
         //public readonly static string PROJECT_DIRECTORY = @"D:\Proj\VStudio\MyOPCUAServer";
         //start from folder containing execute file, then up to 2 levels to the project folder
         //In detail: Folder MyOPCUAServer(ProjectFolder)/bin/Debug(this folder is having MyOPCUAServer.exe)
         public readonly static string PROJECT_DIRECTORY = @"..\..\"; 
->>>>>>> minor
+
         public readonly static string INFORMATION_MODELLING_DIRECTORY = PROJECT_DIRECTORY + @"\InformationModelling";
         public readonly static string TEMP = INFORMATION_MODELLING_DIRECTORY + @"\InformationModelling";
 
