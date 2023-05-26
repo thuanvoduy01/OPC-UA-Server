@@ -1,6 +1,5 @@
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.csproj.AssemblyReference.cache
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.csproj.SuggestedBindingRedirects.cache
-D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyOPCUAServerForm.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.Properties.Resources.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.csproj.GenerateResource.cache
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.csproj.CoreCompileInputs.cache
@@ -236,7 +235,6 @@ D:\Proj\VStudio\MyOPCUAServer\bin\Debug\System.ValueTuple.xml
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.csproj.CopyComplete
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.exe
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.pdb
-D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerConfigForm.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerDesignerUC.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.MyServerStatusUC.resources
 D:\Proj\VStudio\MyOPCUAServer\obj\Debug\MyOPCUAServer.frmAddObject.resources

@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace MyOPCUAServer
 {
@@ -26,11 +27,16 @@ namespace MyOPCUAServer
             //namespaceUrls[0] = BatchPlant.Namespaces.BatchPlant;              dT
             //namespaceUrls[1] = BatchPlant.Namespaces.BatchPlant + "/Instance";
 
-            //namespaceUrls[0] = Namespaces.MyOPCUAServer;
-            //namespaceUrls[1] = Namespaces.MyOPCUAServer + "/Instance";
+            #region load xml
+            XmlDocument xmlDocument = new XmlDocument();
+            string xmlModelDesign = MyOPCUAServer.Const.MODEL_DESIGN_DIRECTORY;
+            xmlDocument.Load(xmlModelDesign);
+            #endregion
+            
+            string urlNamespace = xmlDocument.DocumentElement.GetAttribute("xmlns");
 
-            namespaceUrls[0] = "http://opcfoundation.org/OPCUAServer";
-            namespaceUrls[1] = "http://opcfoundation.org/OPCUAServer" + "/Instance";
+            namespaceUrls[0] = urlNamespace;
+            namespaceUrls[1] = urlNamespace + "/Instance";
             SetNamespaces(namespaceUrls);
 
             // get the configuration for the node manager.
