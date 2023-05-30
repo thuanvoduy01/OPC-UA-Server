@@ -5,6 +5,7 @@ using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -119,7 +120,7 @@ namespace MyOPCUAServer
             {
                 //Server still not be build
                 //Turn back to designer
-                MessageBox.Show("Server has not been created\nPlease build one or import XML Information Model File");
+                MessageBox.Show("Please build one or import XML Information Model File", "Server has not been created",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 AddUserControl(myServerDesignerUC);
             }
         }
