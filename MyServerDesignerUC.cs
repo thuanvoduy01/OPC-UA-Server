@@ -533,6 +533,56 @@ namespace MyOPCUAServer
                 node.SelectedImageIndex = 4;
             }
         }
+
+        /// <summary>
+        /// Return true if there is already a sibling node that have the same SymbolicName
+        /// </summary>
+        /// <param name="xmlNode"></param>
+        /// <param name="symbolicName"></param>
+        public bool CheckSymbolicName(XmlNode xmlNode, string symbolicName)
+        {
+            if (xmlNode == null) { return false; }
+
+            if (symbolicName == null || symbolicName == String.Empty) { return false; }
+
+            xmlNode = GetTheFirstSiblingNode(xmlNode);
+            if(xmlNode == null) { return false; }
+
+            while(xmlNode != null)
+            {
+                if (xmlNode.Attributes == null || xmlNode.Attributes["SymbolicName"] == null) 
+                {
+                    xmlNode = xmlNode.NextSibling;
+                    continue; 
+                }
+
+                string name = xmlNode.Attributes["SymbolicName"].Value;
+                if (name == null || name == String.Empty) 
+                {
+                    xmlNode = xmlNode.NextSibling;
+                    continue;
+                }
+
+                if (name == symbolicName)
+                {
+                    return true;
+                }
+
+                xmlNode = xmlNode.NextSibling;
+            }
+            return false;
+        }
+
+        public XmlNode GetTheFirstSiblingNode(XmlNode xmlNode)
+        {
+            if (xmlNode == null) { return null; }
+
+            while(xmlNode.PreviousSibling != null)
+            {
+                xmlNode = xmlNode.PreviousSibling;
+            }
+            return xmlNode;
+        }
         #endregion
 
         #region Events
@@ -753,6 +803,12 @@ namespace MyOPCUAServer
             else { }
             #endregion
 
+            if (CheckSymbolicName(parent.FirstChild, symbolicName) == true)
+            {
+                MessageBox.Show("SymbolicName is already used", "SymbolicName Conflict", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             #region Create xml tag for folder
             XmlElement objectElement = xmlDocument.CreateElement("opc", "Object", "http://opcfoundation.org/UA/ModelDesign.xsd");
             objectElement.SetAttribute("SymbolicName", $"{symbolicName}");
@@ -850,6 +906,13 @@ namespace MyOPCUAServer
             }
             else { }
             #endregion
+
+            if(CheckSymbolicName(parent.FirstChild, symbolicName) == true)
+            {
+                MessageBox.Show("SymbolicName is already used", "SymbolicName Conflict", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
 
             #region Create xml tag for object
             XmlElement objectElement = xmlDocument.CreateElement("opc", "Object", "http://opcfoundation.org/UA/ModelDesign.xsd");
@@ -949,6 +1012,12 @@ namespace MyOPCUAServer
             }
             else { }
             #endregion
+
+            if (CheckSymbolicName(parent.FirstChild, symbolicName) == true)
+            {
+                MessageBox.Show("SymbolicName is already used", "SymbolicName Conflict", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             #region Create xml tag for folder
             XmlElement variableElement = xmlDocument.CreateElement("opc", "Variable", "http://opcfoundation.org/UA/ModelDesign.xsd");
@@ -1050,6 +1119,12 @@ namespace MyOPCUAServer
             }
             else { }
             #endregion
+
+            if (CheckSymbolicName(parent.FirstChild, symbolicName) == true)
+            {
+                MessageBox.Show("SymbolicName is already used", "SymbolicName Conflict", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             #region Create xml tag for Property
             XmlElement propertyElement = xmlDocument.CreateElement("opc", "Property", "http://opcfoundation.org/UA/ModelDesign.xsd");

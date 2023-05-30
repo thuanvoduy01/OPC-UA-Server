@@ -36,6 +36,10 @@
             <opc:Children />
             <opc:References />
           </opc:Variable>
+          <opc:Object SymbolicName="start" TypeDefinition="ua:BaseObjectType">
+            <opc:Children />
+            <opc:References />
+          </opc:Object>
         </opc:Children>
         <opc:References />
       </opc:Object>
@@ -89,7 +93,20 @@
         </opc:Children>
         <opc:References />
       </opc:Object>
+      <opc:Object SymbolicName="temp" TypeDefinition="ua:BaseObjectType">
+        <opc:Children />
+        <opc:References />
+      </opc:Object>
     </opc:Children>
+    <opc:References>
+      <opc:Reference IsInverse="true">
+        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+      </opc:Reference>
+    </opc:References>
+  </opc:Object>
+  <opc:Object SymbolicName="temp" TypeDefinition="ua:FolderType">
+    <opc:Children />
     <opc:References>
       <opc:Reference IsInverse="true">
         <opc:ReferenceType>ua:Organizes</opc:ReferenceType>

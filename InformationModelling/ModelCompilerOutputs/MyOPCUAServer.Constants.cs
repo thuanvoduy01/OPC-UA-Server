@@ -50,10 +50,19 @@ namespace MyOPCUAServer
         public const uint MySystem_Motor1 = 2;
 
         /// <remarks />
-        public const uint MySystem_Motor2 = 10;
+        public const uint MySystem_Motor1_start = 10;
 
         /// <remarks />
-        public const uint MySystem_Tank1 = 18;
+        public const uint MySystem_Motor2 = 11;
+
+        /// <remarks />
+        public const uint MySystem_Tank1 = 19;
+
+        /// <remarks />
+        public const uint MySystem_temp = 23;
+
+        /// <remarks />
+        public const uint temp = 24;
     }
     #endregion
 
@@ -85,34 +94,34 @@ namespace MyOPCUAServer
         public const uint MySystem_Motor1_SpeedMax = 9;
 
         /// <remarks />
-        public const uint MySystem_Motor2_Start = 11;
+        public const uint MySystem_Motor2_Start = 12;
 
         /// <remarks />
-        public const uint MySystem_Motor2_Stop = 12;
+        public const uint MySystem_Motor2_Stop = 13;
 
         /// <remarks />
-        public const uint MySystem_Motor2_Run = 13;
+        public const uint MySystem_Motor2_Run = 14;
 
         /// <remarks />
-        public const uint MySystem_Motor2_Power = 14;
+        public const uint MySystem_Motor2_Power = 15;
 
         /// <remarks />
-        public const uint MySystem_Motor2_PowerMax = 15;
+        public const uint MySystem_Motor2_PowerMax = 16;
 
         /// <remarks />
-        public const uint MySystem_Motor2_Speed = 16;
+        public const uint MySystem_Motor2_Speed = 17;
 
         /// <remarks />
-        public const uint MySystem_Motor2_SpeedMax = 17;
+        public const uint MySystem_Motor2_SpeedMax = 18;
 
         /// <remarks />
-        public const uint MySystem_Tank1_Level = 19;
+        public const uint MySystem_Tank1_Level = 20;
 
         /// <remarks />
-        public const uint MySystem_Tank1_High = 20;
+        public const uint MySystem_Tank1_High = 21;
 
         /// <remarks />
-        public const uint MySystem_Tank1_Low = 21;
+        public const uint MySystem_Tank1_Low = 22;
     }
     #endregion
 
@@ -129,10 +138,19 @@ namespace MyOPCUAServer
         public static readonly ExpandedNodeId MySystem_Motor1 = new ExpandedNodeId(MyOPCUAServer.Objects.MySystem_Motor1, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
+        public static readonly ExpandedNodeId MySystem_Motor1_start = new ExpandedNodeId(MyOPCUAServer.Objects.MySystem_Motor1_start, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
         public static readonly ExpandedNodeId MySystem_Motor2 = new ExpandedNodeId(MyOPCUAServer.Objects.MySystem_Motor2, MyOPCUAServer.Namespaces.MyOPCUAServer);
 
         /// <remarks />
         public static readonly ExpandedNodeId MySystem_Tank1 = new ExpandedNodeId(MyOPCUAServer.Objects.MySystem_Tank1, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId MySystem_temp = new ExpandedNodeId(MyOPCUAServer.Objects.MySystem_temp, MyOPCUAServer.Namespaces.MyOPCUAServer);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId temp = new ExpandedNodeId(MyOPCUAServer.Objects.temp, MyOPCUAServer.Namespaces.MyOPCUAServer);
     }
     #endregion
 
@@ -211,6 +229,9 @@ namespace MyOPCUAServer
 
         /// <remarks />
         public const string Tank1 = "Tank1";
+
+        /// <remarks />
+        public const string temp = "temp";
     }
     #endregion
 
