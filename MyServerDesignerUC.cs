@@ -128,6 +128,7 @@ namespace MyOPCUAServer
                 {
                     //Object and folder all have xml tag is <opc:Object>
                     //Base on TypeDefinition to distinguish those two
+                    //if (childNode.Name.Contains("Object"))
                     if (childNode.Name.Contains("Object"))
                     {
                         if (childNode.Attributes["TypeDefinition"].Value == "ua:BaseObjectType")
@@ -1231,8 +1232,39 @@ namespace MyOPCUAServer
             }
             else {}
         }
+
         #endregion
 
+        private void tvwModel_DoubleClick(object sender, EventArgs e)
+        {
 
+            if (tvwModel.SelectedNode == null)
+            {
+                return;
+            }
+            string treeviewNodePath = tvwModel.SelectedNode.FullPath;
+
+            #region load xml
+            XmlDocument xmlDocument = new XmlDocument();
+            string xmlModelDesignUc = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
+            xmlDocument.Load(xmlModelDesignUc);
+            #endregion
+
+            XmlElement parent = (XmlElement)GetXmlNode(xmlDocument, treeviewNodePath);
+
+            XmlAttributeCollection attributes = parent.Attributes;
+            if (attributes.Count <= 0)
+            {
+                return;
+            }
+
+            string mess = String.Empty;
+            foreach (XmlAttribute attribute in attributes)
+            {
+                mess = mess + $"{ attribute.Name } = { attribute.Value } \n";
+            }
+
+            MessageBox.Show(mess, "Attributes of the node");
+        }
     }
 }
