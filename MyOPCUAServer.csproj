@@ -239,7 +239,6 @@
     </Compile>
     <Compile Include="Const.cs" />
     <Compile Include="MyOPCUAServerConfiguration.cs" />
-    <Compile Include="MyOPCUAServerNodeManagerMinor.cs" />
     <Compile Include="MyOPCUAServerNodeManager.cs" />
     <Compile Include="MyServer.cs" />
     <Compile Include="MyServerDesignerUC.cs">
