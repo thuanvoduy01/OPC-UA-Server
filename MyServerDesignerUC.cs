@@ -99,7 +99,7 @@ namespace MyOPCUAServer
             TreeNode treeNodeChild = null;
             XmlNodeList childNodeList = node.ChildNodes;
 
-            if (childNodeList.Count <= 0)
+            if (childNodeList.Count <= 0)  
             {
                 return;
             }
@@ -122,36 +122,47 @@ namespace MyOPCUAServer
                     return;
                 }
 
-                if (childNode.Name.Contains("Object") ||
-                    childNode.Name.Contains("Variable") ||
-                    childNode.Name.Contains("Property"))
+                //if (childNode.Name.Contains("Object") ||
+                //    childNode.Name.Contains("Variable") ||
+                //    childNode.Name.Contains("Property"))
+                if (childNode.Name == "opc:Object" ||
+                    childNode.Name == "opc:Variable" ||
+                    childNode.Name == "opc:Property")
                 {
-                    //Object and folder all have xml tag is <opc:Object>
-                    //Base on TypeDefinition to distinguish those two
-                    //if (childNode.Name.Contains("Object"))
-                    if (childNode.Name.Contains("Object"))
+                    try
                     {
-                        if (childNode.Attributes["TypeDefinition"].Value == "ua:BaseObjectType")
+                        //Object and folder all have xml tag is <opc:Object>
+                        //Base on TypeDefinition to distinguish those two
+                        //if (childNode.Name.Contains("Object"))
+                        if (childNode.Name == "opc:Object")
                         {
-                            treeNodeType = "Object";
+                            if (childNode.Attributes["TypeDefinition"].Value == "ua:BaseObjectType")
+                            {
+                                treeNodeType = "Object";
+                            }
+
+                            if (childNode.Attributes["TypeDefinition"].Value == "ua:FolderType")
+                            {
+                                treeNodeType = "Folder";
+                            }
+                        }
+                        else
+                        {
+                            //Only took "Variable" from <opc:Variable>
+                            treeNodeType = childNode.Name.Split(':')[1];
                         }
 
-                        if (childNode.Attributes["TypeDefinition"].Value == "ua:FolderType")
-                        {
-                            treeNodeType = "Folder";
-                        }
+                        treeNodeText = childNode.Attributes["SymbolicName"].Value;
+
+                        string temp = $"{treeNodeText}::{treeNodeType}";
+                        treeNodeChild = treeNode.Nodes.Add(temp);
+                        PopulateTreeview(childNode, treeNodeChild);
                     }
-                    else
+                    catch(Exception ex)
                     {
-                        //Only took "Variable" from <opc:Variable>
-                        treeNodeType = childNode.Name.Split(':')[1];
+                        MessageBox.Show("Cannot open the file", "Open error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        btnNew.PerformClick();
                     }
-
-                    treeNodeText = childNode.Attributes["SymbolicName"].Value;
-
-                    string temp = $"{treeNodeText}::{treeNodeType}";
-                    treeNodeChild = treeNode.Nodes.Add(temp);
-                    PopulateTreeview(childNode, treeNodeChild);
                 }
 
             }
@@ -1340,6 +1351,33 @@ namespace MyOPCUAServer
             }
 
             MessageBox.Show(mess, "Attributes of the node");
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select File";
+            openFileDialog.InitialDirectory = @"C:\";
+            openFileDialog.Filter = "All files (*.*)|*.* | XML files (*.xml)|*.xml";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.ShowDialog();
+            string selectedFileDir = openFileDialog.FileName;
+            if (selectedFileDir == String.Empty)
+            {
+                return;
+            }
+            if (Path.GetExtension(selectedFileDir) != ".xml")
+            {
+                return;
+            }
+
+            string src = selectedFileDir;
+            string des = MyOPCUAServer.Const.MODEL_DESIGN_UC_DIRECTORY;
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(src);
+            xmlDocument.Save(des);
+
+            UpdateTreeViewModel();
         }
     }
 }

@@ -45,6 +45,7 @@
             this.timerUpdateDesigner = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFilePath
@@ -267,6 +268,24 @@
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // btnOpen
+            // 
+            this.btnOpen.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.btnOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(67)))));
+            this.btnOpen.ImageIndex = 7;
+            this.btnOpen.Location = new System.Drawing.Point(657, 18);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(64, 35);
+            this.btnOpen.TabIndex = 2;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Visible = false;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
             // MyServerDesignerUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +296,7 @@
             this.Controls.Add(this.chkImport);
             this.Controls.Add(this.btnRunServer);
             this.Controls.Add(this.btnAddFolder);
+            this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnDelete);
@@ -308,5 +328,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imgNode;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnOpen;
     }
 }

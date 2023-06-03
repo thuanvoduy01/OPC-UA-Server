@@ -9,8 +9,7 @@
       <opc:Object SymbolicName="Motor1" TypeDefinition="ua:BaseObjectType">
         <opc:Children>
           <opc:Variable SymbolicName="Start" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">
-            <opc:Children>
-            </opc:Children>
+            <opc:Children />
             <opc:References />
           </opc:Variable>
           <opc:Variable SymbolicName="Stop" DataType="ua:Boolean" ValueRank="Scalar" AccessLevel="ReadWrite">

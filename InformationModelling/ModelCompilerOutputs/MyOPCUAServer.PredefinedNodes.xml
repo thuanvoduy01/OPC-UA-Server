@@ -207,28 +207,11 @@
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
       </SpeedMax>
-      <start>
-        <uax:NodeClass>Object_1</uax:NodeClass>
-        <uax:NodeId>
-          <uax:Identifier>ns=1;i=10</uax:Identifier>
-        </uax:NodeId>
-        <uax:BrowseName>
-          <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>start</uax:Name>
-        </uax:BrowseName>
-        <uax:ReferenceTypeId>
-          <uax:Identifier>i=47</uax:Identifier>
-        </uax:ReferenceTypeId>
-        <uax:TypeDefinitionId>
-          <uax:Identifier>i=58</uax:Identifier>
-        </uax:TypeDefinitionId>
-        <uax:NumericId>10</uax:NumericId>
-      </start>
     </Motor1>
     <Motor2>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=11</uax:Identifier>
+        <uax:Identifier>ns=1;i=10</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -240,15 +223,38 @@
       <uax:TypeDefinitionId>
         <uax:Identifier>i=58</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>11</uax:NumericId>
+      <uax:NumericId>10</uax:NumericId>
       <Start>
+        <uax:NodeClass>Variable_2</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=11</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Start</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>i=63</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:NumericId>11</uax:NumericId>
+        <uax:DataType>
+          <uax:Identifier>i=1</uax:Identifier>
+        </uax:DataType>
+        <uax:ValueRank>-1</uax:ValueRank>
+        <uax:AccessLevel>3</uax:AccessLevel>
+        <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      </Start>
+      <Stop>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
           <uax:Identifier>ns=1;i=12</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Start</uax:Name>
+          <uax:Name>Stop</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -263,15 +269,15 @@
         <uax:ValueRank>-1</uax:ValueRank>
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
-      </Start>
-      <Stop>
+      </Stop>
+      <Run>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
           <uax:Identifier>ns=1;i=13</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Stop</uax:Name>
+          <uax:Name>Run</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -286,15 +292,15 @@
         <uax:ValueRank>-1</uax:ValueRank>
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
-      </Stop>
-      <Run>
+      </Run>
+      <Power>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
           <uax:Identifier>ns=1;i=14</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Run</uax:Name>
+          <uax:Name>Power</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -304,20 +310,20 @@
         </uax:TypeDefinitionId>
         <uax:NumericId>14</uax:NumericId>
         <uax:DataType>
-          <uax:Identifier>i=1</uax:Identifier>
+          <uax:Identifier>i=10</uax:Identifier>
         </uax:DataType>
         <uax:ValueRank>-1</uax:ValueRank>
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
-      </Run>
-      <Power>
+      </Power>
+      <PowerMax>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
           <uax:Identifier>ns=1;i=15</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Power</uax:Name>
+          <uax:Name>PowerMax</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -332,15 +338,15 @@
         <uax:ValueRank>-1</uax:ValueRank>
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
-      </Power>
-      <PowerMax>
+      </PowerMax>
+      <Speed>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
           <uax:Identifier>ns=1;i=16</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>PowerMax</uax:Name>
+          <uax:Name>Speed</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -350,20 +356,20 @@
         </uax:TypeDefinitionId>
         <uax:NumericId>16</uax:NumericId>
         <uax:DataType>
-          <uax:Identifier>i=10</uax:Identifier>
+          <uax:Identifier>i=5</uax:Identifier>
         </uax:DataType>
         <uax:ValueRank>-1</uax:ValueRank>
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
-      </PowerMax>
-      <Speed>
+      </Speed>
+      <SpeedMax>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
           <uax:Identifier>ns=1;i=17</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Speed</uax:Name>
+          <uax:Name>SpeedMax</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -378,35 +384,12 @@
         <uax:ValueRank>-1</uax:ValueRank>
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
-      </Speed>
-      <SpeedMax>
-        <uax:NodeClass>Variable_2</uax:NodeClass>
-        <uax:NodeId>
-          <uax:Identifier>ns=1;i=18</uax:Identifier>
-        </uax:NodeId>
-        <uax:BrowseName>
-          <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>SpeedMax</uax:Name>
-        </uax:BrowseName>
-        <uax:ReferenceTypeId>
-          <uax:Identifier>i=47</uax:Identifier>
-        </uax:ReferenceTypeId>
-        <uax:TypeDefinitionId>
-          <uax:Identifier>i=63</uax:Identifier>
-        </uax:TypeDefinitionId>
-        <uax:NumericId>18</uax:NumericId>
-        <uax:DataType>
-          <uax:Identifier>i=5</uax:Identifier>
-        </uax:DataType>
-        <uax:ValueRank>-1</uax:ValueRank>
-        <uax:AccessLevel>3</uax:AccessLevel>
-        <uax:UserAccessLevel>3</uax:UserAccessLevel>
       </SpeedMax>
     </Motor2>
     <Tank1>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=19</uax:Identifier>
+        <uax:Identifier>ns=1;i=18</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -418,11 +401,11 @@
       <uax:TypeDefinitionId>
         <uax:Identifier>i=58</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>19</uax:NumericId>
+      <uax:NumericId>18</uax:NumericId>
       <Level>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=20</uax:Identifier>
+          <uax:Identifier>ns=1;i=19</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -434,7 +417,7 @@
         <uax:TypeDefinitionId>
           <uax:Identifier>i=63</uax:Identifier>
         </uax:TypeDefinitionId>
-        <uax:NumericId>20</uax:NumericId>
+        <uax:NumericId>19</uax:NumericId>
         <uax:DataType>
           <uax:Identifier>i=10</uax:Identifier>
         </uax:DataType>
@@ -445,11 +428,34 @@
       <High>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=21</uax:Identifier>
+          <uax:Identifier>ns=1;i=20</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
           <uax:Name>High</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>i=63</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:NumericId>20</uax:NumericId>
+        <uax:DataType>
+          <uax:Identifier>i=1</uax:Identifier>
+        </uax:DataType>
+        <uax:ValueRank>-1</uax:ValueRank>
+        <uax:AccessLevel>3</uax:AccessLevel>
+        <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      </High>
+      <Low>
+        <uax:NodeClass>Variable_2</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=21</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Low</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -464,75 +470,7 @@
         <uax:ValueRank>-1</uax:ValueRank>
         <uax:AccessLevel>3</uax:AccessLevel>
         <uax:UserAccessLevel>3</uax:UserAccessLevel>
-      </High>
-      <Low>
-        <uax:NodeClass>Variable_2</uax:NodeClass>
-        <uax:NodeId>
-          <uax:Identifier>ns=1;i=22</uax:Identifier>
-        </uax:NodeId>
-        <uax:BrowseName>
-          <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Low</uax:Name>
-        </uax:BrowseName>
-        <uax:ReferenceTypeId>
-          <uax:Identifier>i=47</uax:Identifier>
-        </uax:ReferenceTypeId>
-        <uax:TypeDefinitionId>
-          <uax:Identifier>i=63</uax:Identifier>
-        </uax:TypeDefinitionId>
-        <uax:NumericId>22</uax:NumericId>
-        <uax:DataType>
-          <uax:Identifier>i=1</uax:Identifier>
-        </uax:DataType>
-        <uax:ValueRank>-1</uax:ValueRank>
-        <uax:AccessLevel>3</uax:AccessLevel>
-        <uax:UserAccessLevel>3</uax:UserAccessLevel>
       </Low>
     </Tank1>
-    <temp>
-      <uax:NodeClass>Object_1</uax:NodeClass>
-      <uax:NodeId>
-        <uax:Identifier>ns=1;i=23</uax:Identifier>
-      </uax:NodeId>
-      <uax:BrowseName>
-        <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>temp</uax:Name>
-      </uax:BrowseName>
-      <uax:ReferenceTypeId>
-        <uax:Identifier>i=47</uax:Identifier>
-      </uax:ReferenceTypeId>
-      <uax:TypeDefinitionId>
-        <uax:Identifier>i=58</uax:Identifier>
-      </uax:TypeDefinitionId>
-      <uax:NumericId>23</uax:NumericId>
-    </temp>
   </MySystem>
-  <temp xmlns="http://opcfoundation.org/MyOPCUAServer">
-    <uax:NodeClass>Object_1</uax:NodeClass>
-    <uax:NodeId>
-      <uax:Identifier>ns=1;i=24</uax:Identifier>
-    </uax:NodeId>
-    <uax:BrowseName>
-      <uax:NamespaceIndex>1</uax:NamespaceIndex>
-      <uax:Name>temp</uax:Name>
-    </uax:BrowseName>
-    <uax:ReferenceTypeId>
-      <uax:Identifier>i=47</uax:Identifier>
-    </uax:ReferenceTypeId>
-    <uax:TypeDefinitionId>
-      <uax:Identifier>i=61</uax:Identifier>
-    </uax:TypeDefinitionId>
-    <uax:NumericId>24</uax:NumericId>
-    <uax:References>
-      <uax:Reference>
-        <uax:ReferenceTypeId>
-          <uax:Identifier>i=35</uax:Identifier>
-        </uax:ReferenceTypeId>
-        <uax:IsInverse>true</uax:IsInverse>
-        <uax:TargetId>
-          <uax:Identifier>i=85</uax:Identifier>
-        </uax:TargetId>
-      </uax:Reference>
-    </uax:References>
-  </temp>
 </uax:ListOfNodeState>

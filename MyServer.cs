@@ -18,6 +18,7 @@ namespace MyOPCUAServer
 
             // create the custom node managers.
             nodeManagers.Add(new MyOPCUAServerNodeManager(server, configuration));
+            nodeManagers.Add(new MyOPCUAServerNodeManagerMinor(server, configuration));
 
             // create master node manager.
             return new MasterNodeManager(server, configuration, null, nodeManagers.ToArray());
